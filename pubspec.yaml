@@ -95,7 +95,7 @@ flutter:
       #  Leçon 1 
     - assets/audio/lecon1/
     - assets/lecon1/
-    - assets//alphabets/table.png
+    - assets/alphabets/table.png
     #  Leçon 2 
     - assets/audio/lecon2/
     - assets/lecon2/
@@ -168,6 +168,10 @@ flutter:
                 #  Leçon 21  --------
     - assets/audio/lecon21/
     - assets/lecon21/
+    
+                #  Leçon 22  --------
+    - assets/audio/lecon22/
+    - assets/lecon22/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
