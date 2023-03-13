@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 extension ColorExtension on String {
   toColor14() {
     var hexString = this;
@@ -30,12 +31,26 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
   final pointNum = TextEditingController();
   final pointSym = TextEditingController();
   String thereponse = "";
+  late SharedPreferences preferences;
+  String theid = "";
 
   //---- Enregistrer un elve ----
-  Future senddata(String litte, String nume, String symb) async {
-    Navigator.pushReplacementNamed(context, '/menu');
-  }
 
+  Future senddata() async {
+    thereponse = "";
+    final response = await http
+        .post(Uri.parse("https://s-p4.com/yello/update.php"), body: {
+
+       "identifiant": theid,
+       "pointLit": pointLit.text,
+       "pointNum": pointNum.text,
+       "pointSym": pointSym.text,
+    });
+
+  }
+    Future<void> retrieveCounter() async {
+    preferences = await SharedPreferences.getInstance();
+  }
   
 
   @override
@@ -248,7 +263,9 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                         backgroundColor: '#fcca0c'.toColor14(),
                       ),
                       onPressed: () {
-                        senddata(pointLit.text,pointNum.text,pointSym.text);
+                        senddata();
+                        print(theid);
+                        // senddata(pointLit.text,pointNum.text,pointSym.text);
                       },
                       child: Text(
                         'Enrégistrer',
