@@ -18,15 +18,15 @@ extension ColorExtension on String {
   }
 }
 
-class AdminLogin extends StatefulWidget {
-  const AdminLogin({Key? key, required this.title}) : super(key: key);
+class ConnexionEva extends StatefulWidget {
+  const ConnexionEva({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<AdminLogin> createState() => _AdminLoginState();
+  State<ConnexionEva> createState() => _ConnexionEvaState();
 }
 
-class _AdminLoginState extends State<AdminLogin> {
+class _ConnexionEvaState extends State<ConnexionEva> {
   int _counter = 0;
   String go = '';
   final pass = TextEditingController();
@@ -36,7 +36,7 @@ class _AdminLoginState extends State<AdminLogin> {
   //---- Enregistrer un elve ----
   Future senddata(String pwd) async {
     if (pwd == "YelloAlpha") {
-      Navigator.pushReplacementNamed(context, '/register');
+     Navigator.pushNamed(context, '/menuEva');
     } else {
       setState(() {
         thereponse = "Erreur de mot de passe";
@@ -55,7 +55,8 @@ class _AdminLoginState extends State<AdminLogin> {
   }
 
   void GotoMain() {
-    Navigator.pushReplacementNamed(context, '/main');
+    // Navigator.pushReplacementNamed(context, '/menu');
+    Navigator.pop(context);
   }
 
   @override

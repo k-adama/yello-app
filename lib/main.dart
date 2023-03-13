@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:projets/alphabet.dart';
 import 'package:projets/ardoise.dart';
+import 'package:projets/connexion_Evaluation.dart';
 import 'package:projets/dashboard.dart';
 import 'package:projets/ecrire.dart';
 import 'package:projets/infosymbol.dart';
@@ -34,7 +35,10 @@ import 'lecon1.dart';
 import 'lecon10.dart';
 import 'lecon15.dart';
 import 'lecon2.dart';
+import 'lecon24.dart';
+import 'lecon25.dart';
 import 'lecon3.dart';
+import 'lecon30.dart';
 import 'lecon4.dart';
 
 extension ColorExtension on String {
@@ -134,7 +138,19 @@ class MyApp extends StatelessWidget {
             ),
         '/lecon21': (context) => Lecon21(
               title: '',
-            )
+            ),
+            '/lecon24': (context) => Lecon24(
+              title: '',
+            ),
+            '/lecon25': (context) => Lecon25(
+              title: '',
+            ),
+             '/lecon30': (context) => Lecon30(
+              title: '',
+            ),
+             '/connexionEvaluation': (context) => ConnexionEva(
+              title: '',
+            ),
       },
       title: 'Flutter Demo',
       theme: ThemeData(

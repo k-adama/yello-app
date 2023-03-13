@@ -115,30 +115,7 @@ class _MenuAppState extends State<MenuApp> {
                     ),
                   ),
                 ),
-                // SizedBox(
-                //   width: 150,
-                //   height: 150,
-                //   child: Card(
-                //     color: Color.fromRGBO(252, 202, 12, 1),
-                //     child: new InkWell(
-                //       onTap: () {
-                //         Navigator.pushNamed(context, '/alphabet');
-                //         //print("tapped");
-                //       },
-                //       child: Center(
-                //         child: Text(
-                //           'a B c',
-                //           style: TextStyle(
-                //             fontSize: 55,
-                //             fontFamily: 'Poppins',
-                //           ),
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
-                // ),
-                // Expanded(
+             
                 SizedBox(
                   width: 150,
                   height: 150,
@@ -164,7 +141,7 @@ class _MenuAppState extends State<MenuApp> {
                     color: Color.fromRGBO(252, 202, 12, 1),
                     child: new InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/menuEva');
+                        Navigator.pushNamed(context, '/connexionEvaluation');
                         // print("tapped");
                       },
                       child: Image(
