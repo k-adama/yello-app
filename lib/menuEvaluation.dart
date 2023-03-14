@@ -27,20 +27,32 @@ class MenuEvaluation extends StatefulWidget {
 class _MenuEvaluationState extends State<MenuEvaluation> {
   int _counter = 0;
 
-  final pointLit = TextEditingController();
-  final pointNum = TextEditingController();
-  final pointSym = TextEditingController();
+  final pointLit = TextEditingController(text: '0');
+  final pointNum = TextEditingController(text: '0');
+  final pointSym = TextEditingController(text: '0');
   String thereponse = "";
   late SharedPreferences preferences;
   String theid = "";
+   Future init() async {
+    preferences = await SharedPreferences.getInstance();
+    String? id = preferences.getString('id') ?? 'no data';
+    // CheckConfig();
+    GetStudentData(
+        id);
+  }
 
-  //---- Enregistrer un elve ----
+  void Clean() {
+    pointLit.clear();
+    pointNum.clear();
+     pointSym.clear();
+    // Navigator.pushReplacementNamed(context, '/dashboard');
+  }
+  //---- Enregistrer un elve ----0
 
   Future senddata() async {
     thereponse = "";
     final response = await http
         .post(Uri.parse("https://s-p4.com/yello/update.php"), body: {
-
        "identifiant": theid,
        "pointLit": pointLit.text,
        "pointNum": pointNum.text,
@@ -48,14 +60,31 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
     });
 
   }
-    Future<void> retrieveCounter() async {
-    preferences = await SharedPreferences.getInstance();
+  void GetStudentData(String id) {
+    setState(() {
+
+      theid = id;
+    });
   }
-  
+
+    String? validateInput(String value) {
+    if (value.isEmpty) {
+      return 'Valeur manquante';
+    }
+    final n = int.tryParse(value);
+    if (n == null) {
+      return 'La valeur doit être un nombre';
+    }
+    if (n > 10) {
+      return 'La valeur doit être inférieure ou égale à 10';
+    }
+    return null;
+  }
 
   @override
   void initState() {
     super.initState();
+      init();
   }
 
   @override
@@ -112,7 +141,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                               SizedBox(
                                 width: 100,
                                 height: 60,
-                                child: TextField(
+                                child: TextFormField(
                                   textAlign: TextAlign.center,
                                   controller: pointLit,
                                   keyboardType: TextInputType.number,
@@ -126,6 +155,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                                     border: OutlineInputBorder(),
                                     labelText: 'note',
                                   ),
+                              
                                 ),
                               ),
                               Text(
@@ -163,7 +193,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                               SizedBox(
                                 width: 100,
                                 height: 60,
-                                child: TextField(
+                                child: TextFormField(
                                   textAlign: TextAlign.center,
                                   controller: pointNum,
                                   keyboardType: TextInputType.number,
@@ -177,6 +207,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                                     border: OutlineInputBorder(),
                                     labelText: 'note',
                                   ),
+                                  
                                 ),
                               ),
                               Text(
@@ -214,7 +245,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                               SizedBox(
                                 width: 100,
                                 height: 60,
-                                child: TextField(
+                                child: TextFormField(
                                   textAlign: TextAlign.center,
                                   controller: pointSym,
                                   keyboardType: TextInputType.number,
@@ -228,6 +259,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                                     border: OutlineInputBorder(),
                                     labelText: 'note',
                                   ),
+                                 
                                 ),
                               ),
                               Text(
@@ -263,8 +295,114 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                         backgroundColor: '#fcca0c'.toColor14(),
                       ),
                       onPressed: () {
-                        senddata();
-                        print(theid);
+                       
+                  // La saisie est valide
+                  final n = int.parse(pointLit.text);
+                  final m = int.parse(pointNum.text);
+                  final s = int.parse(pointSym.text);
+                   
+                   if ( n > 10) {
+                    showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+
+                                content: Text("La note ne doit pas dépasser 10"),
+                                actions: [
+                                  TextButton(
+                                    child: Text("OK", style: TextStyle(
+                                      color: Colors.black, fontSize: 20,
+                                    ),),
+                                   onPressed: () {
+                                      
+                                        Navigator.of(context).pop();
+                                    },
+                                  ),
+
+                                ],
+                              );
+                            },
+                   );
+              
+                } else if( m > 10) {
+                    showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+
+                                content: Text("La note ne doit pas dépasser 10"),
+                                actions: [
+                                  TextButton(
+                                    child: Text("OK", style: TextStyle(
+                                      color: Colors.black, fontSize: 20,
+                                    ),),
+                                   onPressed: () {
+                                      
+                                        Navigator.of(context).pop();
+                                    },
+                                  ),
+
+                                ],
+                              );
+                            },
+                   );
+              
+                } 
+                else if( s > 10) {
+                    showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+
+                                content: Text("La note ne doit pas dépasser 10"),
+                                actions: [
+                                  TextButton(
+                                    child: Text("OK", style: TextStyle(
+                                      color: Colors.black, fontSize: 20,
+                                    ),),
+                                   onPressed: () {
+                                      
+                                        Navigator.of(context).pop();
+                                    },
+                                  ),
+
+                                ],
+                              );
+                            },
+                   );
+              
+                } 
+                else {
+                  senddata();
+                 Clean();
+                   showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+
+                                content: Text("La note a bien été enregistrée !"),
+                                actions: [
+                                  TextButton(
+                                    child: Text("OK", style: TextStyle(
+                                      color: Colors.black, fontSize: 20,
+                                    ),),
+                                   onPressed: () {
+                                      
+                                        Navigator.of(context).pop();
+                                        Navigator.pushReplacementNamed(context, '/menu');
+                                    },
+                                  ),
+
+                                ],
+                              );
+                            },
+                   );
+                    
+                  // print(theid);
+                
+                }
+                        
+                      
                         // senddata(pointLit.text,pointNum.text,pointSym.text);
                       },
                       child: Text(
