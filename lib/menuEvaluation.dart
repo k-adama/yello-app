@@ -12,6 +12,7 @@ extension ColorExtension on String {
   }
 }
 
+
 class MenuEvaluation extends StatefulWidget {
   const MenuEvaluation({Key? key, required this.title}) : super(key: key);
 
@@ -32,6 +33,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
   final pointSym = TextEditingController(text: '0');
   String thereponse = "";
   late SharedPreferences preferences;
+  
   String theid = "";
    Future init() async {
     preferences = await SharedPreferences.getInstance();
@@ -67,19 +69,19 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
     });
   }
 
-    String? validateInput(String value) {
-    if (value.isEmpty) {
-      return 'Valeur manquante';
-    }
-    final n = int.tryParse(value);
-    if (n == null) {
-      return 'La valeur doit être un nombre';
-    }
-    if (n > 10) {
-      return 'La valeur doit être inférieure ou égale à 10';
-    }
-    return null;
-  }
+  //   String? validateInput(String value) {
+  //   if (value.isEmpty) {
+  //     return 'Valeur manquante';
+  //   }
+  //   final n = int.tryParse(value);
+  //   if (n == null) {
+  //     return 'La valeur doit être un nombre';
+  //   }
+  //   if (n > 10) {
+  //     return 'La valeur doit être inférieure ou égale à 10';
+  //   }
+  //   return null;
+  // }
 
   @override
   void initState() {
@@ -90,6 +92,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       //backgroundColor: '#fcca0c'.toColor2(),
       appBar: AppBar(
         centerTitle: true,
