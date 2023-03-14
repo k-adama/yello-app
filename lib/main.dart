@@ -18,6 +18,7 @@ import 'package:projets/lecon20.dart';
 import 'package:projets/lecon21.dart';
 import 'package:projets/lecon22.dart';
 import 'package:projets/lecon27.dart';
+import 'package:projets/lecon28.dart';
 import 'package:projets/lecon5.dart';
 import 'package:projets/lecon6.dart';
 import 'package:projets/lecon7.dart';
@@ -143,6 +144,9 @@ class MyApp extends StatelessWidget {
               title: '',
             ),
         '/lecon27': (context) => Lecon27(
+              title: '',
+            ),
+        '/lecon28': (context) => Lecon28(
               title: '',
             )
       },
