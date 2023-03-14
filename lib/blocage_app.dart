@@ -1,84 +1,52 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:projets/alphabet.dart';
-import 'package:projets/infosymbol.dart';
-import 'package:projets/menulecon.dart';
-import 'package:projets/menuEvaluation.dart';
-import 'package:projets/ardoise.dart';
-import 'package:projets/calculator.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:projets/adminlogin.dart';
-import 'package:projets/menu.dart';
 
-import 'evaluationSymbol.dart';
-
-extension ColorExtension on String {
-  toColor3() {
-    var hexString = this;
-    final buffer = StringBuffer();
-    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
-    buffer.write(hexString.replaceFirst('#', ''));
-    return Color(int.parse(buffer.toString(), radix: 16));
-  }
+void main() {
+  runApp(MyBlocage());
 }
 
-class MenuApp extends StatefulWidget {
-  const MenuApp({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
+class MyBlocage extends StatefulWidget {
   @override
-  State<MenuApp> createState() => _MenuAppState();
+  _MyBlocageState createState() => _MyBlocageState();
 }
 
-class _MenuAppState extends State<MenuApp> {
-  int _counter = 0;
-  late SharedPreferences preferences;
-  String student = "";
+class _MyBlocageState extends State<MyBlocage> {
 
   @override
   void initState() {
     super.initState();
-    init();
-  }
-
-  Future init() async {
-    preferences = await SharedPreferences.getInstance();
-    CheckConfig();
-  }
-
-  void CheckConfig() {
-    //preferences.setString('nom', eleve.text);
-    String? nom = preferences.getString('nom') ?? '';
-    print(nom);
-    if (nom == '') {
-      Navigator.pushReplacementNamed(context, '/adminlogin');
-    } else {
-      setState(() {
-        student = nom;
-      });
-    }
+    Future.delayed(Duration.zero, () {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            content: Text("Période d'utilisation atteinte !"),
+            actions: <Widget>[
+              TextButton(
+                child: Text('Fermer', style: TextStyle(color: Colors.black, fontSize: 20),),
+                onPressed: () {
+                 SystemNavigator.pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //backgroundColor: '#fcca0c'.toColor2(),
-      appBar: AppBar(
-        centerTitle: true,
-        toolbarHeight: 50,
-        backgroundColor: '#fcca0c'.toColor3(),
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(
-          widget.title +
-              'Y\'ello Alphabétisation $student \n Qu\'est ce qu\'on fait aujourdhui ?',
-          style:
-              TextStyle(color: Color(0xff000000), fontStyle: FontStyle.italic),
-        ),
+    return MaterialApp(
+       theme: ThemeData(
+        primarySwatch: Colors.amber,
       ),
-      body: SingleChildScrollView(
+      title: 'Yello',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Yello'),
+        ),
+        body:  SingleChildScrollView(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
 
@@ -168,17 +136,7 @@ class _MenuAppState extends State<MenuApp> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                // SizedBox(
-                //   width: 150,
-                //   height: 50,
-                //   child: Text(
-                //     'Alphabets',
-                //     style: TextStyle(fontSize: 25),
-                //     textAlign: TextAlign.center,
-                //   ),
-                // ),
-                // ),
-                // Expanded(
+            
                 SizedBox(
                   width: 150,
                   height: 50,
@@ -221,43 +179,7 @@ class _MenuAppState extends State<MenuApp> {
                     ),
                   ),
                 ),
-                // SizedBox(
-                //   width: 150,
-                //   height: 150,
-                //   child: Card(
-                //     color: Color.fromRGBO(252, 202, 12, 1),
-                //     child: new InkWell(
-                //       onTap: () {
-                //         //print("tapped");
-                //         Navigator.pushNamed(context, '/calculator');
-                //       },
-                //       child: Image(
-                //         image: AssetImage('assets/icons/calculator.png'),
-                //         width: 10,
-                //         height: 10,
-                //       ),
-                //     ),
-                //   ),
-                // ),
-
-                // SizedBox(
-                //   width: 150,
-                //   height: 150,
-                //   child: Card(
-                //     color: Color.fromRGBO(252, 202, 12, 1),
-                //     child: new InkWell(
-                //       onTap: () {
-                //         //print("tapped");
-                //         Navigator.pushNamed(context, '/maths');
-                //       },
-                //       child: Image(
-                //         image: AssetImage('assets/icons/maths.png'),
-                //         width: 10,
-                //         height: 10,
-                //       ),
-                //     ),
-                //   ),
-                // ),
+            
                 SizedBox(
                   width: 150,
                   height: 150,
@@ -290,26 +212,6 @@ class _MenuAppState extends State<MenuApp> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                // SizedBox(
-                //   width: 150,
-                //   height: 50,
-                //   child: Text(
-                //     'Calculatrice',
-                //     style: TextStyle(fontSize: 25),
-                //     textAlign: TextAlign.center,
-                //   ),
-                // ),
-                // ),
-                // SizedBox(
-                //   width: 150,
-                //   height: 50,
-                //   child: Text(
-                //     'Maths',
-                //     style: TextStyle(fontSize: 25),
-                //     textAlign: TextAlign.center,
-                //   ),
-                // ),
-                // // Expanded(
                 SizedBox(
                   width: 150,
                   height: 50,
@@ -326,7 +228,7 @@ class _MenuAppState extends State<MenuApp> {
           ],
         ),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
