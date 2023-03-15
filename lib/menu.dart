@@ -53,8 +53,8 @@ class _MenuAppState extends State<MenuApp> {
     String? nom = preferences.getString('nom') ?? '';
     print(nom);
     if (nom == '') {
-      Navigator.pushReplacementNamed(context, '/menulecon');
-      //Navigator.pushReplacementNamed(context, '/adminlogin');
+      // Navigator.pushReplacementNamed(context, '/menulecon');
+      Navigator.pushReplacementNamed(context, '/adminlogin');
     } else {
       setState(() {
         student = nom;
@@ -116,7 +116,7 @@ class _MenuAppState extends State<MenuApp> {
                     ),
                   ),
                 ),
-             
+
                 SizedBox(
                   width: 150,
                   height: 150,
