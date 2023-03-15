@@ -169,6 +169,10 @@ flutter:
     - assets/audio/lecon21/
     - assets/lecon21/
 
+                    #  Leçon 23  --------
+    - assets/audio/lecon23/
+    - assets/lecon23/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

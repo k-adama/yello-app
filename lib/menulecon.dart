@@ -428,18 +428,18 @@ class _MenuLeconState extends State<MenuLecon> {
                     //   ),
                     // ),
                   ),
-                  SizedBox(
+                 SizedBox(
                     width: 150,
                     height: 60,
-                    // child: Card(
-                    //   child: new InkWell(
-                    //     onTap: () {
-                    //       // // Navigator.pushNamed(context, '/lecon1');
-                    //       //print("tapped");
-                    //     },
-                    //     child: Center(child: Text('Leçon 7')),
-                    //   ),
-                    // ),
+                     child: Card(
+                      child: new InkWell(
+                      onTap: () {
+                         Navigator.pushNamed(context, '/lecon23');
+                       
+                       },
+                       child: Center(child: Text('Leçon 23')),
+                    ),
+                    ),
                   ),
                   //   ],
                   // ),
