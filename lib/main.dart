@@ -186,15 +186,6 @@ class _MyAppState extends State<MyApp> {
         '/lecon23': (context) => Lecon23(
               title: '',
             ),
-        '/lecon27': (context) => Lecon27(
-              title: '',
-            ),
-        '/lecon28': (context) => Lecon28(
-              title: '',
-            ),
-        '/lecon29': (context) => Lecon29(
-              title: '',
-            ),
         '/lecon24': (context) => Lecon24(
               title: '',
             ),
@@ -205,6 +196,12 @@ class _MyAppState extends State<MyApp> {
               title: '',
             ),
         '/lecon27': (context) => Lecon27(
+              title: '',
+            ),
+        '/lecon28': (context) => Lecon28(
+              title: '',
+            ),
+        '/lecon29': (context) => Lecon29(
               title: '',
             ),
         '/lecon30': (context) => Lecon30(

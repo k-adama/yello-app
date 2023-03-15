@@ -84,13 +84,15 @@ class _Lecon29State extends State<Lecon29> {
     ];
   }
 
-  String audio0 = 'audio/lecon29/phrase_0.mp3';
-  String audio1 = 'audio/lecon29/melaine.mp3';
-  String audio2 = 'audio/lecon29/madelaine.mp3';
-  String audio3 = 'audio/lecon29/laine.mp3';
-  String audio4 = 'audio/lecon29/leine.mp3';
-  String audio5 = 'audio/lecon29/ai.mp3';
-  String audio6 = 'audio/lecon29/ei.mp3';
+  String audio0 = 'audio/lecon29/phrase.mp3';
+  String audio1 = 'audio/lecon29/carine.mp3';
+  String audio2 = 'audio/lecon29/cari.mp3';
+  String audio3 = 'audio/lecon29/ca.mp3';
+  String audio4 = 'audio/lecon29/c.mp3';
+  String audio5 = 'audio/lecon29/coiffure.mp3';
+  String audio6 = 'audio/lecon29/coi.mp3';
+  String audio7 = 'audio/lecon29/co.mp3';
+  String audio8 = 'audio/lecon29/c.mp3';
 
   @override
   void dispose() {
@@ -108,7 +110,7 @@ class _Lecon29State extends State<Lecon29> {
   }
 
   void playSound(String thesound) {
-    player.play(AssetSource('audio/lecon28/$thesound.mp3'));
+    player.play(AssetSource('audio/lecon29/$thesound.mp3'));
   }
 
   void RepeatVoice() {
@@ -149,16 +151,20 @@ class _Lecon29State extends State<Lecon29> {
         theaudio = audio5;
       } else if (state == 6) {
         theaudio = audio6;
+      } else if (state == 7) {
+        theaudio = audio7;
+      } else if (state == 8) {
+        theaudio = audio8;
       } else {
         theaudio = audio0;
       }
       //player.setAsset(theaudio);
       player.play(AssetSource(theaudio));
       try {
-        if (state > 6) {
+        if (state > 8) {
           state = 0;
         }
-        for (int i = 0; i < 23; i++) {
+        for (int i = 0; i < 9; i++) {
           if (state == i) {
             colorArray[i] = Colors.yellowAccent;
             //    'thebackcolor$state' =  Colors.white;
@@ -328,22 +334,26 @@ class _Lecon29State extends State<Lecon29> {
                               font: FontWeight.w600,
                               size: 20,
                               color: Colors.red,
+                              i: 0,
                             ),
                             letters(
                               text: "arine a un salon de ",
                               font: FontWeight.w600,
                               size: 20,
+                              i: 0,
                             ),
                             letters(
                               text: "c",
                               font: FontWeight.w600,
                               size: 20,
                               color: Colors.red,
+                              i: 0,
                             ),
                             letters(
                               text: "oiffure.",
                               font: FontWeight.w600,
                               size: 20,
+                              i: 0,
                             ),
                           ],
                         ),
@@ -375,12 +385,12 @@ class _Lecon29State extends State<Lecon29> {
                                     font: FontWeight.w600,
                                     size: 20,
                                     color: Colors.red,
-                                    i: 2),
+                                    i: 5),
                                 letters(
                                     text: "oiffure",
                                     font: FontWeight.w600,
                                     size: 20,
-                                    i: 2),
+                                    i: 5),
                               ],
                             ),
                           ],
@@ -398,13 +408,13 @@ class _Lecon29State extends State<Lecon29> {
                                   font: FontWeight.w600,
                                   size: 20,
                                   color: Colors.red,
-                                  i: 3,
+                                  i: 2,
                                 ),
                                 letters(
                                   text: "ari",
                                   font: FontWeight.w600,
                                   size: 20,
-                                  i: 3,
+                                  i: 2,
                                 ),
                               ],
                             ),
@@ -415,12 +425,12 @@ class _Lecon29State extends State<Lecon29> {
                                     font: FontWeight.w600,
                                     size: 20,
                                     color: Colors.red,
-                                    i: 4),
+                                    i: 6),
                                 letters(
                                     text: "oi",
                                     font: FontWeight.w600,
                                     size: 20,
-                                    i: 4),
+                                    i: 6),
                               ],
                             ),
                           ],
@@ -456,12 +466,12 @@ class _Lecon29State extends State<Lecon29> {
                                     font: FontWeight.w600,
                                     size: 20,
                                     color: Colors.red,
-                                    i: 4),
+                                    i: 7),
                                 letters(
                                     text: "o",
                                     font: FontWeight.w600,
                                     size: 20,
-                                    i: 4),
+                                    i: 7),
                               ],
                             ),
                           ],
@@ -477,13 +487,13 @@ class _Lecon29State extends State<Lecon29> {
                                 font: FontWeight.w600,
                                 size: 20,
                                 color: Colors.red,
-                                i: 5),
+                                i: 4),
                             letters(
                               text: "c",
                               font: FontWeight.w600,
                               size: 20,
                               color: Colors.red,
-                              i: 6,
+                              i: 8,
                             ),
                           ],
                         ),
@@ -604,7 +614,7 @@ class _Lecon29State extends State<Lecon29> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(7);
-                      player.play(AssetSource('audio/lecon29/b.mp3'));
+                      player.play(AssetSource('audio/lecon29/unecoiffure.mp3'));
                     },
                     child: Column(
                       children: [
@@ -646,7 +656,7 @@ class _Lecon29State extends State<Lecon29> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(8);
-                      player.play(AssetSource('audio/lecon28/peigne.mp3'));
+                      player.play(AssetSource('audio/lecon29/cuisine.mp3'));
                     },
                     child: Column(
                       children: [
@@ -691,7 +701,7 @@ class _Lecon29State extends State<Lecon29> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(9);
-                      player.play(AssetSource('audio/lecon28/text.mp3'));
+                      player.play(AssetSource('audio/lecon29/phrase2.mp3'));
                     },
                     child: Column(children: [
                       letters(
