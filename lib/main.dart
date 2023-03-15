@@ -148,7 +148,7 @@ class MyApp extends StatelessWidget {
             '/lecon24': (context) => Lecon27(
               title: '',
             ),
-            '/lecon23': (context) => Lecon28(
+            '/lecon28': (context) => Lecon28(
               title: '',
             ),
       },
