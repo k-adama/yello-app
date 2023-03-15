@@ -1,8 +1,12 @@
+import 'dart:convert';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'package:projets/alphabet.dart';
 import 'package:projets/ardoise.dart';
+import 'package:projets/blocage_app.dart';
+import 'package:projets/connexion_Evaluation.dart';
 import 'package:projets/dashboard.dart';
 import 'package:projets/ecrire.dart';
 import 'package:projets/infosymbol.dart';
@@ -38,7 +42,10 @@ import 'lecon1.dart';
 import 'lecon10.dart';
 import 'lecon15.dart';
 import 'lecon2.dart';
+import 'lecon24.dart';
+import 'lecon25.dart';
 import 'lecon3.dart';
+import 'lecon30.dart';
 import 'lecon4.dart';
 
 extension ColorExtension on String {
@@ -51,17 +58,44 @@ extension ColorExtension on String {
   }
 }
 
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  bool _isBlocked = false;
+
+  @override
+  void initState() {
+    super.initState();
+    checkBlock();
+  }
+
+  void checkBlock() async {
+    final response = await http.get(Uri.parse('https://s-p4.com/yello/bloque.php'));
+    if (response.statusCode == 200) {
+      final dateBlocage = DateTime.parse(jsonDecode(response.body)['date_blocage']);
+      final now = DateTime.now();
+      setState(() {
+        _isBlocked = now.isAfter(dateBlocage);
+      });
+    } else {
+      throw Exception('Erreur lors de la récupération de la date');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    Wakelock.enable();
+     Wakelock.enable();
     // Set landscape orientation
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
@@ -69,7 +103,7 @@ class MyApp extends StatelessWidget {
     ]);
 
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
         '/main': (context) => MyApp(),
@@ -139,6 +173,7 @@ class MyApp extends StatelessWidget {
         '/lecon21': (context) => Lecon21(
               title: '',
             ),
+
             '/lecon22': (context) => Lecon22(
               title: '',
             ),
@@ -152,15 +187,29 @@ class MyApp extends StatelessWidget {
               title: '',
             ),
       },
-      title: 'Flutter Demo',
-      theme: ThemeData(
+     
+            '/lecon24': (context) => Lecon24(
+              title: '',
+            ),
+            '/lecon25': (context) => Lecon25(
+              title: '',
+            ),
+             '/lecon30': (context) => Lecon30(
+              title: '',
+            ),
+             '/connexionEvaluation': (context) => ConnexionEva(
+              title: '',
+            ),
+             },
+       title: 'Flutter Demo',
+              theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'Yello',
+      home: _isBlocked ? MyBlocage() : MyHomePage(title: '',),
     );
   }
 }
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
@@ -174,6 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String TheLogo = '';
   late SharedPreferences preference;
   int counterInt = 0;
+
 
   StarCount() {
     Future.delayed(Duration(seconds: 10), () {
@@ -193,6 +243,8 @@ class _MyHomePageState extends State<MyHomePage> {
     StarCount();
     retrieveCounter();
   }
+
+  
 
   Future retrieveCounter() async {
     preference = await SharedPreferences.getInstance();
@@ -216,6 +268,8 @@ class _MyHomePageState extends State<MyHomePage> {
       print('Hello');
     }
   }
+
+  
 
   @override
   Widget build(BuildContext context) {
