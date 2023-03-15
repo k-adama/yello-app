@@ -268,6 +268,7 @@ class _Lecon23State extends State<Lecon23> {
     });
     print(theaudio);
   }
+
   Container carrer({
     Text? text,
     int i = 0,
@@ -285,6 +286,7 @@ class _Lecon23State extends State<Lecon23> {
         ),
         child: text);
   }
+
   //Lire phrase et les mots
   Text letters({
     Color? color,
@@ -356,7 +358,7 @@ class _Lecon23State extends State<Lecon23> {
             Padding(
               padding: EdgeInsets.all(10), //apply padding to all four sides
               child: Text(
-                'La soustraction (+)',
+                "L'additionn (+)",
                 style: TextStyle(
                     fontSize: 25,
                     fontFamily: 'Poppins',
@@ -494,7 +496,7 @@ du soir.''',
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Row(
                   children: [
@@ -505,12 +507,15 @@ du soir.''',
                         i: 1,
                         color: Colors.red),
                     letters(
-                      text: "concombres",
+                      text: " concombres",
                       font: FontWeight.w600,
                       size: MediaQuery.of(context).size.width * 0.022,
                       i: 1,
                     ),
                   ],
+                ),
+                SizedBox(
+                  width: 50,
                 ),
                 letters(
                     text: " + ",
@@ -518,6 +523,9 @@ du soir.''',
                     size: MediaQuery.of(context).size.width * 0.022,
                     i: 2,
                     color: Colors.red),
+                SizedBox(
+                  width: 50,
+                ),
                 Row(
                   children: [
                     letters(
@@ -527,12 +535,15 @@ du soir.''',
                         i: 3,
                         color: Colors.red),
                     letters(
-                      text: "concombres",
+                      text: " concombres",
                       font: FontWeight.w600,
                       size: MediaQuery.of(context).size.width * 0.022,
                       i: 3,
                     ),
                   ],
+                ),
+                SizedBox(
+                  width: 50,
                 ),
                 letters(
                     text: " = ",
@@ -540,6 +551,9 @@ du soir.''',
                     size: MediaQuery.of(context).size.width * 0.022,
                     i: 4,
                     color: Colors.red),
+                SizedBox(
+                  width: 50,
+                ),
                 Row(
                   children: [
                     letters(
@@ -549,7 +563,7 @@ du soir.''',
                         i: 5,
                         color: Colors.red),
                     letters(
-                      text: "concombres",
+                      text: " concombres",
                       font: FontWeight.w600,
                       size: MediaQuery.of(context).size.width * 0.022,
                       i: 5,
@@ -562,40 +576,42 @@ du soir.''',
               height: 20,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                // carrer(
+                //     text: letters(
+                //         text: "9", font: FontWeight.w600, size: 20, i: 1),
+                //     i: 0),
                 carrer(
-                              text: letters(
-                                  text: "9",
-                                  font: FontWeight.w600,
-                                  size: 20,
-                                  i: 1),
-                              i: 0),
-                letters(
-                    text: "9 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 6,
-                    color: Colors.red),
+                  text: letters(
+                      text: "5 ",
+                      font: FontWeight.w600,
+                      size: MediaQuery.of(context).size.width * 0.022,
+                      i: 6,
+                      color: Colors.red),
+                ),
                 SizedBox(
-                  width: 95,
+                  width: 50,
                 ),
                 letters(
-                    text: "- ",
+                    text: "+ ",
                     font: FontWeight.w600,
                     size: MediaQuery.of(context).size.width * 0.022,
                     i: 7,
                     color: Colors.red),
                 SizedBox(
-                  width: 15,
+                  width: 50,
                 ),
-                letters(
-                    text: "3 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 8,
-                    color: Colors.red),
+                carrer(
+                  text: letters(
+                      text: "4 ",
+                      font: FontWeight.w600,
+                      size: MediaQuery.of(context).size.width * 0.022,
+                      i: 6,
+                      color: Colors.red),
+                ),
                 SizedBox(
-                  width: 88,
+                  width: 50,
                 ),
                 letters(
                     text: "= ",
@@ -604,60 +620,64 @@ du soir.''',
                     i: 9,
                     color: Colors.red),
                 SizedBox(
-                  width: 15,
+                  width: 50,
                 ),
-                letters(
-                    text: "6 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 10,
-                    color: Colors.red),
+                carrer(
+                  text: letters(
+                      text: "9 ",
+                      font: FontWeight.w600,
+                      size: MediaQuery.of(context).size.width * 0.022,
+                      i: 6,
+                      color: Colors.red),
+                ),
               ],
             ),
 
             SizedBox(
               height: 20,
             ),
+
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 letters(
-                    text: "9 ",
+                    text: "5 ",
                     font: FontWeight.w600,
                     size: MediaQuery.of(context).size.width * 0.022,
                     i: 11,
                     color: Colors.red),
-                SizedBox(
-                  width: 95,
-                ),
+                // SizedBox(
+                //   width: 50,
+                // ),
                 letters(
-                    text: "- ",
+                    text: "+ ",
                     font: FontWeight.w600,
                     size: MediaQuery.of(context).size.width * 0.022,
                     i: 12,
                     color: Colors.red),
-                SizedBox(
-                  width: 15,
-                ),
+                // SizedBox(
+                //   width: 50,
+                // ),
                 letters(
-                    text: "3 ",
+                    text: "4 ",
                     font: FontWeight.w600,
                     size: MediaQuery.of(context).size.width * 0.022,
                     i: 13,
                     color: Colors.red),
-                SizedBox(
-                  width: 88,
-                ),
+                // SizedBox(
+                //   width: 50,
+                // ),
                 letters(
                     text: "= ",
                     font: FontWeight.w600,
                     size: MediaQuery.of(context).size.width * 0.022,
                     i: 14,
                     color: Colors.red),
-                SizedBox(
-                  width: 15,
-                ),
+                // SizedBox(
+                //   width: 50,
+                // ),
                 letters(
-                    text: "6 ",
+                    text: "9 ",
                     font: FontWeight.w600,
                     size: MediaQuery.of(context).size.width * 0.022,
                     i: 15,
@@ -668,180 +688,107 @@ du soir.''',
             SizedBox(
               height: 20,
             ),
+
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                letters(
-                    text: "7 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 16,
-                    color: Colors.red),
-                letters(
-                    text: "- ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 17,
-                    color: Colors.red),
-                letters(
-                    text: "5 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 18,
-                    color: Colors.red),
-                letters(
-                    text: "= ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 19,
-                    color: Colors.red),
                 SizedBox(
-                  width: 25,
+                  width: MediaQuery.of(context).size.width / 6,
+                  height: MediaQuery.of(context).size.height / 9,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        // // Navigator.pushNamed(context, '/lecon1');
+                        //print("tapped");
+                        player.play(AssetSource('audio/lecon27/op_4.mp3'));
+                      },
+                      child: Center(
+                          child: Text('3 + 3 =',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600))),
+                    ),
+                  ),
                 ),
-                letters(
-                    text: "5 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 20,
-                    color: Colors.red),
-                letters(
-                    text: "- ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 21,
-                    color: Colors.red),
-                letters(
-                    text: "5 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 22,
-                    color: Colors.red),
-                letters(
-                    text: "= ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 23,
-                    color: Colors.red),
                 SizedBox(
-                  width: 25,
+                  width: MediaQuery.of(context).size.width / 6,
+                  height: MediaQuery.of(context).size.height / 9,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        // // Navigator.pushNamed(context, '/lecon1');
+                        //print("tapped");
+                        player.play(AssetSource('audio/lecon27/op_4.mp3'));
+                      },
+                      child: Center(
+                          child: Text('5 + 2 =',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600))),
+                    ),
+                  ),
                 ),
-                letters(
-                    text: "8 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 24,
-                    color: Colors.red),
-                letters(
-                    text: "- ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 25,
-                    color: Colors.red),
-                letters(
-                    text: "3 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 26,
-                    color: Colors.red),
-                letters(
-                    text: "= ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 27,
-                    color: Colors.red),
                 SizedBox(
-                  width: 25,
+                  width: MediaQuery.of(context).size.width / 6,
+                  height: MediaQuery.of(context).size.height / 9,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        // // Navigator.pushNamed(context, '/lecon1');
+                        //print("tapped");
+                        player.play(AssetSource('audio/lecon27/op_4.mp3'));
+                      },
+                      child: Center(
+                          child: Text('6 + 1 =',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600))),
+                    ),
+                  ),
                 ),
-                letters(
-                    text: "4 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 28,
-                    color: Colors.red),
-                letters(
-                    text: "- ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 29,
-                    color: Colors.red),
-                letters(
-                    text: "2 ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 30,
-                    color: Colors.red),
-                letters(
-                    text: "= ",
-                    font: FontWeight.w600,
-                    size: MediaQuery.of(context).size.width * 0.022,
-                    i: 31,
-                    color: Colors.red),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 6,
+                  height: MediaQuery.of(context).size.height / 9,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        // // Navigator.pushNamed(context, '/lecon1');
+                        //print("tapped");
+                        player.play(AssetSource('audio/lecon27/op_4.mp3'));
+                      },
+                      child: Center(
+                          child: Text('5 + 1 =',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600))),
+                    ),
+                  ),
+                ),
               ],
             ),
 
             // le text de la fin
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 50, bottom: 50),
-                  child: InkWell(
-                    onTap: () {
-                      extraHilght(9);
-                      player.play(AssetSource('audio/lecon24/signe.mp3'));
-                    },
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          letters(
-                              text:
-                                  "Pour faire le signe de la soustraction (-), on fait : ",
-                              i: 9),
-                          letters(
-                              text: "la tolérance.",
-                              font: FontWeight.w600,
-                              size: MediaQuery.of(context).size.width * 0.022,
-                              i: 9,
-                              color: Colors.red),
-                        ]),
-                  ),
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: InkWell(
+                onTap: () {
+                  extraHilght(9);
+                  player.play(AssetSource('audio/lecon24/signe.mp3'));
+                },
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  letters(
+                      text:
+                          "Pour faire le signe de la soustraction (-), on fait : ",
+                      i: 9),
+                  letters(
+                      text: "la tolérance.",
+                      font: FontWeight.w600,
+                      size: MediaQuery.of(context).size.width * 0.022,
+                      i: 9,
+                      color: Colors.red),
+                ]),
+              ),
             )
-
-            //---------------- Les phrases de fin ------------
-            // Row(
-            //   //---------------- Les  sons ------------
-            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //   children: <Widget>[
-            //     Column(
-            //       children: <Widget>[
-            //         SizedBox(
-            //           width: 300,
-            //           height: 20,
-            //         ),
-            //         SizedBox(
-            //           width: 550,
-            //           height: 300,
-            //           child: Text(
-            //             "Il nous faut chercher du bon texte",
-            //             style: TextStyle(
-            //                 color: Colors.black,
-            //                 fontSize: 30,
-            //                 fontFamily: 'Poppins',
-            //                 background: Paint()
-            //                   ..strokeWidth = 25.0
-            //                   ..color = Colors.white
-            //                   ..style = PaintingStyle.fill
-            //                   ..strokeJoin = StrokeJoin.round),
-            //           ),
-            //         ),
-            //       ],
-            //     ),
-            //   ],
-            // ),
           ],
         ),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

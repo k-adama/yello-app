@@ -187,13 +187,18 @@ flutter:
     - assets/lecon25/
     - assets/lecon25/lecon25.png
     
-                #  Leçon 27  --------
+      #  Leçon 26 --------        
+    - assets/audio/lecon26/
+    - assets/lecon26/
+        #  Leçon 27  --------      
     - assets/audio/lecon27/
     - assets/lecon27/
-
                 #  Leçon 28  --------
     - assets/audio/lecon28/
     - assets/lecon28/
+                    #  Leçon 29  --------
+    - assets/audio/lecon29/
+    - assets/lecon29/
 
      #  Leçon 30  --------
     - assets/audio/lecon30/

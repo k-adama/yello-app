@@ -18,14 +18,14 @@ extension ColorExtension on String {
   }
 }
 
-class Lecon23 extends StatefulWidget {
-  const Lecon23({Key? key, required this.title}) : super(key: key);
+class Lecon26 extends StatefulWidget {
+  const Lecon26({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
-  State<Lecon23> createState() => _Lecon23State();
+  State<Lecon26> createState() => _Lecon26State();
 }
 
-class _Lecon23State extends State<Lecon23> {
+class _Lecon26State extends State<Lecon26> {
   int state = 1;
   String theaudio = '';
 
@@ -105,38 +105,38 @@ class _Lecon23State extends State<Lecon23> {
     ];
   }
 
-  String audio0 = 'audio/lecon23/phrase.mp3';
-  String audio1 = 'audio/lecon23/phrase1.mp3';
-  String audio2 = 'audio/lecon23/CinqC.mp3';
-  String audio3 = 'audio/lecon23/plus.mp3';
-  String audio4 = 'audio/lecon23/quatresC.mp3';
-  String audio5 = 'audio/lecon23/egal.mp3';
-  String audio6 = 'audio/lecon23/neufC.mp3';
-  String audio7 = 'audio/lecon23/Cinq.mp3';
-  String audio8 = 'audio/lecon23/plus.mp3';
-  String audio9 = 'audio/lecon23/quatres.mp3';
-  String audio10 = 'audio/lecon23/egal.mp3';
-  String audio11 = 'audio/lecon23/neuf.mp3';
-  String audio12 = 'audio/lecon23/Cinq.mp3';
-  String audio13 = 'audio/lecon23/plus.mp3';
-  String audio14 = 'audio/lecon23/quatres.mp3';
-  String audio15 = 'audio/lecon23/egal.mp3';
-  String audio16 = 'audio/lecon23/neuf.mp3';
-  String audio17 = 'audio/lecon23/o1.mp3';
-  String audio18 = 'audio/lecon23/o2.mp3';
-  String audio19 = 'audio/lecon23/o3.mp3';
-  String audio20 = 'audio/lecon23/o4.mp3';
-  String audio21 = 'audio/lecon23/phrase2.mp3';
-  String audio22 = 'audio/lecon23/cinq.mp3';
-  String audio23 = 'audio/lecon23/egal.mp3';
-  String audio24 = 'audio/lecon23/huit.mp3';
-  String audio25 = 'audio/lecon23/moins.mp3';
-  String audio26 = 'audio/lecon23/trois.mp3';
-  String audio27 = 'audio/lecon23/egal.mp3';
-  String audio28 = 'audio/lecon23/quatre.mp3';
-  String audio29 = 'audio/lecon23/moins.mp3';
-  String audio30 = 'audio/lecon23/deux.mp3';
-  String audio31 = 'audio/lecon23/egal.mp3';
+  String audio0 = 'audio/lecon26/phrase.mp3';
+  String audio1 = 'audio/lecon26/trois.mp3';
+  String audio2 = 'audio/lecon26/fois.mp3';
+  String audio3 = 'audio/lecon26/trois.mp3';
+  String audio4 = 'audio/lecon26/egal.mp3';
+  String audio5 = 'audio/lecon26/neuf.mp3';
+  String audio6 = 'audio/lecon26/trois.mp3';
+  String audio7 = 'audio/lecon26/fois.mp3';
+  String audio8 = 'audio/lecon26/trois.mp3';
+  String audio9 = 'audio/lecon26/egal.mp3';
+  String audio10 = 'audio/lecon26/neuf.mp3';
+  String audio11 = 'audio/lecon26/trois.mp3';
+  String audio12 = 'audio/lecon26/fois.mp3';
+  String audio13 = 'audio/lecon26/trois.mp3';
+  String audio14 = 'audio/lecon26/egal.mp3';
+  String audio15 = 'audio/lecon26/neuf.mp3';
+  String audio16 = 'audio/lecon26/sept.mp3';
+  String audio17 = 'audio/lecon26/moins.mp3';
+  String audio18 = 'audio/lecon26/cinq.mp3';
+  String audio19 = 'audio/lecon26/egal.mp3';
+  String audio20 = 'audio/lecon26/cinq.mp3';
+  String audio21 = 'audio/lecon26/moins.mp3';
+  String audio22 = 'audio/lecon26/cinq.mp3';
+  String audio23 = 'audio/lecon26/egal.mp3';
+  String audio24 = 'audio/lecon26/huit.mp3';
+  String audio25 = 'audio/lecon26/moins.mp3';
+  String audio26 = 'audio/lecon26/trois.mp3';
+  String audio27 = 'audio/lecon26/egal.mp3';
+  String audio28 = 'audio/lecon26/quatre.mp3';
+  String audio29 = 'audio/lecon26/moins.mp3';
+  String audio30 = 'audio/lecon26/deux.mp3';
+  String audio31 = 'audio/lecon26/egal.mp3';
 
   @override
   void dispose() {
@@ -213,15 +213,13 @@ class _Lecon23State extends State<Lecon23> {
         theaudio = audio14;
       } else if (state == 15) {
         theaudio = audio15;
-      } else if (state == 16) {
-        theaudio = audio16;
       } else {
         theaudio = audio0;
       }
       //player.setAsset(theaudio);
       player.play(AssetSource(theaudio));
       try {
-        if (state > 16) {
+        if (state > 15) {
           state = 0;
         }
         for (int i = 0; i < 32; i++) {
@@ -320,7 +318,7 @@ class _Lecon23State extends State<Lecon23> {
         toolbarHeight: 40,
         backgroundColor: '#fcca0c'.toColor6(),
         title: Text(
-          widget.title + 'Leçon 23',
+          widget.title + 'Leçon 26',
           style:
               TextStyle(color: Color(0xff000000), fontStyle: FontStyle.italic),
         ),
@@ -332,7 +330,7 @@ class _Lecon23State extends State<Lecon23> {
             Padding(
               padding: EdgeInsets.all(10), //apply padding to all four sides
               child: Text(
-                "L'addition (+)",
+                "La multiplication(x)",
                 style: TextStyle(
                     fontSize: 25,
                     fontFamily: 'Poppins',
@@ -392,7 +390,7 @@ class _Lecon23State extends State<Lecon23> {
                       SizedBox(
                         height: 300,
                         child: Image(
-                          image: AssetImage('assets/lecon23/imgL23.png'),
+                          image: AssetImage('assets/lecon26/imgL26.png'),
                           width: 300,
                         ),
                       ),
@@ -412,48 +410,46 @@ class _Lecon23State extends State<Lecon23> {
                         children: <Widget>[
                           letters(
                               text: '''
-Solange se rend au marché du village pour 
-acheter des concombres pour la nourriture 
-du soir.''',
+Les ''',
+                              font: FontWeight.w600,
+                              size: MediaQuery.of(context).size.width * 0.022,
+                              i: 0),
+                          letters(
+                              text: "3 ",
+                              font: FontWeight.w600,
+                              size: MediaQuery.of(context).size.width * 0.021,
+                              i: 0,
+                              color: Colors.red),
+//                               enfants de Victorine disposent chacun
+// de 3 bâtons de craies pour l’école.
+                          letters(
+                              text: " enfants de Victorine disposent chacun",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.022,
                               i: 0),
                         ],
                       ),
-
                       Row(
                         children: <Widget>[
                           letters(
-                              text: "Elle en achète ",
+                              text: '''
+de ''',
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.022,
-                              i: 1),
+                              i: 0),
                           letters(
-                              text: "5  ",
+                              text: "3 ",
                               font: FontWeight.w600,
-                              size: MediaQuery.of(context).size.width * 0.022,
-                              color: Colors.red,
-                              i: 1),
+                              size: MediaQuery.of(context).size.width * 0.021,
+                              i: 0,
+                              color: Colors.red),
+//                               enfants de Victorine disposent chacun
+// de 3 bâtons de craies pour l’école.
                           letters(
-                              text: "chez maman Djako et",
+                              text: " bâtons de craies pour l’école.",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.022,
-                              i: 1),
-                          letters(
-                              text: " 4 ",
-                              font: FontWeight.w600,
-                              size: MediaQuery.of(context).size.width * 0.022,
-                              color: Colors.red,
-                              i: 1),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          letters(
-                              text: "chez maman Beugré.",
-                              font: FontWeight.w600,
-                              size: MediaQuery.of(context).size.width * 0.022,
-                              i: 1),
+                              i: 0),
                         ],
                       ),
                       //fin phrase
@@ -461,55 +457,38 @@ du soir.''',
                         height: 20,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           letters(
-                              text: "5 ",
+                              text: "3 ",
+                              font: FontWeight.w600,
+                              size: MediaQuery.of(context).size.width * 0.021,
+                              i: 1,
+                              color: Colors.red),
+                          letters(
+                              text: "x ",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.021,
                               i: 2,
                               color: Colors.red),
                           letters(
-                            text: "concombres ",
-                            font: FontWeight.w600,
-                            size: MediaQuery.of(context).size.width * 0.021,
-                            i: 2,
-                          ),
-                          letters(
-                              text: "+ ",
+                              text: "3 ",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.021,
                               i: 3,
                               color: Colors.red),
                           letters(
-                              text: "4 ",
+                              text: "= ",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.021,
                               i: 4,
                               color: Colors.red),
                           letters(
-                            text: "concombres ",
-                            font: FontWeight.w600,
-                            size: MediaQuery.of(context).size.width * 0.021,
-                            i: 4,
-                          ),
-                          letters(
-                              text: "= ",
+                              text: " 9 ",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.021,
                               i: 5,
                               color: Colors.red),
-                          letters(
-                              text: " 9 ",
-                              font: FontWeight.w600,
-                              size: MediaQuery.of(context).size.width * 0.021,
-                              i: 6,
-                              color: Colors.red),
-                          letters(
-                            text: "concombres",
-                            font: FontWeight.w600,
-                            size: MediaQuery.of(context).size.width * 0.021,
-                            i: 6,
-                          ),
                         ],
                       ),
                       SizedBox(
@@ -519,30 +498,30 @@ du soir.''',
                         children: <Widget>[
                           carrer(
                             text: letters(
-                                text: "5 ",
+                                text: "3 ",
                                 font: FontWeight.w600,
                                 size: MediaQuery.of(context).size.width * 0.022,
-                                i: 7,
+                                i: 6,
                                 color: Colors.red),
                           ),
                           SizedBox(
                             width: 10,
                           ),
                           letters(
-                              text: "+ ",
+                              text: "x ",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.022,
-                              i: 8,
+                              i: 7,
                               color: Colors.red),
                           SizedBox(
                             width: 10,
                           ),
                           carrer(
                             text: letters(
-                                text: "4 ",
+                                text: "3 ",
                                 font: FontWeight.w600,
                                 size: MediaQuery.of(context).size.width * 0.022,
-                                i: 9,
+                                i: 8,
                                 color: Colors.red),
                           ),
                           SizedBox(
@@ -552,7 +531,7 @@ du soir.''',
                               text: "= ",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.022,
-                              i: 10,
+                              i: 9,
                               color: Colors.red),
                           SizedBox(
                             width: 10,
@@ -562,7 +541,7 @@ du soir.''',
                                 text: "9 ",
                                 font: FontWeight.w600,
                                 size: MediaQuery.of(context).size.width * 0.022,
-                                i: 11,
+                                i: 10,
                                 color: Colors.red),
                           ),
                         ],
@@ -572,30 +551,31 @@ du soir.''',
                         height: 10,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           letters(
-                              text: "5 ",
+                              text: "3 ",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.022,
-                              i: 12,
+                              i: 11,
                               color: Colors.red),
                           SizedBox(
                             width: 95,
                           ),
                           letters(
-                              text: "+ ",
+                              text: "x ",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.022,
-                              i: 13,
+                              i: 12,
                               color: Colors.red),
                           SizedBox(
                             width: 15,
                           ),
                           letters(
-                              text: "4 ",
+                              text: "3 ",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.022,
-                              i: 14,
+                              i: 13,
                               color: Colors.red),
                           SizedBox(
                             width: 88,
@@ -604,7 +584,7 @@ du soir.''',
                               text: "= ",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.022,
-                              i: 15,
+                              i: 14,
                               color: Colors.red),
                           SizedBox(
                             width: 15,
@@ -613,7 +593,7 @@ du soir.''',
                               text: "9",
                               font: FontWeight.w600,
                               size: MediaQuery.of(context).size.width * 0.022,
-                              i: 16,
+                              i: 15,
                               color: Colors.red),
                         ],
                       ),
@@ -635,10 +615,10 @@ du soir.''',
                       onTap: () {
                         // // Navigator.pushNamed(context, '/lecon1');
                         //print("tapped");
-                        player.play(AssetSource('audio/lecon23/o1.mp3'));
+                        player.play(AssetSource('audio/lecon26/o1.mp3'));
                       },
                       child: Center(
-                          child: Text('3 + 3 =',
+                          child: Text('3 x 2 =',
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w600))),
                     ),
@@ -652,10 +632,10 @@ du soir.''',
                       onTap: () {
                         // // Navigator.pushNamed(context, '/lecon1');
                         //print("tapped");
-                        player.play(AssetSource('audio/lecon23/o2.mp3'));
+                        player.play(AssetSource('audio/lecon26/o2.mp3'));
                       },
                       child: Center(
-                          child: Text('5 + 2 =',
+                          child: Text('1 x 3 =',
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w600))),
                     ),
@@ -669,10 +649,10 @@ du soir.''',
                       onTap: () {
                         // // Navigator.pushNamed(context, '/lecon1');
                         //print("tapped");
-                        player.play(AssetSource('audio/lecon23/o3.mp3'));
+                        player.play(AssetSource('audio/lecon26/o3.mp3'));
                       },
                       child: Center(
-                          child: Text('6 + 1 =',
+                          child: Text('2 x 2 =',
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w600))),
                     ),
@@ -686,10 +666,10 @@ du soir.''',
                       onTap: () {
                         // // Navigator.pushNamed(context, '/lecon1');
                         //print("tapped");
-                        player.play(AssetSource('audio/lecon23/o4.mp3'));
+                        player.play(AssetSource('audio/lecon26/o4.mp3'));
                       },
                       child: Center(
-                          child: Text('5 + 1 =',
+                          child: Text('4 x 1 =',
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w600))),
                     ),
@@ -708,31 +688,32 @@ du soir.''',
                   child: InkWell(
                     onTap: () {
                       extraHilght(9);
-                      player.play(AssetSource('audio/lecon23/phrase2.mp3'));
+                      player.play(AssetSource('audio/lecon26/phrase2.mp3'));
                     },
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           letters(
                               text:
-                                  "Pour faire le signe de l'addition (+), on fait : ",
+                                  "Pour faire le signe de la multiplication(x), on fait : ",
+                              size: MediaQuery.of(context).size.width * 0.021,
                               i: 9),
                           letters(
-                              text: "la tolérance ",
+                              text: "l’amour maternel ",
                               font: FontWeight.w600,
-                              size: MediaQuery.of(context).size.width * 0.022,
+                              size: MediaQuery.of(context).size.width * 0.021,
                               i: 9,
                               color: Colors.red),
                           letters(
                             text: "et ",
                             font: FontWeight.w600,
-                            size: MediaQuery.of(context).size.width * 0.022,
+                            size: MediaQuery.of(context).size.width * 0.021,
                             i: 9,
                           ),
                           letters(
-                              text: "la sincérité.",
+                              text: "l’amour paternel.",
                               font: FontWeight.w600,
-                              size: MediaQuery.of(context).size.width * 0.022,
+                              size: MediaQuery.of(context).size.width * 0.021,
                               i: 9,
                               color: Colors.red),
                         ]),

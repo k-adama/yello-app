@@ -411,9 +411,9 @@ class _MenuLeconState extends State<MenuLecon> {
                         onTap: () {
                           // // Navigator.pushNamed(context, '/lecon1');
                           //print("tapped");
-                          Navigator.pushNamed(context, '/lecon6');
+                          Navigator.pushNamed(context, '/lecon22');
                         },
-                        child: Center(child: Text('Leçon 6')),
+                        child: Center(child: Text('Leçon 22')),
                       ),
                     ),
                   ),
@@ -423,9 +423,9 @@ class _MenuLeconState extends State<MenuLecon> {
                     child: Card(
                       child: new InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/lecon7');
+                          Navigator.pushNamed(context, '/lecon23');
                         },
-                        child: Center(child: Text('Leçon 7')),
+                        child: Center(child: Text('Leçon 23')),
                       ),
                     ),
                   ),
@@ -467,9 +467,9 @@ class _MenuLeconState extends State<MenuLecon> {
                     child: Card(
                       child: new InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/lecon10');
+                          Navigator.pushNamed(context, '/lecon26');
                         },
-                        child: Center(child: Text('Leçon 10')),
+                        child: Center(child: Text('Leçon 26')),
                       ),
                     ),
                   ),
@@ -481,9 +481,9 @@ class _MenuLeconState extends State<MenuLecon> {
                         onTap: () {
                           // // Navigator.pushNamed(context, '/lecon1');
                           //print("tapped");
-                          Navigator.pushNamed(context, '/lecon11');
+                          Navigator.pushNamed(context, '/lecon27');
                         },
-                        child: Center(child: Text('Leçon 11')),
+                        child: Center(child: Text('Leçon 27')),
                       ),
                     ),
                   ),
@@ -499,27 +499,11 @@ class _MenuLeconState extends State<MenuLecon> {
                     child: Card(
                       child: new InkWell(
                         onTap: () {
-                          // // Navigator.pushNamed(context, '/lecon1');
-                          //print("tapped");
-                          Navigator.pushNamed(context, '/lecon12');
+                          Navigator.pushNamed(context, '/lecon28');
                         },
-                        child: Center(child: Text('Leçon 12')),
+                        child: Center(child: Text('Leçon 28')),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 150,
-                    height: 60,
-
-                    // child: Card(
-                    //   child: new InkWell(
-                    //     onTap: () {
-                    //       // // Navigator.pushNamed(context, '/lecon1');
-                    //       //print("tapped");
-                    //     },
-                    //     child: Center(child: Text('Leçon 6')),
-                    //   ),
-                    // ),
                   ),
                   SizedBox(
                     width: 150,
@@ -527,9 +511,34 @@ class _MenuLeconState extends State<MenuLecon> {
                     child: Card(
                       child: new InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/lecon23');
+                          Navigator.pushNamed(context, '/lecon29');
                         },
-                        child: Center(child: Text('Leçon 23')),
+                        child: Center(child: Text('Leçon 29')),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/lecon30');
+                        },
+                        child: Center(child: Text('Leçon 30')),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          // // Navigator.pushNamed(context, '/lecon1');
+                          // //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 31')),
                       ),
                     ),
                   ),
@@ -649,44 +658,44 @@ class _MenuLeconState extends State<MenuLecon> {
                   //         ),
                   //       ),
                   //     ),
-                  SizedBox(
-                    width: 150,
-                    height: 60,
-                    child: Card(
-                      child: new InkWell(
-                        onTap: () {
-                          // Navigator.pushNamed(context, '/lecon1');
-                          //print("tapped");
-                          Navigator.pushNamed(context, '/lecon13');
-                        },
-                        child: Center(child: Text('Leçon 13')),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 150,
-                    height: 60,
-                    child: Card(
-                      child: new InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/lecon30');
-                        },
-                        child: Center(child: Text('Leçon 30')),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 150,
-                    height: 60,
-                    child: Card(
-                      child: new InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/lecon15');
-                        },
-                        child: Center(child: Text('Leçon 15')),
-                      ),
-                    ),
-                  ),
+                  // SizedBox(
+                  //   width: 150,
+                  //   height: 60,
+                  //   child: Card(
+                  //     child: new InkWell(
+                  //       onTap: () {
+                  //         // Navigator.pushNamed(context, '/lecon1');
+                  //         //print("tapped");
+                  //         Navigator.pushNamed(context, '/lecon13');
+                  //       },
+                  //       child: Center(child: Text('Leçon 13')),
+                  //     ),
+                  //   ),
+                  // ),
+                  // SizedBox(
+                  //   width: 150,
+                  //   height: 60,
+                  //   child: Card(
+                  //     child: new InkWell(
+                  //       onTap: () {
+                  //         Navigator.pushNamed(context, '/lecon30');
+                  //       },
+                  //       child: Center(child: Text('Leçon 30')),
+                  //     ),
+                  //   ),
+                  // ),
+                  // SizedBox(
+                  //   width: 150,
+                  //   height: 60,
+                  //   child: Card(
+                  //     child: new InkWell(
+                  //       onTap: () {
+                  //         Navigator.pushNamed(context, '/lecon15');
+                  //       },
+                  //       child: Center(child: Text('Leçon 15')),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
 
