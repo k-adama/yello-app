@@ -169,6 +169,18 @@ flutter:
     - assets/audio/lecon21/
     - assets/lecon21/
 
+                    #  Leçon 22  --------
+    - assets/audio/lecon22/
+    - assets/lecon22/
+
+                #  Leçon 27  --------
+    - assets/audio/lecon27/
+    - assets/lecon27/
+
+                #  Leçon 28  --------
+    - assets/audio/lecon28/
+    - assets/lecon28/
+
                     #  Leçon 23  --------
     - assets/audio/lecon23/
     - assets/lecon23/
