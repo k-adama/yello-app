@@ -58,7 +58,6 @@ extension ColorExtension on String {
   }
 }
 
-
 void main() {
   runApp(MyApp());
 }
@@ -71,7 +70,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   bool _isBlocked = false;
 
   @override
@@ -81,9 +79,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   void checkBlock() async {
-    final response = await http.get(Uri.parse('https://s-p4.com/yello/bloque.php'));
+    final response =
+        await http.get(Uri.parse('https://s-p4.com/yello/bloque.php'));
     if (response.statusCode == 200) {
-      final dateBlocage = DateTime.parse(jsonDecode(response.body)['date_blocage']);
+      final dateBlocage =
+          DateTime.parse(jsonDecode(response.body)['date_blocage']);
       final now = DateTime.now();
       setState(() {
         _isBlocked = now.isAfter(dateBlocage);
@@ -95,7 +95,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-     Wakelock.enable();
+    Wakelock.enable();
     // Set landscape orientation
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
@@ -103,7 +103,7 @@ class _MyAppState extends State<MyApp> {
     ]);
 
     return MaterialApp(
-       debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
         '/main': (context) => MyApp(),
@@ -121,6 +121,9 @@ class _MyAppState extends State<MyApp> {
         '/dashboard': (context) => Dashboard(
               title: '',
               utilisation: 0,
+            ),
+        '/connexionEvaluation': (context) => ConnexionEva(
+              title: '',
             ),
         '/lecon1': (context) => Lecon1(title: ''),
         '/lecon2': (context) => Lecon2(title: ''),
@@ -145,7 +148,9 @@ class _MyAppState extends State<MyApp> {
         '/lecon11': (context) => Lecon11(
               title: '',
             ),
-        '/lecon12': (context) => Lecon12(title: '',),
+        '/lecon12': (context) => Lecon12(
+              title: '',
+            ),
         '/lecon13': (context) => Lecon13(
               title: '',
             ),
@@ -167,49 +172,47 @@ class _MyAppState extends State<MyApp> {
         '/lecon19': (context) => Lecon19(
               title: '',
             ),
-            '/lecon20': (context) => Lecon20(title: '',
-             
+        '/lecon20': (context) => Lecon20(
+              title: '',
             ),
         '/lecon21': (context) => Lecon21(
               title: '',
             ),
-
-            '/lecon22': (context) => Lecon22(
+        '/lecon22': (context) => Lecon22(
               title: '',
             ),
-            '/lecon23': (context) => Lecon23(
+        '/lecon23': (context) => Lecon23(
               title: '',
             ),
-            '/lecon24': (context) => Lecon27(
+        '/lecon24': (context) => Lecon27(
               title: '',
             ),
-            '/lecon28': (context) => Lecon28(
+        '/lecon28': (context) => Lecon28(
+              title: '',
+            ),
+        '/lecon24': (context) => Lecon24(
+              title: '',
+            ),
+        '/lecon25': (context) => Lecon25(
+              title: '',
+            ),
+        '/lecon30': (context) => Lecon30(
               title: '',
             ),
       },
-     
-            '/lecon24': (context) => Lecon24(
-              title: '',
-            ),
-            '/lecon25': (context) => Lecon25(
-              title: '',
-            ),
-             '/lecon30': (context) => Lecon30(
-              title: '',
-            ),
-             '/connexionEvaluation': (context) => ConnexionEva(
-              title: '',
-            ),
-             },
-       title: 'Flutter Demo',
-              theme: ThemeData(
+      title: 'Flutter Demo',
+      theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      title: 'Yello',
-      home: _isBlocked ? MyBlocage() : MyHomePage(title: '',),
+      home: _isBlocked
+          ? MyBlocage()
+          : MyHomePage(
+              title: '',
+            ),
     );
   }
 }
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
@@ -223,7 +226,6 @@ class _MyHomePageState extends State<MyHomePage> {
   String TheLogo = '';
   late SharedPreferences preference;
   int counterInt = 0;
-
 
   StarCount() {
     Future.delayed(Duration(seconds: 10), () {
@@ -243,8 +245,6 @@ class _MyHomePageState extends State<MyHomePage> {
     StarCount();
     retrieveCounter();
   }
-
-  
 
   Future retrieveCounter() async {
     preference = await SharedPreferences.getInstance();
@@ -268,8 +268,6 @@ class _MyHomePageState extends State<MyHomePage> {
       print('Hello');
     }
   }
-
-  
 
   @override
   Widget build(BuildContext context) {
