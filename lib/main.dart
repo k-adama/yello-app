@@ -20,6 +20,21 @@ import 'package:projets/lecon18.dart';
 import 'package:projets/lecon19.dart';
 import 'package:projets/lecon20.dart';
 import 'package:projets/lecon21.dart';
+import 'package:projets/lecon22.dart';
+
+
+
+import 'package:projets/lecon33.dart';
+import 'package:projets/lecon38.dart';
+// import 'package:projets/lecon41.dart';
+// import 'package:projets/lecon45.dart';
+
+import 'package:projets/lecon23.dart';
+import 'package:projets/lecon26.dart';
+import 'package:projets/lecon27.dart';
+import 'package:projets/lecon28.dart';
+import 'package:projets/lecon29.dart';
+
 import 'package:projets/lecon5.dart';
 import 'package:projets/lecon6.dart';
 import 'package:projets/lecon7.dart';
@@ -121,6 +136,9 @@ class _MyAppState extends State<MyApp> {
               title: '',
               utilisation: 0,
             ),
+        '/connexionEvaluation': (context) => ConnexionEva(
+              title: '',
+            ),
         '/lecon1': (context) => Lecon1(title: ''),
         '/lecon2': (context) => Lecon2(title: ''),
         '/lecon3': (context) => Lecon3(),
@@ -174,6 +192,7 @@ class _MyAppState extends State<MyApp> {
         '/lecon21': (context) => Lecon21(
               title: '',
             ),
+
         '/lecon24': (context) => Lecon24(
               title: '',
             ),
@@ -196,10 +215,55 @@ class _MyAppState extends State<MyApp> {
               title: '',
             ),
       },
+
+        '/lecon22': (context) => Lecon22(
+              title: '',
+            ),
+
+
+        '/lecon33': (context) => Lecon33(
+              title: '',
+            ),
+        '/lecon38': (context) => Lecon38(
+              title: '',
+            ),
+        // '/lecon41': (context) => Lecon41(
+        //       title: '',
+        //     ),
+        // '/lecon45': (context) => Lecon45(
+        //       title: '',
+        //     )
+
+        '/lecon23': (context) => Lecon23(
+              title: '',
+            ),
+        '/lecon24': (context) => Lecon24(
+              title: '',
+            ),
+        '/lecon25': (context) => Lecon25(
+              title: '',
+            ),
+        '/lecon26': (context) => Lecon26(
+              title: '',
+            ),
+        '/lecon27': (context) => Lecon27(
+              title: '',
+            ),
+        '/lecon28': (context) => Lecon28(
+              title: '',
+            ),
+        '/lecon29': (context) => Lecon29(
+              title: '',
+            ),
+        '/lecon30': (context) => Lecon30(
+              title: '',
+            ),
+
+      },
+      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      title: 'Yello',
       home: _isBlocked
           ? MyBlocage()
           : MyHomePage(
