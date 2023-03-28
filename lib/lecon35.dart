@@ -1,12 +1,5 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:projets/menu.dart';
-import 'package:projets/infosymbol.dart';
-import 'package:projets/menulecon.dart';
 
 extension ColorExtension on String {
   toColor6() {
@@ -18,14 +11,14 @@ extension ColorExtension on String {
   }
 }
 
-class Lecon25 extends StatefulWidget {
-  const Lecon25({Key? key, required this.title}) : super(key: key);
+class Lecon35 extends StatefulWidget {
+  const Lecon35({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
-  State<Lecon25> createState() => _Lecon25State();
+  State<Lecon35> createState() => _Lecon35State();
 }
 
-class _Lecon25State extends State<Lecon25> {
+class _Lecon35State extends State<Lecon35> {
   int state = 1;
   String theaudio = '';
   final player = AudioPlayer();
@@ -84,29 +77,20 @@ class _Lecon25State extends State<Lecon25> {
     ];
   }
 
-  String audio0 = 'audio/lecon25/bbDjomanPhrase.mp3';
-  String audio1 = 'audio/lecon25/lebebe.mp3';
-  String audio2 = 'audio/lecon25/bebe.mp3';
-  String audio3 = 'audio/lecon25/be.mp3';
-  String audio4 = 'audio/lecon25/e.mp3';
-  // String audio5 = 'audio/lecon6/grand_l.mp3';
-  // String audio6 = 'audio/lecon6/lo.mp3';
-  // String audio7 = 'audio/lecon6/li.mp3';
-  // String audio8 = 'audio/lecon6/la.mp3';
-  // String audio9 = 'audio/lecon6/lu.mp3';
-  // String audio10 = 'audio/lecon6/loi.mp3';
-  // String audio11 = 'audio/lecon6/lom.mp3';
-  // String audio12 = 'audio/lecon6/le.mp3';
-  // String audio13 = 'audio/lecon6/lb.mp3';
-  // String audio14 = 'audio/lecon6/lc.mp3';
-  // String audio15 = 'audio/lecon6/lai.mp3';
-  // String audio16 = 'audio/lecon6/lan.mp3';
-  // String audio17 = 'audio/lecon6/lou.mp3';
-  // String audio18 = 'audio/lecon6/lui.mp3';
-  // String audio19 = 'audio/lecon6/ler.mp3';
-  // String audio20 = 'audio/lecon6/legume.mp3';
-  // String audio21 = 'audio/lecon6/lame.mp3';
-  // String audio22 = 'audio/lecon6/text.mp3';
+  String audio0 = 'audio/lecon35/daniellePhrase.mp3';
+  String audio1 = 'audio/lecon35/danielle.mp3';
+  String audio2 = 'audio/lecon35/donne.mp3';
+  String audio3 = 'audio/lecon35/dani.mp3';
+  String audio4 = 'audio/lecon35/don.mp3';
+  String audio5 = 'audio/lecon35/dan.mp3';
+  String audio6 = 'audio/lecon35/do.mp3';
+  String audio7 = 'audio/lecon35/da.mp3';
+  String audio8 = 'audio/lecon35/do.mp3';
+  String audio9 = 'audio/lecon35/d.mp3';
+  String audio10 = 'audio/lecon35/d.mp3';
+  // String audio11 = 'audio/lecon9/e.mp3';
+  // String audio11 = 'audio/lecon3/O.mp3';
+  // String audio12 = 'audio/lecon3/e.mp3';
 
   @override
   void dispose() {
@@ -124,7 +108,7 @@ class _Lecon25State extends State<Lecon25> {
   }
 
   void playSound(String thesound) {
-    player.play(AssetSource('audio/lecon6/$thesound.mp3'));
+    player.play(AssetSource('audio/lecon9/$thesound.mp3'));
   }
 
   void RepeatVoice() {
@@ -143,16 +127,16 @@ class _Lecon25State extends State<Lecon25> {
         colorArray[8] = Colors.yellowAccent;
         colorArray[9] = Colors.white;
         colorArray[10] = Colors.white;
-      } else if (i == 10) {
-        colorArray[7] = Colors.white;
-        colorArray[10] = Colors.yellowAccent;
-        colorArray[9] = Colors.white;
-        colorArray[8] = Colors.white;
-      } else {
+      } else if (i == 9) {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.white;
         colorArray[9] = Colors.yellowAccent;
         colorArray[10] = Colors.white;
+      } else {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.yellowAccent;
       }
     });
   }
@@ -169,11 +153,21 @@ class _Lecon25State extends State<Lecon25> {
         theaudio = audio3;
       } else if (state == 4) {
         theaudio = audio4;
+      } else if (state == 5) {
+        theaudio = audio5;
+      } else if (state == 6) {
+        theaudio = audio6;
+      } else if (state == 7) {
+        theaudio = audio7;
+      } else if (state == 8) {
+        theaudio = audio8;
+      } else if (state == 9) {
+        theaudio = audio9;
+      } else if (state == 10) {
+        theaudio = audio10;
       }
-      // else if (state == 5) {
-      //   theaudio = audio5;
-      // } else if (state == 6) {
-      //   theaudio = audio6;
+      //else if (state == 11) {
+      //   theaudio = audio11;
       // }
       else {
         theaudio = audio0;
@@ -181,10 +175,10 @@ class _Lecon25State extends State<Lecon25> {
       //player.setAsset(theaudio);
       player.play(AssetSource(theaudio));
       try {
-        if (state > 4) {
+        if (state > 10) {
           state = 0;
         }
-        for (int i = 0; i < 23; i++) {
+        for (int i = 0; i < 22; i++) {
           if (state == i) {
             colorArray[i] = Colors.yellowAccent;
             //    'thebackcolor$state' =  Colors.white;
@@ -194,7 +188,7 @@ class _Lecon25State extends State<Lecon25> {
           // if (i == 0) {
           //   setState(() {
           //     state == i;
-          //     colorArray[i] = Colors.yellowAccent;;
+          //     colorArray[i] = Colors.white;
           //   });
           //   //    'thebackcolor$state' =  Colors.white;
           // } else if (state == i) {
@@ -215,20 +209,18 @@ class _Lecon25State extends State<Lecon25> {
   }
 
   //Lire phrase et les mots
-  Text letters({
+  Text MesPhrases({
     Color? color,
     String? text,
     int i = 0,
-    double size = 20,
-    FontWeight? font,
   }) {
     return Text(
       text!,
       style: TextStyle(
           color: color,
-          fontWeight: font,
+          fontWeight: FontWeight.w600,
           fontFamily: 'Poppins',
-          fontSize: size,
+          fontSize: 20,
           background: Paint()
             ..strokeWidth = 3.0
             ..color = colorArray[i]
@@ -240,7 +232,7 @@ class _Lecon25State extends State<Lecon25> {
 //Fin lecture phrase et les mots
 
   //Début lecture des syllabes
-  SizedBox Syllabes({String? son}) {
+  SizedBox Syllabes({String? son, required child}) {
     return SizedBox(
       width: 100,
       height: 80,
@@ -269,37 +261,46 @@ class _Lecon25State extends State<Lecon25> {
       //backgroundColor: '#fcca0c'.toColor2(),
       appBar: AppBar(
         centerTitle: true,
-        toolbarHeight: 40,
+        toolbarHeight: 30,
         backgroundColor: '#fcca0c'.toColor6(),
         title: Text(
-          widget.title + 'Leçon 25',
+          widget.title + 'Leçon 35',
           style:
               TextStyle(color: Color(0xff000000), fontStyle: FontStyle.italic),
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            //titre de la leçon
             Padding(
               padding: EdgeInsets.all(10), //apply padding to all four sides
               child: Text(
-                'é',
+                'd / D',
                 style: TextStyle(
-                    fontSize: 25,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.bold),
+                  fontSize: 25,
+                  fontFamily: 'Poppins',
+                ),
               ),
             ),
-            //contenu de la leçon
+            SizedBox(
+              //  Image illustration
+              width: 200,
+              height: 30,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                //  Image illustration de gauche
+                // Expanded(
                 SizedBox(
+                  //  Image illustration
+                  width: 200,
+                  height: 300,
                   child: Column(
                     children: <Widget>[
                       Row(
+                        //Menu buttons---------
                         children: <Widget>[
                           SizedBox(
                             width: 100,
@@ -341,149 +342,142 @@ class _Lecon25State extends State<Lecon25> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 200,
-                        child: Image(
-                          image: AssetImage('assets/lecon25/lecon25.png'),
-                          width: 300,
-                        ),
+                      Row(
+                        children: <Widget>[
+                          SizedBox(
+                            width: 200,
+                            height: 200,
+                            child: Image(
+                              image: AssetImage('assets/lecon35/photo.png'),
+                            ),
+                          ),
+                        ],
                       ),
-
                       //--- Menu -----------------------
                     ],
                   ),
                 ),
-
-                //  phrase de droite
-                Container(
-                  margin: EdgeInsets.only(bottom: 100, top: 30),
-                  width: MediaQuery.of(context).size.width / 2,
+                // ),
+                // Expanded(
+                SizedBox(
+                  // les phrases
+                  width: 430,
+                  height: 280,
                   child: Column(
-                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
+                      // Ligne 1----------------------------------------///
                       Row(
+                        // Ligne 1
                         children: <Widget>[
-                          letters(
-                            text: "Le  b",
-                            font: FontWeight.w600,
-                            size: 25,
-                          ),
-                          letters(
-                              text: "é",
-                              font: FontWeight.w600,
-                              size: 30,
-                              color: Colors.red),
-                          letters(
-                            text: "b",
-                            font: FontWeight.w600,
-                            size: 25,
-                          ),
-                          letters(
-                              text: "é ",
-                              font: FontWeight.w600,
-                              size: 30,
-                              color: Colors.red),
-                          letters(
-                            text: "de Djoman est beau",
-                            font: FontWeight.w600,
-                            size: 25,
-                          ),
+                          //Elève
+
+                          MesPhrases(text: "D", color: Colors.red),
+                          MesPhrases(text: "anielle "),
+
+                          //a été
+
+                          MesPhrases(text: "d", color: Colors.red),
+                          MesPhrases(text: "onne "),
+
+                          //Frappé
+
+                          MesPhrases(text: "d", color: Colors.red),
+                          MesPhrases(text: "es "),
+
+                          //
+                          MesPhrases(text: "conseils"),
+                          MesPhrases(text: "à ses enfants"),
                         ],
+                        //Text('Ulrich cuisine une soupe'),
                       ),
-                      SizedBox(
-                        height: 30,
-                      ),
+                      // Ligne 2----------------------------------------///
                       Row(
+                        // Ligne 2
                         children: <Widget>[
-                          letters(
-                            text: "Le b",
-                            font: FontWeight.w600,
-                            size: 20,
-                            i: 1,
+                          SizedBox(
+                            height: 80,
                           ),
-                          letters(
-                              text: "é",
-                              font: FontWeight.w600,
-                              size: 25,
-                              i: 1,
-                              color: Colors.red),
-                          letters(
-                            text: "b",
-                            font: FontWeight.w600,
-                            size: 20,
-                            i: 1,
-                          ),
-                          letters(
-                              text: "é",
-                              font: FontWeight.w600,
-                              size: 25,
-                              i: 1,
-                              color: Colors.red),
+                          //Elève
+                          MesPhrases(text: "D", i: 1, color: Colors.red),
+                          MesPhrases(text: "anielle ", i: 1),
                           SizedBox(
                             width: 200,
                           ),
-                          letters(
-                            text: "b",
-                            font: FontWeight.w600,
-                            size: 20,
-                            i: 2,
-                          ),
-                          letters(
-                              text: "é",
-                              font: FontWeight.w600,
-                              size: 25,
-                              i: 2,
-                              color: Colors.red),
-                          letters(
-                            text: "b",
-                            font: FontWeight.w600,
-                            size: 20,
-                            i: 2,
-                          ),
-                          letters(
-                              text: "é",
-                              font: FontWeight.w600,
-                              size: 25,
-                              i: 2,
-                              color: Colors.red),
+                          //cuisine
+                          MesPhrases(text: "d", i: 2, color: Colors.red),
+                          MesPhrases(text: "onne ", i: 2),
                         ],
+                        //Text('L'élève a été frappé et blessé'),
                       ),
-                      SizedBox(
-                        height: 30,
-                      ),
+
+                      // Ligne 3----------------------------------------///
                       Row(
+                        // Ligne 3
                         children: <Widget>[
-                          letters(
-                            text: "b",
-                            font: FontWeight.w600,
-                            size: 20,
-                            i: 3,
-                          ),
-                          letters(
-                              text: "é",
-                              font: FontWeight.w600,
-                              size: 25,
-                              i: 3,
-                              color: Colors.red),
+                          MesPhrases(text: "D", color: Colors.red, i: 3),
+                          MesPhrases(text: "ani", i: 3),
                           SizedBox(
-                            width: 300,
+                            width: 240,
                           ),
-                          letters(
-                              text: "é",
-                              font: FontWeight.w600,
-                              size: 25,
-                              i: 4,
-                              color: Colors.red),
+                          //cuisine
+
+                          MesPhrases(text: "d", i: 4, color: Colors.red),
+                          MesPhrases(text: "on", i: 4),
                         ],
+                        //Text('L'élève a été frappé et blessé'),
+                      ),
+
+                      // Ligne 4----------------------------------------///
+                      Row(
+                        // Ligne 3
+                        children: <Widget>[
+                          MesPhrases(text: "D", color: Colors.red, i: 5),
+                          MesPhrases(text: "an", i: 5),
+                          SizedBox(
+                            width: 245,
+                          ),
+                          //cuisine
+
+                          MesPhrases(text: "d", i: 6, color: Colors.red),
+                          MesPhrases(text: "o", i: 6),
+                        ],
+                        //Text('L'élève a été frappé et blessé'),
+                      ),
+                      // Ligne 4----------------------------------------///
+                      Row(
+                        // Ligne 3
+                        children: <Widget>[
+                          MesPhrases(text: "D", color: Colors.red, i: 7),
+                          MesPhrases(text: "a", i: 7),
+                          SizedBox(
+                            width: 255,
+                          ),
+                          MesPhrases(text: "d", i: 8, color: Colors.red),
+                          MesPhrases(text: "o", i: 8),
+                        ],
+                        //Text('L'élève a été frappé et blessé'),
+                      ),
+                      // Ligne 4----------------------------------------///
+                      Row(
+                        // Ligne 3
+                        children: <Widget>[
+                          MesPhrases(text: "D", color: Colors.red, i: 9),
+                          SizedBox(
+                            width: 270,
+                          ),
+                          MesPhrases(text: "d", i: 10, color: Colors.red),
+                        ],
+                        //Text('L'élève a été frappé et blessé'),
                       ),
                     ],
                   ),
                 ),
+                // ),
               ],
             ),
             // les syllabes
             Container(
-              margin: EdgeInsets.only(bottom: 80, top: 30, left: 50),
+              margin: EdgeInsets.only(bottom: 80, left: 50),
               //width: MediaQuery.of(context).size.width / 2,
               child: Column(
                 children: [
@@ -500,11 +494,11 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/e.mp3'));
+                              player.play(AssetSource('audio/lecon35/d.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/e.png")),
+                                  child: Image.asset("assets/lecon35/d.png")),
                             ),
                           ),
                         ),
@@ -517,29 +511,12 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/e.mp3'));
-                            },
-                            child: Center(
-                                child: Text('é',
-                                    style: TextStyle(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.w600))),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              // player.play(AssetSource('audio/lecon25/e.mp3'));
+                              player.play(AssetSource('audio/lecon35/d.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/e.png")),
+                                  child:
+                                      Image.asset("assets/lecon35/petitd.png")),
                             ),
                           ),
                         ),
@@ -552,36 +529,11 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/e.mp3'));
-                            },
-                            child: Center(
-                                child: Text('é',
-                                    style: TextStyle(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.w600))),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon25/pe.mp3'));
+                              player.play(AssetSource('audio/lecon35/d.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/pe.png")),
+                                  child: Image.asset("assets/lecon35/grd.png")),
                             ),
                           ),
                         ),
@@ -594,62 +546,12 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/le.mp3'));
+                              player.play(AssetSource('audio/lecon35/d.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/le.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon25/de.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon25/de.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon25/ge.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon25/ge.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon25/re.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon25/re.png")),
+                                  child:
+                                      Image.asset("assets/lecon35/mind.png")),
                             ),
                           ),
                         ),
@@ -669,11 +571,11 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/ne.mp3'));
+                              player.play(AssetSource('audio/lecon35/do.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/ne.png")),
+                                  child: Image.asset("assets/lecon35/do.png")),
                             ),
                           ),
                         ),
@@ -686,11 +588,11 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/te.mp3'));
+                              player.play(AssetSource('audio/lecon35/di.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/te.png")),
+                                  child: Image.asset("assets/lecon35/di.png")),
                             ),
                           ),
                         ),
@@ -703,11 +605,11 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/he.mp3'));
+                              player.play(AssetSource('audio/lecon35/da.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/he.png")),
+                                  child: Image.asset("assets/lecon35/da.png")),
                             ),
                           ),
                         ),
@@ -720,11 +622,11 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/me.mp3'));
+                              player.play(AssetSource('audio/lecon35/du.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/me.png")),
+                                  child: Image.asset("assets/lecon35/du.png")),
                             ),
                           ),
                         ),
@@ -737,103 +639,11 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/we.mp3'));
+                              player.play(AssetSource('audio/lecon35/doi.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/we.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon25/se.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon25/se.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon25/me.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon25/me.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon25/gue.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon25/gue.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon25/be.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon25/be.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon25/de.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon25/de.png")),
+                                  child: Image.asset("assets/lecon35/doi.png")),
                             ),
                           ),
                         ),
@@ -853,11 +663,11 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/fe.mp3'));
+                              player.play(AssetSource('audio/lecon35/dom.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/fe.png")),
+                                  child: Image.asset("assets/lecon35/dom.png")),
                             ),
                           ),
                         ),
@@ -870,11 +680,11 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/je.mp3'));
+                              player.play(AssetSource('audio/lecon35/de.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/je.png")),
+                                  child: Image.asset("assets/lecon35/de.png")),
                             ),
                           ),
                         ),
@@ -887,11 +697,11 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/ke.mp3'));
+                              player.play(AssetSource('audio/lecon35/dee.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/ke.png")),
+                                  child: Image.asset("assets/lecon35/dee.png")),
                             ),
                           ),
                         ),
@@ -904,11 +714,105 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/xe.mp3'));
+                              player
+                                  .play(AssetSource('audio/lecon35/deee.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon25/xe.png")),
+                                  child:
+                                      Image.asset("assets/lecon35/deee.png")),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        height: MediaQuery.of(context).size.height / 9,
+                        child: Card(
+                          child: new InkWell(
+                            onTap: () {
+                              // // Navigator.pushNamed(context, '/lecon1');
+                              //print("tapped");
+                              player.play(AssetSource('audio/lecon35/dai.mp3'));
+                            },
+                            child: Center(
+                              child: Center(
+                                  child: Image.asset("assets/lecon35/dai.png")),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        height: MediaQuery.of(context).size.height / 9,
+                        child: Card(
+                          child: new InkWell(
+                            onTap: () {
+                              // // Navigator.pushNamed(context, '/lecon1');
+                              //print("tapped");
+                              player.play(AssetSource('audio/lecon35/dan.mp3'));
+                            },
+                            child: Center(
+                              child: Center(
+                                  child: Image.asset("assets/lecon35/dan.png")),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        height: MediaQuery.of(context).size.height / 9,
+                        child: Card(
+                          child: new InkWell(
+                            onTap: () {
+                              // // Navigator.pushNamed(context, '/lecon1');
+                              //print("tapped");
+                              player.play(AssetSource('audio/lecon35/dou.mp3'));
+                            },
+                            child: Center(
+                              child: Center(
+                                  child: Image.asset("assets/lecon35/dou.png")),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        height: MediaQuery.of(context).size.height / 9,
+                        child: Card(
+                          child: new InkWell(
+                            onTap: () {
+                              // // Navigator.pushNamed(context, '/lecon1');
+                              //print("tapped");
+                              player.play(AssetSource('audio/lecon35/dui.mp3'));
+                            },
+                            child: Center(
+                              child: Center(
+                                  child: Image.asset("assets/lecon35/dui.png")),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        height: MediaQuery.of(context).size.height / 9,
+                        child: Card(
+                          child: new InkWell(
+                            onTap: () {
+                              // // Navigator.pushNamed(context, '/lecon1');
+                              //print("tapped");
+                              player.play(AssetSource('audio/lecon35/dem.mp3'));
+                            },
+                            child: Center(
+                              child: Center(
+                                  child: Image.asset("assets/lecon35/dem.png")),
                             ),
                           ),
                         ),
@@ -923,35 +827,31 @@ class _Lecon25State extends State<Lecon25> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 170,
+                  height: 300,
                   child: InkWell(
                     onTap: () {
-                      extraHilght(7);
-                      player.play(AssetSource('audio/lecon25/beb.mp3'));
+                      extraHilght(11);
+                      player.play(AssetSource('audio/lecon35/unde.mp3'));
                     },
                     child: Column(
                       children: [
                         Image(
-                          image: AssetImage('assets/lecon25/bebe.png'),
+                          image: AssetImage('assets/lecon35/imagde.png'),
                           width: 200,
-                          height: 100,
+                          height: 200,
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Row(
                           children: [
-                            letters(
-                              text: "Un ",
-                              i: 7,
-                            ),
-                            letters(
-                              text: "bé",
+                            MesPhrases(text: "Un ", i: 11),
+                            MesPhrases(
+                              text: "dé",
                               color: Colors.red,
-                              font: FontWeight.w600,
-                              i: 7,
+                              // font: FontWeight.w600,
+                              i: 11,
                             ),
-                            letters(text: "bé", i: 7),
                           ],
                         )
                       ],
@@ -962,72 +862,30 @@ class _Lecon25State extends State<Lecon25> {
                   width: 20,
                 ),
                 SizedBox(
-                  height: 170,
+                  height: 300,
                   child: InkWell(
                     onTap: () {
-                      extraHilght(8);
-                      player.play(AssetSource('audio/lecon25/belier.mp3'));
+                      extraHilght(12);
+                      player.play(AssetSource('audio/lecon35/dormir.mp3'));
                     },
                     child: Column(
                       children: [
                         Image(
-                          image: AssetImage('assets/lecon25/belier.png'),
+                          image: AssetImage('assets/lecon35/dormir.png'),
                           width: 200,
-                          height: 100,
+                          height: 200,
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Row(
                           children: [
-                            letters(
-                              text: "Un ",
-                              i: 8,
-                            ),
-                            letters(
-                                text: "bé",
+                            MesPhrases(
+                                text: "do",
                                 color: Colors.red,
-                                font: FontWeight.w600,
-                                i: 8),
-                            letters(text: "lier", i: 8),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                SizedBox(
-                  height: 170,
-                  child: InkWell(
-                    onTap: () {
-                      extraHilght(10);
-                      player.play(AssetSource('audio/lecon25/meca.mp3'));
-                    },
-                    child: Column(
-                      children: [
-                        Image(
-                          image: AssetImage('assets/lecon25/mecanicien.png'),
-                          width: 200,
-                          height: 100,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Row(
-                          children: [
-                            letters(
-                              text: "Un ",
-                              i: 10,
-                            ),
-                            letters(
-                                text: "mé",
-                                color: Colors.red,
-                                font: FontWeight.w600,
-                                i: 10),
-                            letters(text: "canicien", i: 10),
+                                // font: FontWeight.w600,
+                                i: 11),
+                            MesPhrases(text: "rmir", i: 11),
                           ],
                         )
                       ],
@@ -1041,30 +899,29 @@ class _Lecon25State extends State<Lecon25> {
             Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 50, bottom: 10),
+                  padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(9);
-                      player.play(AssetSource('audio/lecon25/maternelle.mp3'));
+                      extraHilght(12);
+                      player.play(AssetSource('audio/lecon35/texte.mp3'));
                     },
                     child: Column(children: [
-                      letters(
+                      MesPhrases(
                           text:
-                              "Le bébé de Djoman est beau ! Djoman prend soin de son ",
-                          i: 9),
-                      letters(
+                              "Danielle donne des conseils de bonne conduite à ses",
+                          i: 12),
+                      MesPhrases(
                           text:
-                              "bébé. Elle lui fait tous ses vaccins et suit les conseils du ",
-                          i: 9),
-                      letters(
+                              "enfants. Les enfants suivent les conseils de leur maman. Ils ",
+                          i: 12),
+                      MesPhrases(
                           text:
-                              "médecin. Djoman nourrit son bébé au sein. Le bébé est en ",
-                          i: 9),
-                      letters(
+                              "sont respectueux et travaillent bien à l’école. Danielle est",
+                          i: 12),
+                      MesPhrases(
                           text:
-                              "pleine forme et plein de vie. Le lait maternel aide l’enfant à",
-                          i: 9),
-                      letters(text: " grandir.", i: 9),
+                              "fière de ses enfants et leur donne de nombreux cadeaux.",
+                          i: 12),
                     ]),
                   ),
                 ),

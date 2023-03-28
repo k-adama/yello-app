@@ -57,7 +57,10 @@ import 'lecon24.dart';
 import 'lecon25.dart';
 import 'lecon3.dart';
 import 'lecon30.dart';
+import 'lecon35.dart';
+import 'lecon36.dart';
 import 'lecon4.dart';
+import 'lecon51.dart';
 
 extension ColorExtension on String {
   toColor() {
@@ -189,6 +192,30 @@ class _MyAppState extends State<MyApp> {
         '/lecon21': (context) => Lecon21(
               title: '',
             ),
+
+        '/lecon24': (context) => Lecon24(
+              title: '',
+            ),
+        '/lecon25': (context) => Lecon25(
+              title: '',
+            ),
+        '/lecon30': (context) => Lecon30(
+              title: '',
+            ),
+        '/lecon35': (context) => Lecon35(
+              title: '',
+            ),
+        '/lecon36': (context) => Lecon36(
+              title: '',
+            ),
+        '/lecon51': (context) => Lecon51(
+              title: '',
+            ),
+        '/connexionEvaluation': (context) => ConnexionEva(
+              title: '',
+            ),
+      },
+
         '/lecon22': (context) => Lecon22(
               title: '',
             ),
