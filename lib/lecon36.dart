@@ -77,17 +77,17 @@ class _Lecon36State extends State<Lecon36> {
     ];
   }
 
-  String audio0 = 'audio/lecon35/daniellePhrase.mp3';
-  String audio1 = 'audio/lecon35/danielle.mp3';
-  String audio2 = 'audio/lecon35/donne.mp3';
-  String audio3 = 'audio/lecon35/dani.mp3';
-  String audio4 = 'audio/lecon35/don.mp3';
-  String audio5 = 'audio/lecon35/dan.mp3';
-  String audio6 = 'audio/lecon35/do.mp3';
-  String audio7 = 'audio/lecon35/da.mp3';
-  String audio8 = 'audio/lecon35/do.mp3';
-  String audio9 = 'audio/lecon35/d.mp3';
-  String audio10 = 'audio/lecon35/d.mp3';
+  String audio0 = 'audio/lecon36/gaticPhrase.mp3';
+  String audio1 = 'audio/lecon36/calcul.mp3';
+  // String audio2 = 'audio/lecon35/donne.mp3';
+  // String audio3 = 'audio/lecon35/dani.mp3';
+  // String audio4 = 'audio/lecon35/don.mp3';
+  // String audio5 = 'audio/lecon35/dan.mp3';
+  // String audio6 = 'audio/lecon35/do.mp3';
+  // String audio7 = 'audio/lecon35/da.mp3';
+  // String audio8 = 'audio/lecon35/do.mp3';
+  // String audio9 = 'audio/lecon35/d.mp3';
+  // String audio10 = 'audio/lecon35/d.mp3';
   // String audio11 = 'audio/lecon9/e.mp3';
   // String audio11 = 'audio/lecon3/O.mp3';
   // String audio12 = 'audio/lecon3/e.mp3';
@@ -119,24 +119,314 @@ class _Lecon36State extends State<Lecon36> {
     setState(() {
       if (i == 7) {
         colorArray[7] = Colors.yellowAccent;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
         colorArray[8] = Colors.white;
         colorArray[9] = Colors.white;
         colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
       } else if (i == 8) {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.yellowAccent;
         colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
         colorArray[10] = Colors.white;
-      } else if (i == 9) {
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 16) {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.white;
-        colorArray[9] = Colors.yellowAccent;
+        colorArray[16] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
         colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+      } else if (i == 2) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[2] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 3) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[3] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 4) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[4] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 5) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[5] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 6) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[6] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 10) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[10] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 11) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[11] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 12) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[12] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 13) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[13] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 14) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[14] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 15) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[15] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+      } else if (i == 16) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.yellowAccent;
+      } else if (i == 17) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+        colorArray[17] = Colors.yellowAccent;
+      } else if (i == 18) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+        colorArray[17] = Colors.white;
+        colorArray[18] = Colors.yellowAccent;
+      } else if (i == 19) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+        colorArray[17] = Colors.white;
+        colorArray[18] = Colors.white;
+        colorArray[19] = Colors.yellowAccent;
       } else {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.white;
-        colorArray[9] = Colors.white;
-        colorArray[10] = Colors.yellowAccent;
+        colorArray[9] = Colors.yellowAccent;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[15] = Colors.white;
+        colorArray[16] = Colors.white;
       }
     });
   }
@@ -147,25 +437,26 @@ class _Lecon36State extends State<Lecon36> {
         theaudio = audio0;
       } else if (state == 1) {
         theaudio = audio1;
-      } else if (state == 2) {
-        theaudio = audio2;
-      } else if (state == 3) {
-        theaudio = audio3;
-      } else if (state == 4) {
-        theaudio = audio4;
-      } else if (state == 5) {
-        theaudio = audio5;
-      } else if (state == 6) {
-        theaudio = audio6;
-      } else if (state == 7) {
-        theaudio = audio7;
-      } else if (state == 8) {
-        theaudio = audio8;
-      } else if (state == 9) {
-        theaudio = audio9;
-      } else if (state == 10) {
-        theaudio = audio10;
       }
+      // else if (state == 2) {
+      //   theaudio = audio2;
+      // } else if (state == 3) {
+      //   theaudio = audio3;
+      // } else if (state == 4) {
+      //   theaudio = audio4;
+      // } else if (state == 5) {
+      //   theaudio = audio5;
+      // } else if (state == 6) {
+      //   theaudio = audio6;
+      // } else if (state == 7) {
+      //   theaudio = audio7;
+      // } else if (state == 8) {
+      //   theaudio = audio8;
+      // } else if (state == 9) {
+      //   theaudio = audio9;
+      // } else if (state == 10) {
+      //   theaudio = audio10;
+      // }
       //else if (state == 11) {
       //   theaudio = audio11;
       // }
@@ -175,7 +466,7 @@ class _Lecon36State extends State<Lecon36> {
       //player.setAsset(theaudio);
       player.play(AssetSource(theaudio));
       try {
-        if (state > 10) {
+        if (state > 1) {
           state = 0;
         }
         for (int i = 0; i < 22; i++) {
@@ -371,8 +662,8 @@ class _Lecon36State extends State<Lecon36> {
                         children: <Widget>[
                           //Elève
                           MesPhrases(
-                              text: "Dans l’ONG Ga-Tic, le droit d’adhésion ",
-                              i: 1),
+                            text: "Dans l’ONG Ga-Tic, le droit d’adhésion ",
+                          ),
                         ],
                         //Text('Ulrich cuisine une soupe'),
                       ),
@@ -384,9 +675,13 @@ class _Lecon36State extends State<Lecon36> {
                           SizedBox(
                             height: 40,
                           ),
-                          MesPhrases(text: "est de ", i: 1),
-                          MesPhrases(text: "3000 ", i: 1, color: Colors.red),
-                          MesPhrases(text: "F CFA. Pour être membre de ", i: 1),
+                          MesPhrases(
+                            text: "est de ",
+                          ),
+                          MesPhrases(text: "3000 ", color: Colors.red),
+                          MesPhrases(
+                            text: "F CFA. Pour être membre de ",
+                          ),
                         ],
                         //Text('L'élève a été frappé et blessé'),
                       ),
@@ -396,16 +691,18 @@ class _Lecon36State extends State<Lecon36> {
                         // Ligne 3
                         children: <Widget>[
                           MesPhrases(
-                              text: " l’organisation, il faut s’acquitter ",
-                              i: 1),
-                          MesPhrases(text: "de cette", i: 1),
+                            text: " l’organisation, il faut s’acquitter ",
+                          ),
+                          MesPhrases(text: "de cette"),
                         ],
                         //Text('L'élève a été frappé et blessé'),
                       ),
                       Row(
                         // Ligne 3
                         children: <Widget>[
-                          MesPhrases(text: " somme. ", i: 1),
+                          MesPhrases(
+                            text: " somme. ",
+                          ),
                         ],
                         //Text('L'élève a été frappé et blessé'),
                       ),
@@ -416,11 +713,11 @@ class _Lecon36State extends State<Lecon36> {
                       Row(
                         // Ligne 3
                         children: <Widget>[
-                          MesPhrases(text: "3000", color: Colors.red, i: 2),
-                          MesPhrases(text: " F CFA, c’est", i: 2),
+                          MesPhrases(text: "3000", color: Colors.red, i: 1),
+                          MesPhrases(text: " F CFA, c’est", i: 1),
                           MesPhrases(
-                              text: " 30 X 100", color: Colors.red, i: 2),
-                          MesPhrases(text: " F CFA ", i: 2),
+                              text: " 30 X 100", color: Colors.red, i: 1),
+                          MesPhrases(text: " F CFA ", i: 1),
                         ],
                         //Text('L'élève a été frappé et blessé'),
                       ),
@@ -458,14 +755,14 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(3);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      extraHilght(2);
+                      player.play(AssetSource('audio/lecon36/milliers.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(
                           text:
                               "Mettre les nombres suivants dans le Tableau des milliers:",
-                          i: 3),
+                          i: 2),
                     ]),
                   ),
                 ),
@@ -479,7 +776,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(4);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/ch1.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "97 650", i: 4),
@@ -491,7 +788,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(5);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/ch2.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "864 540 ", i: 5),
@@ -503,7 +800,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(6);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/ch3.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "2 390", i: 6),
@@ -515,7 +812,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(7);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/ch4.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "765 415", i: 7),
@@ -527,7 +824,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(8);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/ch5.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "900 000", i: 8),
@@ -561,7 +858,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(9);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/operations.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(
@@ -578,7 +875,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(10);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/addition.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "L’addition:", i: 10),
@@ -594,7 +891,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(11);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/ad1.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "56 000 + 69 000 = ", i: 11),
@@ -606,7 +903,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(12);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/ad2.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "38 000 + 10 0000 =", i: 12),
@@ -618,7 +915,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(13);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/ad3.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "47 000 + 3 550 =", i: 13),
@@ -654,10 +951,11 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(14);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player
+                          .play(AssetSource('audio/lecon36/soustraction.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "La soustration:", i: 14),
+                      MesPhrases(text: "La soustraction:", i: 14),
                     ]),
                   ),
                 ),
@@ -670,7 +968,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(15);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/s1.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "197 000 – 130 000 = ", i: 15),
@@ -682,7 +980,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(16);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/s2.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "364 800 – 8 950 =", i: 16),
@@ -694,7 +992,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(17);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/s3.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "450 000 – 95 000 =", i: 17),
@@ -730,7 +1028,8 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(14);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(
+                          AssetSource('audio/lecon36/multiplication.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "La multiplication:", i: 18),
@@ -746,7 +1045,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(19);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/m1.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "96 300 X 40 = ", i: 19),
@@ -758,7 +1057,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(20);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/m2.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "48 000 X 6 =", i: 20),
@@ -770,7 +1069,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(21);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/m3.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "18 700 X 30 =", i: 21),
@@ -782,7 +1081,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(22);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/m4.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "54 100 X 70 =", i: 22),
@@ -818,7 +1117,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(14);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/division.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "La division:", i: 18),
@@ -834,7 +1133,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(19);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/d1.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: " 30 500 ÷ 5 = ", i: 19),
@@ -846,7 +1145,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(20);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/d2.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "80 000 ÷ 4 =", i: 20),
@@ -858,7 +1157,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(21);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/d3.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "96 600 ÷ 3 =", i: 21),
@@ -870,7 +1169,7 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(22);
-                      player.play(AssetSource('audio/lecon35/texte.mp3'));
+                      player.play(AssetSource('audio/lecon36/d4.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(text: "21 000 ÷ 7 =", i: 22),
