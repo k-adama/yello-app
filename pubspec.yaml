@@ -191,12 +191,12 @@ flutter:
     - assets/lecon38/
 
                 #  Leçon 41  -------- 
-    - assets/audio/lecon41/
-    - assets/lecon41/
+    # - assets/audio/lecon41/
+    # - assets/lecon41/
 
-                #  Leçon 45  -------- 
-    - assets/audio/lecon45/
-    - assets/lecon45/
+    #             #  Leçon 45  -------- 
+    # - assets/audio/lecon45/
+    # - assets/lecon45/
 
                         #  Leçon 23  --------
     - assets/audio/lecon23/
