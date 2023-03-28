@@ -174,31 +174,7 @@ flutter:
     - assets/audio/lecon22/
     - assets/lecon22/
    
-                #  Leçon 27  --------
-    - assets/audio/lecon27/
-    - assets/lecon27/
-    
-                #  Leçon 28  --------
-    - assets/audio/lecon28/
-    - assets/lecon28/
-
-                #  Leçon 33  --------
-    - assets/audio/lecon33/
-    - assets/lecon33/
-
-                #  Leçon 38  -------- 
-    - assets/audio/lecon38/
-    - assets/lecon38/
-
-                #  Leçon 41  -------- 
-    # - assets/audio/lecon41/
-    # - assets/lecon41/
-
-    #             #  Leçon 45  -------- 
-    # - assets/audio/lecon45/
-    # - assets/lecon45/
-
-                        #  Leçon 23  --------
+       #  Leçon 23  --------
     - assets/audio/lecon23/
     - assets/lecon23/
 
@@ -217,6 +193,15 @@ flutter:
     - assets/audio/lecon26/
     - assets/lecon26/
 
+                    #  Leçon 27  --------
+    - assets/audio/lecon27/
+    - assets/lecon27/
+    
+                #  Leçon 28  --------
+    - assets/audio/lecon28/
+    - assets/lecon28/
+
+
                     #  Leçon 29  --------
     - assets/audio/lecon29/
     - assets/lecon29/
@@ -225,6 +210,25 @@ flutter:
     - assets/audio/lecon30/
     - assets/lecon30/
     - assets/lecon30/lecon30.png
+
+
+                #  Leçon 33  --------
+    - assets/audio/lecon33/
+    - assets/lecon33/
+
+                #  Leçon 38  -------- 
+    - assets/audio/lecon38/
+    - assets/lecon38/
+
+                #  Leçon 41  -------- 
+    # - assets/audio/lecon41/
+    # - assets/lecon41/
+
+    #             #  Leçon 45  -------- 
+    # - assets/audio/lecon45/
+    # - assets/lecon45/
+
+                        #  Leçon 23  --------
 
      #  Leçon 35  --------
     - assets/audio/lecon35/
