@@ -79,16 +79,7 @@ class _AdminLoginState extends State<AdminLogin> {
             style: TextStyle(
                 color: Color(0xff000000), fontStyle: FontStyle.italic),
           ),
-          // leading: IconButton(
-          //   icon: const Icon(
-          //     Icons.arrow_back_ios,
-          //     color: Colors.black,
-          //   ),
-          //   tooltip: "Close",
-          //   onPressed: () {
-          //     Navigator.pushReplacementNamed(context, '/main');
-          //   },
-          // ),
+       
         ),
 
         body: SingleChildScrollView(
