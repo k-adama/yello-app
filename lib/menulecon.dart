@@ -501,9 +501,9 @@ class _MenuLeconState extends State<MenuLecon> {
                         onTap: () {
                           // // Navigator.pushNamed(context, '/lecon1');
                           //print("tapped");
-                          Navigator.pushNamed(context, '/lecon12');
+                          Navigator.pushNamed(context, '/lecon51');
                         },
-                        child: Center(child: Text('Leçon 12')),
+                        child: Center(child: Text('Leçon 51')),
                       ),
                     ),
                   ),

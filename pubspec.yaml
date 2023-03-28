@@ -197,6 +197,11 @@ flutter:
     - assets/lecon36/soustraction.png
     - assets/lecon36/multiplication.png
     - assets/lecon36/division.png
+
+     #  Leçon 51  --------
+    - assets/audio/lecon51/
+    - assets/lecon51/
+    - assets/lecon51/budget.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
