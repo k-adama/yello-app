@@ -573,15 +573,15 @@ class _MenuLeconState extends State<MenuLecon> {
                   SizedBox(
                     width: 150,
                     height: 60,
-                    //   child: Card(
-                    //     child: new InkWell(
-                    //       onTap: () {
-                    //         Navigator.pushNamed(context, '/lecon41');
-                    //         //print("tapped");
-                    //       },
-                    //       child: Center(child: Text('Leçon 41')),
-                    //     ),
-                    //   ),
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/lecon34');
+                          //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 34')),
+                      ),
+                    ),
                   ),
                   SizedBox(
                     width: 150,
@@ -618,16 +618,16 @@ class _MenuLeconState extends State<MenuLecon> {
                   SizedBox(
                     width: 150,
                     height: 60,
-                    // child: Card(
-                    //   child: new InkWell(
-                    //     onTap: () {
-                    //       // Navigator.pushNamed(context, '/lecon3');
-                    //       //print("tapped");
-                    //       Navigator.pushNamed(context, '/lecon19');
-                    //     },
-                    //     child: Center(child: Text('Leçon 19')),
-                    //   ),
-                    // ),
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          // Navigator.pushNamed(context, '/lecon3');
+                          //print("tapped");
+                          Navigator.pushNamed(context, '/lecon37');
+                        },
+                        child: Center(child: Text('Leçon 37')),
+                      ),
+                    ),
                   ),
                   SizedBox(
                     width: 150,

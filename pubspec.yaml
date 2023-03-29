@@ -217,6 +217,10 @@ flutter:
     - assets/audio/lecon33/
     - assets/lecon33/
 
+      #  Leçon 34
+    - assets/audio/lecon34/
+    - assets/lecon34/
+
         #  Leçon 35
     - assets/audio/lecon35/
     - assets/lecon35/
@@ -231,6 +235,10 @@ flutter:
     - assets/lecon36/soustraction.png
     - assets/lecon36/multiplication.png
     - assets/lecon36/division.png
+
+      #  Leçon 37
+    - assets/audio/lecon37/
+    - assets/lecon37/
 
       #  Leçon 38
     - assets/audio/lecon38/

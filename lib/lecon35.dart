@@ -165,11 +165,7 @@ class _Lecon35State extends State<Lecon35> {
         theaudio = audio9;
       } else if (state == 10) {
         theaudio = audio10;
-      }
-      //else if (state == 11) {
-      //   theaudio = audio11;
-      // }
-      else {
+      } else {
         theaudio = audio0;
       }
       //player.setAsset(theaudio);
@@ -178,24 +174,13 @@ class _Lecon35State extends State<Lecon35> {
         if (state > 10) {
           state = 0;
         }
-        for (int i = 0; i < 22; i++) {
+        for (int i = 0; i < 23; i++) {
           if (state == i) {
             colorArray[i] = Colors.yellowAccent;
             //    'thebackcolor$state' =  Colors.white;
           } else {
             colorArray[i] = Colors.white;
           }
-          // if (i == 0) {
-          //   setState(() {
-          //     state == i;
-          //     colorArray[i] = Colors.white;
-          //   });
-          //   //    'thebackcolor$state' =  Colors.white;
-          // } else if (state == i) {
-          //   colorArray[i] = Colors.yellowAccent;
-          // } else {
-          //   colorArray[i] = Colors.white;
-          // }
         }
         //SetColorArray();
         state = state + 1;

@@ -180,12 +180,9 @@ class _Lecon39State extends State<Lecon39> {
         theaudio = audio7;
       } else if (state == 8) {
         theaudio = audio8;
-      } else if (state == 9) {
-        theaudio = audio9;
       } else {
         theaudio = audio0;
       }
-
       //player.setAsset(theaudio);
       player.play(AssetSource(theaudio));
       try {
@@ -199,17 +196,6 @@ class _Lecon39State extends State<Lecon39> {
           } else {
             colorArray[i] = Colors.white;
           }
-          // if (i == 0) {
-          //   setState(() {
-          //     state == i;
-          //     colorArray[i] = Colors.yellowAccent;;
-          //   });
-          //   //    'thebackcolor$state' =  Colors.white;
-          // } else if (state == i) {
-          //   colorArray[i] = Colors.yellowAccent;
-          // } else {
-          //   colorArray[i] = Colors.white;
-          // }
         }
         //SetColorArray();
         state = state + 1;

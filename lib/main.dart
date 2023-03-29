@@ -25,6 +25,8 @@ import 'package:projets/lecon31.dart';
 import 'package:projets/lecon32.dart';
 
 import 'package:projets/lecon33.dart';
+import 'package:projets/lecon34.dart';
+import 'package:projets/lecon37.dart';
 import 'package:projets/lecon38.dart';
 // import 'package:projets/lecon41.dart';
 // import 'package:projets/lecon45.dart';
@@ -230,10 +232,16 @@ class _MyAppState extends State<MyApp> {
         '/lecon33': (context) => Lecon33(
               title: '',
             ),
+        '/lecon34': (context) => Lecon34(
+              title: '',
+            ),
         '/lecon35': (context) => Lecon35(
               title: '',
             ),
         '/lecon36': (context) => Lecon36(
+              title: '',
+            ),
+        '/lecon37': (context) => Lecon37(
               title: '',
             ),
         '/lecon38': (context) => Lecon38(
