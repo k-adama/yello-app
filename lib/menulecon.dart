@@ -49,32 +49,30 @@ class _MenuLeconState extends State<MenuLecon> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: '#fcca0c'.toColor2(),
-      appBar: AppBar(
-        centerTitle: true,
-        toolbarHeight: 50,
-        backgroundColor: '#fcca0c'.toColor5(),
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(
-          widget.title + 'Les leçons ',
-          style:
-              TextStyle(color: Color(0xff000000), fontStyle: FontStyle.italic),
+        //backgroundColor: '#fcca0c'.toColor2(),
+        appBar: AppBar(
+          centerTitle: true,
+          toolbarHeight: 50,
+          backgroundColor: '#fcca0c'.toColor5(),
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(
+            widget.title + 'Les leçons ',
+            style: TextStyle(
+                color: Color(0xff000000), fontStyle: FontStyle.italic),
+          ),
+          // leading: IconButton(
+          //   icon: const Icon(
+          //     Icons.arrow_back_ios,
+          //     color: Colors.black,
+          //   ),
+          //   tooltip: "Close",
+          //   onPressed: () {
+          //     Navigator.pushReplacementNamed(context, '/menu');
+          //   },
+          // ),
         ),
-        // leading: IconButton(
-        //   icon: const Icon(
-        //     Icons.arrow_back_ios,
-        //     color: Colors.black,
-        //   ),
-        //   tooltip: "Close",
-        //   onPressed: () {
-        //     Navigator.pushReplacementNamed(context, '/menu');
-        //   },
-        // ),
-      ),
-      body: PageView(
-        controller: _controller,
-        children: [
+        body: PageView(controller: _controller, children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -552,6 +550,19 @@ class _MenuLeconState extends State<MenuLecon> {
                     child: Card(
                       child: new InkWell(
                         onTap: () {
+                          Navigator.pushNamed(context, '/lecon32');
+                          //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 32')),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
                           Navigator.pushNamed(context, '/lecon33');
                           //print("tapped");
                         },
@@ -562,11 +573,71 @@ class _MenuLeconState extends State<MenuLecon> {
                   SizedBox(
                     width: 150,
                     height: 60,
+                    //   child: Card(
+                    //     child: new InkWell(
+                    //       onTap: () {
+                    //         Navigator.pushNamed(context, '/lecon41');
+                    //         //print("tapped");
+                    //       },
+                    //       child: Center(child: Text('Leçon 41')),
+                    //     ),
+                    //   ),
+                  ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
                     child: Card(
                       child: new InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/lecon38');
+                          Navigator.pushNamed(context, '/lecon35');
                           //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 35')),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          // Navigator.pushNamed(context, '/lecon2');
+                          //print("tapped");
+                          Navigator.pushNamed(context, '/lecon36');
+                        },
+                        child: Center(child: Text('Leçon 36')),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    // child: Card(
+                    //   child: new InkWell(
+                    //     onTap: () {
+                    //       // Navigator.pushNamed(context, '/lecon3');
+                    //       //print("tapped");
+                    //       Navigator.pushNamed(context, '/lecon19');
+                    //     },
+                    //     child: Center(child: Text('Leçon 19')),
+                    //   ),
+                    // ),
+                  ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          // Navigator.pushNamed(context, '/lecon3');
+                          //print("tapped");
+                          Navigator.pushNamed(context, '/lecon38');
                         },
                         child: Center(child: Text('Leçon 38')),
                       ),
@@ -575,95 +646,78 @@ class _MenuLeconState extends State<MenuLecon> {
                   SizedBox(
                     width: 150,
                     height: 60,
-                    //   child: Card(
-                    //     child: new InkWell(
-                    //       onTap: () {
-                    //         Navigator.pushNamed(context, '/lecon41');
-                    //         //print("tapped");
-                    //       },
-                    //       child: Center(child: Text('Leçon 41')),
-                    //     ),
-                    //   ),
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          // Navigator.pushNamed(context, '/lecon3');
+                          //print("tapped");
+                          Navigator.pushNamed(context, '/lecon39');
+                        },
+                        child: Center(child: Text('Leçon 39')),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          // Navigator.pushNamed(context, '/lecon4');
+                          //print("tapped");
+                          Navigator.pushNamed(context, '/lecon40');
+                        },
+                        child: Center(child: Text('Leçon 40')),
+                      ),
+                    ),
                   ),
                   SizedBox(
                     width: 150,
                     height: 60,
-                    //   child: Card(
-                    //     child: new InkWell(
-                    //       onTap: () {
-                    //         Navigator.pushNamed(context, '/lecon41');
-                    //         //print("tapped");
-                    //       },
-                    //       child: Center(child: Text('Leçon 41')),
-                    //     ),
+                    // child: Card(
+                    //   child: new InkWell(
+                    //     onTap: () {
+                    //       // // Navigator.pushNamed(context, '/lecon1');
+                    //       //print("tapped");
+                    //       Navigator.pushNamed(context, '/lecon21');
+                    //     },
+                    //     child: Center(child: Text('Leçon 21')),
                     //   ),
+                    // ),
                   ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  //   SizedBox(
-                  //     width: 150,
-                  //     height: 60,
-                  //     child: Card(
-                  //       child: new InkWell(
-                  //         onTap: () {
-                  //           // Navigator.pushNamed(context, '/lecon2');
-                  //           //print("tapped");
-                  //           Navigator.pushNamed(context, '/lecon18');
-                  //         },
-                  //         child: Center(child: Text('Leçon 18')),
-                  //       ),
-                  //     ),
-                  //   ),
-                  //   SizedBox(
-                  //     width: 150,
-                  //     height: 60,
-                  //     child: Card(
-                  //       child: new InkWell(
-                  //         onTap: () {
-                  //           // Navigator.pushNamed(context, '/lecon3');
-                  //           //print("tapped");
-                  //           Navigator.pushNamed(context, '/lecon19');
-                  //         },
-                  //         child: Center(child: Text('Leçon 19')),
-                  //       ),
-                  //     ),
-                  //   ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  // SizedBox(
-                  //   width: 150,
-                  //   height: 60,
-                  //   child: Card(
-                  //     child: new InkWell(
-                  //       onTap: () {
-                  //         // Navigator.pushNamed(context, '/lecon4');
-                  //         //print("tapped");
-                  //         Navigator.pushNamed(context, '/lecon20');
-                  //       },
-                  //       child: Center(child: Text('Leçon 20')),
-                  //     ),
-                  //   ),
-                  // ),
-                  // SizedBox(
-                  //   width: 150,
-                  //   height: 60,
-                  //   child: Card(
-                  //     child: new InkWell(
-                  //       onTap: () {
-                  //         // // Navigator.pushNamed(context, '/lecon1');
-                  //         //print("tapped");
-                  //         Navigator.pushNamed(context, '/lecon21');
-                  //       },
-                  //       child: Center(child: Text('Leçon 21')),
-                  //     ),
-                  //   ),
-                  // ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    // child: Card(
+                    //   child: new InkWell(
+                    //     onTap: () {
+                    //       // // Navigator.pushNamed(context, '/lecon1');
+                    //       //print("tapped");
+                    //       Navigator.pushNamed(context, '/lecon21');
+                    //     },
+                    //     child: Center(child: Text('Leçon 21')),
+                    //   ),
+                    // ),
+                  ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    // child: Card(
+                    //   child: new InkWell(
+                    //     onTap: () {
+                    //       // // Navigator.pushNamed(context, '/lecon1');
+                    //       //print("tapped");
+                    //       Navigator.pushNamed(context, '/lecon21');
+                    //     },
+                    //     child: Center(child: Text('Leçon 21')),
+                    //   ),
+                    // ),
+                  ),
                 ],
               ),
               Row(
@@ -701,8 +755,6 @@ class _MenuLeconState extends State<MenuLecon> {
               ),
             ],
           ),
-        ]
-      )
-    );
+        ]));
   }
 }
