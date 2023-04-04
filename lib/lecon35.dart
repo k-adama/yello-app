@@ -122,21 +122,48 @@ class _Lecon35State extends State<Lecon35> {
         colorArray[8] = Colors.white;
         colorArray[9] = Colors.white;
         colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
       } else if (i == 8) {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.yellowAccent;
         colorArray[9] = Colors.white;
         colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
       } else if (i == 9) {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.white;
         colorArray[9] = Colors.yellowAccent;
         colorArray[10] = Colors.white;
-      } else {
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+      } else if (i == 10) {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.white;
         colorArray[9] = Colors.white;
         colorArray[10] = Colors.yellowAccent;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+      } else if (i == 11) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.yellowAccent;
+        colorArray[12] = Colors.white;
+      } else if (i == 12) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.yellowAccent;
+      } else {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
       }
     });
   }
@@ -815,7 +842,7 @@ class _Lecon35State extends State<Lecon35> {
                   height: 300,
                   child: InkWell(
                     onTap: () {
-                      extraHilght(11);
+                      extraHilght(10);
                       player.play(AssetSource('audio/lecon35/unde.mp3'));
                     },
                     child: Column(
@@ -830,12 +857,12 @@ class _Lecon35State extends State<Lecon35> {
                         ),
                         Row(
                           children: [
-                            MesPhrases(text: "Un ", i: 11),
+                            MesPhrases(text: "Un ", i: 10),
                             MesPhrases(
                               text: "dé",
                               color: Colors.red,
                               // font: FontWeight.w600,
-                              i: 11,
+                              i: 10,
                             ),
                           ],
                         )
@@ -850,7 +877,7 @@ class _Lecon35State extends State<Lecon35> {
                   height: 300,
                   child: InkWell(
                     onTap: () {
-                      extraHilght(12);
+                      extraHilght(11);
                       player.play(AssetSource('audio/lecon35/dormir.mp3'));
                     },
                     child: Column(

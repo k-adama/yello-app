@@ -45,8 +45,12 @@ class _Lecon36State extends State<Lecon36> {
   static Color thebackcolor20 = Colors.white;
   static Color thebackcolor21 = Colors.white;
   static Color thebackcolor22 = Colors.white;
+  static Color thebackcolor23 = Colors.white;
+  static Color thebackcolor24 = Colors.white;
+  static Color thebackcolor25 = Colors.white;
+  static Color thebackcolor26 = Colors.white;
 
-  var colorArray = new List<Color>.filled(23, Colors.white, growable: true);
+  var colorArray = new List<Color>.filled(29, Colors.white, growable: true);
   //static List<Color>colorArray.filled(0,0, growable:true);
 
   void SetColorArray() {
@@ -73,7 +77,16 @@ class _Lecon36State extends State<Lecon36> {
       thebackcolor19,
       thebackcolor20,
       thebackcolor21,
-      thebackcolor22
+      thebackcolor22,
+      thebackcolor23,
+      thebackcolor24,
+      thebackcolor20,
+      thebackcolor21,
+      thebackcolor22,
+      thebackcolor23,
+      thebackcolor24,
+      thebackcolor25,
+      thebackcolor26
     ];
   }
 
@@ -342,15 +355,15 @@ class _Lecon36State extends State<Lecon36> {
         colorArray[14] = Colors.white;
         colorArray[16] = Colors.white;
       } else if (i == 16) {
-        colorArray[7] = Colors.white;
-        colorArray[8] = Colors.white;
-        colorArray[15] = Colors.white;
-        colorArray[9] = Colors.white;
+        colorArray[1] = Colors.white;
         colorArray[2] = Colors.white;
         colorArray[3] = Colors.white;
         colorArray[4] = Colors.white;
         colorArray[5] = Colors.white;
         colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
         colorArray[10] = Colors.white;
         colorArray[11] = Colors.white;
         colorArray[12] = Colors.white;
@@ -358,15 +371,15 @@ class _Lecon36State extends State<Lecon36> {
         colorArray[14] = Colors.white;
         colorArray[16] = Colors.yellowAccent;
       } else if (i == 17) {
-        colorArray[7] = Colors.white;
-        colorArray[8] = Colors.white;
-        colorArray[15] = Colors.white;
-        colorArray[9] = Colors.white;
+        colorArray[1] = Colors.white;
         colorArray[2] = Colors.white;
         colorArray[3] = Colors.white;
         colorArray[4] = Colors.white;
         colorArray[5] = Colors.white;
         colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
         colorArray[10] = Colors.white;
         colorArray[11] = Colors.white;
         colorArray[12] = Colors.white;
@@ -375,15 +388,15 @@ class _Lecon36State extends State<Lecon36> {
         colorArray[16] = Colors.white;
         colorArray[17] = Colors.yellowAccent;
       } else if (i == 18) {
-        colorArray[7] = Colors.white;
-        colorArray[8] = Colors.white;
-        colorArray[15] = Colors.white;
-        colorArray[9] = Colors.white;
+        colorArray[1] = Colors.white;
         colorArray[2] = Colors.white;
         colorArray[3] = Colors.white;
         colorArray[4] = Colors.white;
         colorArray[5] = Colors.white;
         colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
         colorArray[10] = Colors.white;
         colorArray[11] = Colors.white;
         colorArray[12] = Colors.white;
@@ -392,16 +405,24 @@ class _Lecon36State extends State<Lecon36> {
         colorArray[16] = Colors.white;
         colorArray[17] = Colors.white;
         colorArray[18] = Colors.yellowAccent;
+        colorArray[19] = Colors.white;
+        colorArray[20] = Colors.white;
+        colorArray[21] = Colors.white;
+        colorArray[22] = Colors.white;
+        colorArray[23] = Colors.white;
+        colorArray[24] = Colors.white;
+        colorArray[25] = Colors.white;
+        colorArray[26] = Colors.white;
       } else if (i == 19) {
-        colorArray[7] = Colors.white;
-        colorArray[8] = Colors.white;
-        colorArray[15] = Colors.white;
-        colorArray[9] = Colors.white;
+        colorArray[1] = Colors.white;
         colorArray[2] = Colors.white;
         colorArray[3] = Colors.white;
         colorArray[4] = Colors.white;
         colorArray[5] = Colors.white;
         colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
         colorArray[10] = Colors.white;
         colorArray[11] = Colors.white;
         colorArray[12] = Colors.white;
@@ -411,6 +432,195 @@ class _Lecon36State extends State<Lecon36> {
         colorArray[17] = Colors.white;
         colorArray[18] = Colors.white;
         colorArray[19] = Colors.yellowAccent;
+        colorArray[20] = Colors.white;
+        colorArray[21] = Colors.white;
+        colorArray[22] = Colors.white;
+        colorArray[23] = Colors.white;
+        colorArray[24] = Colors.white;
+        colorArray[25] = Colors.white;
+        colorArray[26] = Colors.white;
+      } else if (i == 20) {
+        colorArray[1] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+        colorArray[17] = Colors.white;
+        colorArray[18] = Colors.white;
+        colorArray[19] = Colors.white;
+        colorArray[20] = Colors.yellowAccent;
+        colorArray[21] = Colors.white;
+        colorArray[22] = Colors.white;
+        colorArray[23] = Colors.white;
+        colorArray[24] = Colors.white;
+        colorArray[25] = Colors.white;
+        colorArray[26] = Colors.white;
+      } else if (i == 21) {
+        colorArray[1] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+        colorArray[17] = Colors.white;
+        colorArray[18] = Colors.white;
+        colorArray[19] = Colors.white;
+        colorArray[20] = Colors.white;
+        colorArray[21] = Colors.yellowAccent;
+        colorArray[22] = Colors.white;
+        colorArray[23] = Colors.white;
+        colorArray[24] = Colors.white;
+        colorArray[25] = Colors.white;
+        colorArray[26] = Colors.white;
+      } else if (i == 22) {
+        colorArray[1] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+        colorArray[17] = Colors.white;
+        colorArray[18] = Colors.white;
+        colorArray[19] = Colors.white;
+        colorArray[20] = Colors.white;
+        colorArray[21] = Colors.white;
+        colorArray[22] = Colors.yellowAccent;
+        colorArray[23] = Colors.white;
+        colorArray[24] = Colors.white;
+        colorArray[25] = Colors.white;
+        colorArray[26] = Colors.white;
+      } else if (i == 23) {
+        colorArray[1] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+        colorArray[17] = Colors.white;
+        colorArray[18] = Colors.white;
+        colorArray[19] = Colors.white;
+        colorArray[20] = Colors.white;
+        colorArray[21] = Colors.white;
+        colorArray[22] = Colors.white;
+        colorArray[23] = Colors.yellowAccent;
+        colorArray[24] = Colors.white;
+        colorArray[25] = Colors.white;
+        colorArray[26] = Colors.white;
+      } else if (i == 24) {
+        colorArray[1] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+        colorArray[17] = Colors.white;
+        colorArray[18] = Colors.white;
+        colorArray[19] = Colors.white;
+        colorArray[20] = Colors.white;
+        colorArray[21] = Colors.white;
+        colorArray[22] = Colors.white;
+        colorArray[23] = Colors.white;
+        colorArray[24] = Colors.yellowAccent;
+        colorArray[25] = Colors.white;
+        colorArray[26] = Colors.white;
+      } else if (i == 25) {
+        colorArray[1] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+        colorArray[17] = Colors.white;
+        colorArray[18] = Colors.white;
+        colorArray[19] = Colors.white;
+        colorArray[20] = Colors.white;
+        colorArray[21] = Colors.white;
+        colorArray[22] = Colors.white;
+        colorArray[23] = Colors.white;
+        colorArray[24] = Colors.white;
+        colorArray[25] = Colors.yellowAccent;
+        colorArray[26] = Colors.white;
+      } else if (i == 26) {
+        colorArray[1] = Colors.white;
+        colorArray[2] = Colors.white;
+        colorArray[3] = Colors.white;
+        colorArray[4] = Colors.white;
+        colorArray[5] = Colors.white;
+        colorArray[6] = Colors.white;
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
+        colorArray[11] = Colors.white;
+        colorArray[12] = Colors.white;
+        colorArray[13] = Colors.white;
+        colorArray[14] = Colors.white;
+        colorArray[16] = Colors.white;
+        colorArray[17] = Colors.white;
+        colorArray[18] = Colors.white;
+        colorArray[19] = Colors.white;
+        colorArray[20] = Colors.white;
+        colorArray[21] = Colors.white;
+        colorArray[22] = Colors.white;
+        colorArray[23] = Colors.white;
+        colorArray[24] = Colors.white;
+        colorArray[25] = Colors.white;
+        colorArray[26] = Colors.yellowAccent;
       } else {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.white;
@@ -427,6 +637,16 @@ class _Lecon36State extends State<Lecon36> {
         colorArray[14] = Colors.white;
         colorArray[15] = Colors.white;
         colorArray[16] = Colors.white;
+        colorArray[17] = Colors.white;
+        colorArray[18] = Colors.white;
+        colorArray[19] = Colors.white;
+        colorArray[20] = Colors.white;
+        colorArray[21] = Colors.white;
+        colorArray[22] = Colors.white;
+        colorArray[23] = Colors.white;
+        colorArray[24] = Colors.white;
+        colorArray[25] = Colors.white;
+        colorArray[26] = Colors.white;
       }
     });
   }
@@ -469,7 +689,7 @@ class _Lecon36State extends State<Lecon36> {
         if (state > 1) {
           state = 0;
         }
-        for (int i = 0; i < 22; i++) {
+        for (int i = 0; i < 27; i++) {
           if (state == i) {
             colorArray[i] = Colors.yellowAccent;
             //    'thebackcolor$state' =  Colors.white;
@@ -775,11 +995,23 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(4);
+                      extraHilght(3);
                       player.play(AssetSource('audio/lecon36/ch1.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "97 650", i: 4),
+                      MesPhrases(text: "97 650", i: 3),
+                    ]),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 50, bottom: 50),
+                  child: InkWell(
+                    onTap: () {
+                      extraHilght(4);
+                      player.play(AssetSource('audio/lecon36/ch2.mp3'));
+                    },
+                    child: Column(children: [
+                      MesPhrases(text: "864 540 ", i: 4),
                     ]),
                   ),
                 ),
@@ -788,10 +1020,10 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(5);
-                      player.play(AssetSource('audio/lecon36/ch2.mp3'));
+                      player.play(AssetSource('audio/lecon36/ch3.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "864 540 ", i: 5),
+                      MesPhrases(text: "2 390", i: 5),
                     ]),
                   ),
                 ),
@@ -800,10 +1032,10 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(6);
-                      player.play(AssetSource('audio/lecon36/ch3.mp3'));
+                      player.play(AssetSource('audio/lecon36/ch4.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "2 390", i: 6),
+                      MesPhrases(text: "765 415", i: 6),
                     ]),
                   ),
                 ),
@@ -812,22 +1044,10 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(7);
-                      player.play(AssetSource('audio/lecon36/ch4.mp3'));
-                    },
-                    child: Column(children: [
-                      MesPhrases(text: "765 415", i: 7),
-                    ]),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 50, bottom: 50),
-                  child: InkWell(
-                    onTap: () {
-                      extraHilght(8);
                       player.play(AssetSource('audio/lecon36/ch5.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "900 000", i: 8),
+                      MesPhrases(text: "900 000", i: 7),
                     ]),
                   ),
                 ),
@@ -857,12 +1077,12 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 30),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(9);
+                      extraHilght(8);
                       player.play(AssetSource('audio/lecon36/operations.mp3'));
                     },
                     child: Column(children: [
                       MesPhrases(
-                          text: "Effectuez les Operations suivantes :", i: 9),
+                          text: "Effectuez les Operations suivantes :", i: 8),
                     ]),
                   ),
                 ),
@@ -874,11 +1094,11 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 20),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(10);
+                      extraHilght(9);
                       player.play(AssetSource('audio/lecon36/addition.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "L’addition:", i: 10),
+                      MesPhrases(text: "L’addition:", i: 9),
                     ]),
                   ),
                 ),
@@ -890,11 +1110,23 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(11);
+                      extraHilght(10);
                       player.play(AssetSource('audio/lecon36/ad1.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "56 000 + 69 000 = ", i: 11),
+                      MesPhrases(text: "56 000 + 69 000 = ", i: 10),
+                    ]),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 50, bottom: 50),
+                  child: InkWell(
+                    onTap: () {
+                      extraHilght(11);
+                      player.play(AssetSource('audio/lecon36/ad2.mp3'));
+                    },
+                    child: Column(children: [
+                      MesPhrases(text: "38 000 + 10 0000 =", i: 11),
                     ]),
                   ),
                 ),
@@ -903,22 +1135,10 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(12);
-                      player.play(AssetSource('audio/lecon36/ad2.mp3'));
-                    },
-                    child: Column(children: [
-                      MesPhrases(text: "38 000 + 10 0000 =", i: 12),
-                    ]),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 50, bottom: 50),
-                  child: InkWell(
-                    onTap: () {
-                      extraHilght(13);
                       player.play(AssetSource('audio/lecon36/ad3.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "47 000 + 3 550 =", i: 13),
+                      MesPhrases(text: "47 000 + 3 550 =", i: 12),
                     ]),
                   ),
                 ),
@@ -950,12 +1170,12 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 20),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(14);
+                      extraHilght(13);
                       player
                           .play(AssetSource('audio/lecon36/soustraction.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "La soustraction:", i: 14),
+                      MesPhrases(text: "La soustraction:", i: 13),
                     ]),
                   ),
                 ),
@@ -967,11 +1187,23 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(15);
+                      extraHilght(14);
                       player.play(AssetSource('audio/lecon36/s1.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "197 000 – 130 000 = ", i: 15),
+                      MesPhrases(text: "197 000 – 130 000 = ", i: 14),
+                    ]),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 50, bottom: 50),
+                  child: InkWell(
+                    onTap: () {
+                      extraHilght(15);
+                      player.play(AssetSource('audio/lecon36/s2.mp3'));
+                    },
+                    child: Column(children: [
+                      MesPhrases(text: "364 800 – 8 950 =", i: 15),
                     ]),
                   ),
                 ),
@@ -980,22 +1212,10 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(16);
-                      player.play(AssetSource('audio/lecon36/s2.mp3'));
-                    },
-                    child: Column(children: [
-                      MesPhrases(text: "364 800 – 8 950 =", i: 16),
-                    ]),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 50, bottom: 50),
-                  child: InkWell(
-                    onTap: () {
-                      extraHilght(17);
                       player.play(AssetSource('audio/lecon36/s3.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "450 000 – 95 000 =", i: 17),
+                      MesPhrases(text: "450 000 – 95 000 =", i: 16),
                     ]),
                   ),
                 ),
@@ -1027,12 +1247,12 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 20),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(14);
+                      extraHilght(17);
                       player.play(
                           AssetSource('audio/lecon36/multiplication.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "La multiplication:", i: 18),
+                      MesPhrases(text: "La multiplication:", i: 17),
                     ]),
                   ),
                 ),
@@ -1044,11 +1264,23 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(19);
+                      extraHilght(18);
                       player.play(AssetSource('audio/lecon36/m1.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "96 300 X 40 = ", i: 19),
+                      MesPhrases(text: "96 300 X 40 = ", i: 18),
+                    ]),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 50, bottom: 50),
+                  child: InkWell(
+                    onTap: () {
+                      extraHilght(19);
+                      player.play(AssetSource('audio/lecon36/m2.mp3'));
+                    },
+                    child: Column(children: [
+                      MesPhrases(text: "48 000 X 6 =", i: 19),
                     ]),
                   ),
                 ),
@@ -1057,10 +1289,10 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(20);
-                      player.play(AssetSource('audio/lecon36/m2.mp3'));
+                      player.play(AssetSource('audio/lecon36/m3.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "48 000 X 6 =", i: 20),
+                      MesPhrases(text: "18 700 X 30 =", i: 20),
                     ]),
                   ),
                 ),
@@ -1069,22 +1301,10 @@ class _Lecon36State extends State<Lecon36> {
                   child: InkWell(
                     onTap: () {
                       extraHilght(21);
-                      player.play(AssetSource('audio/lecon36/m3.mp3'));
-                    },
-                    child: Column(children: [
-                      MesPhrases(text: "18 700 X 30 =", i: 21),
-                    ]),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 50, bottom: 50),
-                  child: InkWell(
-                    onTap: () {
-                      extraHilght(22);
                       player.play(AssetSource('audio/lecon36/m4.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "54 100 X 70 =", i: 22),
+                      MesPhrases(text: "54 100 X 70 =", i: 21),
                     ]),
                   ),
                 ),
@@ -1116,11 +1336,11 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 20),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(14);
+                      extraHilght(22);
                       player.play(AssetSource('audio/lecon36/division.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "La division:", i: 18),
+                      MesPhrases(text: "La division:", i: 22),
                     ]),
                   ),
                 ),
@@ -1132,11 +1352,11 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(19);
+                      extraHilght(23);
                       player.play(AssetSource('audio/lecon36/d1.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: " 30 500 ÷ 5 = ", i: 19),
+                      MesPhrases(text: " 30 500 ÷ 5 = ", i: 23),
                     ]),
                   ),
                 ),
@@ -1144,11 +1364,11 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(20);
+                      extraHilght(24);
                       player.play(AssetSource('audio/lecon36/d2.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "80 000 ÷ 4 =", i: 20),
+                      MesPhrases(text: "80 000 ÷ 4 =", i: 24),
                     ]),
                   ),
                 ),
@@ -1156,11 +1376,11 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(21);
+                      extraHilght(25);
                       player.play(AssetSource('audio/lecon36/d3.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "96 600 ÷ 3 =", i: 21),
+                      MesPhrases(text: "96 600 ÷ 3 =", i: 25),
                     ]),
                   ),
                 ),
@@ -1168,11 +1388,11 @@ class _Lecon36State extends State<Lecon36> {
                   padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(22);
+                      extraHilght(26);
                       player.play(AssetSource('audio/lecon36/d4.mp3'));
                     },
                     child: Column(children: [
-                      MesPhrases(text: "21 000 ÷ 7 =", i: 22),
+                      MesPhrases(text: "21 000 ÷ 7 =", i: 26),
                     ]),
                   ),
                 ),

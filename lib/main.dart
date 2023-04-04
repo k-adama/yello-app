@@ -253,9 +253,9 @@ class _MyAppState extends State<MyApp> {
         '/lecon40': (context) => Lecon40(
               title: '',
             ),
-        '/lecon51': (context) => Lecon51(
-              title: '',
-            ),
+        // '/lecon51': (context) => Lecon51(
+        //       title: '',
+        //     ),
       },
       title: 'Flutter Demo',
       theme: ThemeData(

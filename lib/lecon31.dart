@@ -148,14 +148,27 @@ class _Lecon31State extends State<Lecon31> {
         colorArray[7] = Colors.yellowAccent;
         colorArray[8] = Colors.white;
         colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
       } else if (i == 8) {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.yellowAccent;
         colorArray[9] = Colors.white;
-      } else {
+        colorArray[10] = Colors.white;
+      } else if (i == 9) {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.white;
         colorArray[9] = Colors.yellowAccent;
+        colorArray[10] = Colors.white;
+      } else if (i == 10) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.yellowAccent;
+      } else {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+        colorArray[10] = Colors.white;
       }
     });
   }
@@ -176,8 +189,6 @@ class _Lecon31State extends State<Lecon31> {
         theaudio = audio5;
       } else if (state == 6) {
         theaudio = audio6;
-      } else if (state == 7) {
-        theaudio = audio7;
       } else {
         theaudio = audio0;
       }
@@ -185,10 +196,10 @@ class _Lecon31State extends State<Lecon31> {
       //player.setAsset(theaudio);
       player.play(AssetSource(theaudio));
       try {
-        if (state > 8) {
+        if (state > 6) {
           state = 0;
         }
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 7; i++) {
           if (state == i) {
             colorArray[i] = Colors.yellowAccent;
             //    'thebackcolor$state' =  Colors.white;
@@ -835,7 +846,7 @@ class _Lecon31State extends State<Lecon31> {
                   height: 300,
                   child: InkWell(
                     onTap: () {
-                      extraHilght(8);
+                      extraHilght(7);
                       player.play(AssetSource('audio/lecon31/dufoutou.mp3'));
                     },
                     child: Column(
@@ -852,13 +863,16 @@ class _Lecon31State extends State<Lecon31> {
                           children: [
                             letters(
                               text: "du ",
+                              i: 7,
                             ),
                             letters(
                               text: "fou",
                               font: FontWeight.bold,
+                              i: 7,
                             ),
                             letters(
                               text: "tou",
+                              i: 7,
                             ),
                           ],
                         )
@@ -891,13 +905,16 @@ class _Lecon31State extends State<Lecon31> {
                           children: [
                             letters(
                               text: "une ",
+                              i: 8,
                             ),
                             letters(
                               text: "bou",
+                              i: 8,
                               font: FontWeight.bold,
                             ),
                             letters(
                               text: "teille",
+                              i: 8,
                             ),
                           ],
                         )
@@ -909,7 +926,7 @@ class _Lecon31State extends State<Lecon31> {
                   height: 300,
                   child: InkWell(
                     onTap: () {
-                      extraHilght(8);
+                      extraHilght(9);
                       player.play(AssetSource('audio/lecon31/unboubou.mp3'));
                     },
                     child: Column(
@@ -926,13 +943,16 @@ class _Lecon31State extends State<Lecon31> {
                           children: [
                             letters(
                               text: "un ",
+                              i: 9,
                             ),
                             letters(
                               text: "bou",
+                              i: 9,
                               font: FontWeight.bold,
                             ),
                             letters(
                               text: "bou",
+                              i: 9,
                             ),
                           ],
                         )
@@ -950,34 +970,34 @@ class _Lecon31State extends State<Lecon31> {
                   padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(9);
+                      extraHilght(10);
                       player.play(AssetSource('audio/lecon31/fatoulong.mp3'));
                     },
                     child: Column(children: [
                       letters(
                           text:
                               "La famille de Fatou aime le foutou. Tous les lundis et",
-                          i: 9),
+                          i: 10),
                       letters(
                           text:
                               "vendredis, Fatou prépare du foutou pour toute la famille. Lors",
-                          i: 9),
+                          i: 10),
                       letters(
                           text:
                               "orner les plats de ses invités. c'est un geste qu'elle a appris ",
-                          i: 9),
+                          i: 10),
                       letters(
                           text:
                               "des fêtes traditionnelles et des évènements heureux, elle sert",
-                          i: 9),
+                          i: 10),
                       letters(
                           text:
                               "du foutou à ses invités. Ceux-ci se régalent et la félicitent pour",
-                          i: 9),
+                          i: 10),
                       letters(
                           text:
                               "ses mets délicieux. Sa fille l’aide dans les tâches ménagères.",
-                          i: 9),
+                          i: 10),
                     ]),
                   ),
                 ),
