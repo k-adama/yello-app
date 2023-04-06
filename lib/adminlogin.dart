@@ -37,6 +37,7 @@ class _AdminLoginState extends State<AdminLogin> {
   Future senddata(String pwd) async {
     if (pwd == "YelloAlpha") {
       Navigator.pushReplacementNamed(context, '/register');
+      // Navigator.pushReplacementNamed(context, '/menulecon');
     } else {
       setState(() {
         thereponse = "Erreur de mot de passe";
@@ -79,7 +80,6 @@ class _AdminLoginState extends State<AdminLogin> {
             style: TextStyle(
                 color: Color(0xff000000), fontStyle: FontStyle.italic),
           ),
-       
         ),
 
         body: SingleChildScrollView(

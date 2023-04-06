@@ -21,11 +21,24 @@ import 'package:projets/lecon19.dart';
 import 'package:projets/lecon20.dart';
 import 'package:projets/lecon21.dart';
 import 'package:projets/lecon22.dart';
+import 'package:projets/lecon31.dart';
+import 'package:projets/lecon32.dart';
+
+import 'package:projets/lecon33.dart';
+import 'package:projets/lecon34.dart';
+import 'package:projets/lecon37.dart';
+import 'package:projets/lecon38.dart';
+// import 'package:projets/lecon41.dart';
+// import 'package:projets/lecon45.dart';
+
 import 'package:projets/lecon23.dart';
 import 'package:projets/lecon26.dart';
 import 'package:projets/lecon27.dart';
 import 'package:projets/lecon28.dart';
 import 'package:projets/lecon29.dart';
+import 'package:projets/lecon39.dart';
+import 'package:projets/lecon40.dart';
+
 import 'package:projets/lecon5.dart';
 import 'package:projets/lecon6.dart';
 import 'package:projets/lecon7.dart';
@@ -48,7 +61,10 @@ import 'lecon24.dart';
 import 'lecon25.dart';
 import 'lecon3.dart';
 import 'lecon30.dart';
+import 'lecon35.dart';
+import 'lecon36.dart';
 import 'lecon4.dart';
+import 'lecon51.dart';
 
 extension ColorExtension on String {
   toColor() {
@@ -207,6 +223,39 @@ class _MyAppState extends State<MyApp> {
         '/lecon30': (context) => Lecon30(
               title: '',
             ),
+        '/lecon31': (context) => Lecon31(
+              title: '',
+            ),
+        '/lecon32': (context) => Lecon32(
+              title: '',
+            ),
+        '/lecon33': (context) => Lecon33(
+              title: '',
+            ),
+        '/lecon34': (context) => Lecon34(
+              title: '',
+            ),
+        '/lecon35': (context) => Lecon35(
+              title: '',
+            ),
+        '/lecon36': (context) => Lecon36(
+              title: '',
+            ),
+        '/lecon37': (context) => Lecon37(
+              title: '',
+            ),
+        '/lecon38': (context) => Lecon38(
+              title: '',
+            ),
+        '/lecon39': (context) => Lecon39(
+              title: '',
+            ),
+        '/lecon40': (context) => Lecon40(
+              title: '',
+            ),
+        // '/lecon51': (context) => Lecon51(
+        //       title: '',
+        //     ),
       },
       title: 'Flutter Demo',
       theme: ThemeData(

@@ -137,23 +137,22 @@ class _Lecon25State extends State<Lecon25> {
         colorArray[7] = Colors.yellowAccent;
         colorArray[8] = Colors.white;
         colorArray[9] = Colors.white;
-         colorArray[10] = Colors.white;
+        colorArray[10] = Colors.white;
       } else if (i == 8) {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.yellowAccent;
         colorArray[9] = Colors.white;
         colorArray[10] = Colors.white;
-      }else if (i == 10) {
+      } else if (i == 10) {
         colorArray[7] = Colors.white;
         colorArray[10] = Colors.yellowAccent;
         colorArray[9] = Colors.white;
-         colorArray[8] = Colors.white;
-      }
-       else {
+        colorArray[8] = Colors.white;
+      } else {
         colorArray[7] = Colors.white;
         colorArray[8] = Colors.white;
         colorArray[9] = Colors.yellowAccent;
-         colorArray[10] = Colors.white;
+        colorArray[10] = Colors.white;
       }
     });
   }
@@ -170,12 +169,12 @@ class _Lecon25State extends State<Lecon25> {
         theaudio = audio3;
       } else if (state == 4) {
         theaudio = audio4;
-      } 
+      }
       // else if (state == 5) {
       //   theaudio = audio5;
       // } else if (state == 6) {
       //   theaudio = audio6;
-      // } 
+      // }
       else {
         theaudio = audio0;
       }
@@ -379,18 +378,16 @@ class _Lecon25State extends State<Lecon25> {
                             font: FontWeight.w600,
                             size: 25,
                           ),
-                           letters(
+                          letters(
                               text: "é ",
                               font: FontWeight.w600,
                               size: 30,
                               color: Colors.red),
-                        
                           letters(
                             text: "de Djoman est beau",
                             font: FontWeight.w600,
                             size: 25,
                           ),
-                         
                         ],
                       ),
                       SizedBox(
@@ -398,7 +395,7 @@ class _Lecon25State extends State<Lecon25> {
                       ),
                       Row(
                         children: <Widget>[
-                            letters(
+                          letters(
                             text: "Le b",
                             font: FontWeight.w600,
                             size: 20,
@@ -410,7 +407,6 @@ class _Lecon25State extends State<Lecon25> {
                               size: 25,
                               i: 1,
                               color: Colors.red),
-                        
                           letters(
                             text: "b",
                             font: FontWeight.w600,
@@ -423,10 +419,10 @@ class _Lecon25State extends State<Lecon25> {
                               size: 25,
                               i: 1,
                               color: Colors.red),
-                              SizedBox(
-                                width: 200,
-                              ),
-                               letters(
+                          SizedBox(
+                            width: 200,
+                          ),
+                          letters(
                             text: "b",
                             font: FontWeight.w600,
                             size: 20,
@@ -438,7 +434,6 @@ class _Lecon25State extends State<Lecon25> {
                               size: 25,
                               i: 2,
                               color: Colors.red),
-                        
                           letters(
                             text: "b",
                             font: FontWeight.w600,
@@ -458,7 +453,7 @@ class _Lecon25State extends State<Lecon25> {
                       ),
                       Row(
                         children: <Widget>[
-                           letters(
+                          letters(
                             text: "b",
                             font: FontWeight.w600,
                             size: 20,
@@ -470,7 +465,6 @@ class _Lecon25State extends State<Lecon25> {
                               size: 25,
                               i: 3,
                               color: Colors.red),
-                         
                           SizedBox(
                             width: 300,
                           ),
@@ -480,10 +474,8 @@ class _Lecon25State extends State<Lecon25> {
                               size: 25,
                               i: 4,
                               color: Colors.red),
-                         
                         ],
                       ),
-                      
                     ],
                   ),
                 ),
@@ -500,7 +492,7 @@ class _Lecon25State extends State<Lecon25> {
                       SizedBox(
                         width: 60,
                       ),
-                         SizedBox(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width / 6,
                         height: MediaQuery.of(context).size.height / 9,
                         child: Card(
@@ -543,7 +535,7 @@ class _Lecon25State extends State<Lecon25> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon25/e.mp3'));
+                              // player.play(AssetSource('audio/lecon25/e.mp3'));
                             },
                             child: Center(
                               child: Center(
@@ -552,7 +544,7 @@ class _Lecon25State extends State<Lecon25> {
                           ),
                         ),
                       ),
-                         SizedBox(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width / 6,
                         height: MediaQuery.of(context).size.height / 9,
                         child: Card(
@@ -570,7 +562,6 @@ class _Lecon25State extends State<Lecon25> {
                           ),
                         ),
                       ),
-                   
                     ],
                   ),
                   SizedBox(
@@ -830,7 +821,7 @@ class _Lecon25State extends State<Lecon25> {
                           ),
                         ),
                       ),
-                       SizedBox(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width / 6,
                         height: MediaQuery.of(context).size.height / 9,
                         child: Card(
@@ -849,7 +840,7 @@ class _Lecon25State extends State<Lecon25> {
                       ),
                     ],
                   ),
-                   SizedBox(
+                  SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -922,7 +913,6 @@ class _Lecon25State extends State<Lecon25> {
                           ),
                         ),
                       ),
-                     
                     ],
                   ),
                 ],
@@ -1006,8 +996,7 @@ class _Lecon25State extends State<Lecon25> {
                     ),
                   ),
                 ),
-
-                 SizedBox(
+                SizedBox(
                   width: 20,
                 ),
                 SizedBox(
@@ -1081,7 +1070,6 @@ class _Lecon25State extends State<Lecon25> {
                 ),
               ],
             )
-
           ],
         ),
       ),

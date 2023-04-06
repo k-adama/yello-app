@@ -116,7 +116,7 @@ class _MenuAppState extends State<MenuApp> {
                     ),
                   ),
                 ),
-             
+
                 SizedBox(
                   width: 150,
                   height: 150,
@@ -291,26 +291,7 @@ class _MenuAppState extends State<MenuApp> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                // SizedBox(
-                //   width: 150,
-                //   height: 50,
-                //   child: Text(
-                //     'Calculatrice',
-                //     style: TextStyle(fontSize: 25),
-                //     textAlign: TextAlign.center,
-                //   ),
-                // ),
-                // ),
-                // SizedBox(
-                //   width: 150,
-                //   height: 50,
-                //   child: Text(
-                //     'Maths',
-                //     style: TextStyle(fontSize: 25),
-                //     textAlign: TextAlign.center,
-                //   ),
-                // ),
-                // // Expanded(
+              
                 SizedBox(
                   width: 150,
                   height: 50,
