@@ -42,7 +42,10 @@ import 'package:projets/lecon42.dart';
 import 'package:projets/lecon44.dart';
 
 import 'package:projets/lecon5.dart';
+import 'package:projets/lecon50.dart';
+import 'package:projets/lecon53.dart';
 import 'package:projets/lecon6.dart';
+import 'package:projets/lecon62.dart';
 import 'package:projets/lecon7.dart';
 import 'package:projets/lecon8.dart';
 import 'package:projets/lecon9.dart';
@@ -67,6 +70,9 @@ import 'lecon35.dart';
 import 'lecon36.dart';
 import 'lecon4.dart';
 import 'lecon51.dart';
+import 'lecon58.dart';
+import 'lecon66.dart';
+import 'lecon67.dart';
 
 extension ColorExtension on String {
   toColor() {
@@ -259,6 +265,24 @@ class _MyAppState extends State<MyApp> {
               title: '',
             ),
         '/lecon44': (context) => Lecon44(
+              title: '',
+            ),
+        '/lecon50': (context) => Lecon50(
+              title: '',
+            ),
+        '/lecon53': (context) => Lecon53(
+              title: '',
+            ),
+        '/lecon58': (context) => Lecon58(
+              title: '',
+            ),
+        '/lecon62': (context) => Lecon62(
+              title: '',
+            ),
+        '/lecon66': (context) => Lecon66(
+              title: '',
+            ),
+        '/lecon67': (context) => Lecon67(
               title: '',
             ),
         // '/lecon51': (context) => Lecon51(
