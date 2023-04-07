@@ -256,6 +256,10 @@ flutter:
     - assets/audio/lecon42/
     - assets/lecon42/
 
+      #  Leçon 44
+    - assets/audio/lecon44/
+    - assets/lecon44/
+
     #             #  Leçon 45
     # - assets/audio/lecon45/
     # - assets/lecon45/
