@@ -18,14 +18,14 @@ extension ColorExtension on String {
   }
 }
 
-class Lecon13 extends StatefulWidget {
-  const Lecon13({Key? key, required this.title}) : super(key: key);
+class Lecon22 extends StatefulWidget {
+  const Lecon22({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
-  State<Lecon13> createState() => _Lecon13State();
+  State<Lecon22> createState() => _Lecon22State();
 }
 
-class _Lecon13State extends State<Lecon13> {
+class _Lecon22State extends State<Lecon22> {
   int state = 1;
   String theaudio = '';
   final player = AudioPlayer();
@@ -84,29 +84,13 @@ class _Lecon13State extends State<Lecon13> {
     ];
   }
 
-  String audio0 = 'audio/lecon3/l13.mp3';
-  String audio1 = 'audio/lecon3/alima.mp3';
-  String audio2 = 'audio/lecon3/alphabetisation.mp3';
-  String audio3 = 'audio/lecon3/ali.mp3';
-  String audio4 = 'audio/lecon3/al.mp3';
-  String audio5 = 'audio/lecon3/a.mp3';
-  String audio6 = 'audio/lecon3/a.mp3';
-  String audio7 = 'audio/lecon3/a.mp3';
-  String audio8 = 'audio/lecon3/a.mp3';
-  String audio9 = 'audio/lecon3/pa1.mp3';
-  String audio10 = 'audio/lecon3/la1.mp3';
-  String audio11 = 'audio/lecon3/da.mp3';
-  String audio12 = 'audio/lecon3/ga.mp3';
-  String audio13 = 'audio/lecon3/ra.mp3';
-  String audio14 = 'audio/lecon3/ma1.mp3';
-  String audio15 = 'audio/lecon3/ta1.mp3';
-  String audio16 = 'audio/lecon3/a.mp3';
-  String audio17 = 'audio/lecon14/lou.mp3';
-  String audio18 = 'audio/lecon14/lui.mp3';
-  String audio19 = 'audio/lecon14/ler.mp3';
-  String audio20 = 'audio/lecon14/legume.mp3';
-  String audio21 = 'audio/lecon14/lame.mp3';
-  String audio22 = 'audio/lecon14/text.mp3';
+  String audio0 = 'audio/lecon22/phrase_0.mp3';
+  String audio1 = 'audio/lecon22/sopie.mp3';
+  String audio2 = 'audio/lecon22/brosse.mp3';
+  String audio3 = 'audio/lecon22/so.mp3';
+  String audio4 = 'audio/lecon22/se.mp3';
+  String audio5 = 'audio/lecon22/s.mp3';
+  String audio6 = 'audio/lecon22/s.mp3';
 
   @override
   void dispose() {
@@ -124,36 +108,28 @@ class _Lecon13State extends State<Lecon13> {
   }
 
   void playSound(String thesound) {
-    player.play(AssetSource('audio/lecon3/$thesound.mp3'));
+    player.play(AssetSource('audio/lecon22/$thesound.mp3'));
   }
 
   void RepeatVoice() {
     player.play(AssetSource(theaudio));
   }
 
-  void extraHilght(int indice) async {
+  void extraHilght(int i) async {
     setState(() {
-      for (int i = 9; i < 13; i++) {
-        if (indice == i) {
-          colorArray[i] = Colors.yellowAccent;
-          //    'thebackcolor$state' =  Colors.white;
-        } else {
-          colorArray[i] = Colors.white;
-        }
+      if (i == 7) {
+        colorArray[7] = Colors.yellowAccent;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.white;
+      } else if (i == 8) {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.yellowAccent;
+        colorArray[9] = Colors.white;
+      } else {
+        colorArray[7] = Colors.white;
+        colorArray[8] = Colors.white;
+        colorArray[9] = Colors.yellowAccent;
       }
-      // if(i == 7){
-      //   colorArray[7] = Colors.yellowAccent;
-      //   colorArray[8] = Colors.white;
-      //   colorArray[9] = Colors.white;
-      // } else if(i == 8) {
-      //   colorArray[7] = Colors.white;
-      //   colorArray[8] = Colors.yellowAccent;
-      //   colorArray[9] = Colors.white;
-      // } else {
-      //    colorArray[7] = Colors.white;
-      //   colorArray[8] = Colors.white;
-      //   colorArray[9] = Colors.yellowAccent;
-      // }
     });
   }
 
@@ -173,17 +149,13 @@ class _Lecon13State extends State<Lecon13> {
         theaudio = audio5;
       } else if (state == 6) {
         theaudio = audio6;
-      } else if (state == 7) {
-        theaudio = audio7;
-      } else if (state == 8) {
-        theaudio = audio8;
       } else {
         theaudio = audio0;
       }
       //player.setAsset(theaudio);
       player.play(AssetSource(theaudio));
       try {
-        if (state > 8) {
+        if (state > 6) {
           state = 0;
         }
         for (int i = 0; i < 23; i++) {
@@ -200,6 +172,7 @@ class _Lecon13State extends State<Lecon13> {
       } on Exception catch (_) {
         print('error');
       }
+      //theaudio = 'audio$state';
     });
     print(theaudio);
   }
@@ -262,7 +235,7 @@ class _Lecon13State extends State<Lecon13> {
         toolbarHeight: 40,
         backgroundColor: '#fcca0c'.toColor6(),
         title: Text(
-          widget.title + 'Leçon 13',
+          widget.title + 'Leçon 22',
           style:
               TextStyle(color: Color(0xff000000), fontStyle: FontStyle.italic),
         ),
@@ -272,11 +245,11 @@ class _Lecon13State extends State<Lecon13> {
           children: <Widget>[
             //titre de la leçon
             Padding(
-              padding: EdgeInsets.all(20), //apply padding to all four sides
+              padding: EdgeInsets.all(10), //apply padding to all four sides
               child: Text(
-                'a / A',
+                's / S',
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 20,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.bold),
               ),
@@ -334,8 +307,8 @@ class _Lecon13State extends State<Lecon13> {
                       SizedBox(
                         height: 200,
                         child: Image(
-                          image: AssetImage('assets/lecon/l13.png'),
-                          width: 230,
+                          image: AssetImage('assets/lecon22/img_1.png'),
+                          width: 300,
                         ),
                       ),
 
@@ -346,77 +319,168 @@ class _Lecon13State extends State<Lecon13> {
 
                 //  phrase de droite
                 Container(
-                  margin: EdgeInsets.only(bottom: 100, top: 50),
+                  margin: EdgeInsets.only(bottom: 100, top: 30),
                   width: MediaQuery.of(context).size.width / 2,
                   child: Column(
                     //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Padding(padding: EdgeInsets.only(right: 10)),
                       Row(
                         children: <Widget>[
-                          SizedBox(),
                           letters(
-                            text:
-                                "1. Alima suit des cours d'alphabetisation avec Ga-Tic.",
-                            size: 15,
+                              text: "S",
+                              font: FontWeight.w600,
+                              size: 25,
+                              color: Colors.red),
+                          letters(
+                            text: "opie",
+                            font: FontWeight.w600,
+                            size: 20,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          letters(
+                            text: "se",
+                            font: FontWeight.w600,
+                            size: 20,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          letters(
+                            text: "brosse",
+                            font: FontWeight.w600,
+                            size: 20,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          letters(
+                            text: "les",
+                            font: FontWeight.w600,
+                            size: 20,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          letters(
+                            text: "dents",
+                            font: FontWeight.w600,
+                            size: 20,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          letters(
+                            text: "pour",
+                            font: FontWeight.w600,
+                            size: 20,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 15,
+                          ),
+                          letters(
+                            text: "éviter",
+                            font: FontWeight.w600,
+                            size: 20,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          letters(
+                            text: "la",
+                            font: FontWeight.w600,
+                            size: 20,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          letters(
+                            text: "carie",
+                            font: FontWeight.w600,
+                            size: 20,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          letters(
+                            text: "dentaire.",
+                            font: FontWeight.w600,
+                            size: 20,
                           ),
                         ],
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 25,
                       ),
                       Row(
                         children: <Widget>[
                           letters(
-                            text: "Alima",
+                              text: "S",
+                              font: FontWeight.w600,
+                              size: 20,
+                              i: 1,
+                              color: Colors.red),
+                          letters(
+                            text: "opie",
+                            font: FontWeight.w600,
                             size: 20,
                             i: 1,
                           ),
                           SizedBox(
-                            width: 80,
+                            width: 180,
                           ),
                           letters(
-                            text: "alphabetisation",
+                            text: "brosse",
+                            font: FontWeight.w600,
                             size: 20,
                             i: 2,
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
                       Row(
                         children: <Widget>[
                           letters(
-                            text: "Ali",
+                              text: "S",
+                              font: FontWeight.w600,
+                              size: 20,
+                              i: 3,
+                              color: Colors.red),
+                          letters(
+                            text: "o",
+                            font: FontWeight.w600,
                             size: 20,
                             i: 3,
                           ),
                           SizedBox(
-                            width: 120,
+                            width: 210,
                           ),
                           letters(
-                            text: "al",
+                            text: "se",
+                            font: FontWeight.w600,
                             size: 20,
                             i: 4,
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
                       Row(
                         children: <Widget>[
                           letters(
-                            text: "A",
-                            size: 25,
-                            i: 5,
-                          ),
+                              text: "S",
+                              font: FontWeight.w600,
+                              size: 20,
+                              i: 5,
+                              color: Colors.red),
                           SizedBox(
-                            width: 125,
+                            width: 230,
                           ),
                           letters(
-                            text: "a",
+                            text: "s",
+                            font: FontWeight.w600,
                             size: 20,
                             i: 6,
                           ),
@@ -446,27 +510,12 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/a.mp3'));
+                              player.play(AssetSource('audio/lecon22/s.mp3'));
                             },
                             child: Center(
-                                child: Image.asset("assets/lecon/a3.png")),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon3/a.mp3'));
-                            },
-                            child: Center(
-                                child: Text('A',
+                                child: Text('S',
                                     style: TextStyle(
-                                        fontSize: 25,
+                                        fontSize: 20,
                                         fontWeight: FontWeight.w600))),
                           ),
                         ),
@@ -479,11 +528,29 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/a.mp3'));
+                              player.play(AssetSource('audio/lecon22/s.mp3'));
+                            },
+                            child: Center(
+                                child: Text('s',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w600))),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        height: MediaQuery.of(context).size.height / 9,
+                        child: Card(
+                          child: new InkWell(
+                            onTap: () {
+                              // // Navigator.pushNamed(context, '/lecon1');
+                              //print("tapped");
+                              player.play(AssetSource('audio/lecon22/s.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/a1.png")),
+                                  child: Image.asset("assets/lecon22/s.png")),
                             ),
                           ),
                         ),
@@ -496,103 +563,11 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/a.mp3'));
+                              player.play(AssetSource('audio/lecon22/s.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/a0.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon3/pa1.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon/pa.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon3/la1.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon/la.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon3/da.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon/da.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon3/ga.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon/ga.png")),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: Card(
-                          child: new InkWell(
-                            onTap: () {
-                              // // Navigator.pushNamed(context, '/lecon1');
-                              //print("tapped");
-                              player.play(AssetSource('audio/lecon3/ra.mp3'));
-                            },
-                            child: Center(
-                              child: Center(
-                                  child: Image.asset("assets/lecon/ra.png")),
+                                  child: Image.asset("assets/lecon22/s_m.png")),
                             ),
                           ),
                         ),
@@ -612,11 +587,11 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/sa1.mp3'));
+                              player.play(AssetSource('audio/lecon22/si.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/sa.png")),
+                                  child: Image.asset("assets/lecon22/si.png")),
                             ),
                           ),
                         ),
@@ -629,11 +604,11 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/ma1.mp3'));
+                              player.play(AssetSource('audio/lecon22/sa.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/ma.png")),
+                                  child: Image.asset("assets/lecon22/sa.png")),
                             ),
                           ),
                         ),
@@ -646,11 +621,11 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/na1.mp3'));
+                              player.play(AssetSource('audio/lecon22/su.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/na.png")),
+                                  child: Image.asset("assets/lecon22/su.png")),
                             ),
                           ),
                         ),
@@ -663,11 +638,11 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/ta1.mp3'));
+                              player.play(AssetSource('audio/lecon22/soi.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/ta.png")),
+                                  child: Image.asset("assets/lecon22/soi.png")),
                             ),
                           ),
                         ),
@@ -680,11 +655,11 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/a.mp3'));
+                              player.play(AssetSource('audio/lecon22/som.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/ha.png")),
+                                  child: Image.asset("assets/lecon22/som.png")),
                             ),
                           ),
                         ),
@@ -704,11 +679,11 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/ka.mp3'));
+                              player.play(AssetSource('audio/lecon22/se.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/ka.png")),
+                                  child: Image.asset("assets/lecon22/se.png")),
                             ),
                           ),
                         ),
@@ -721,11 +696,13 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/sa1.mp3'));
+                              player.play(AssetSource(
+                                  'audio/lecon22/se_accent_aigu.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/xa.png")),
+                                  child: Image.asset(
+                                      "assets/lecon22/se_accent_aigu.png")),
                             ),
                           ),
                         ),
@@ -738,11 +715,13 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/ja.mp3'));
+                              player.play(AssetSource(
+                                  'audio/lecon22/se_accent_grave.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/ja.png")),
+                                  child: Image.asset(
+                                      "assets/lecon22/se_accent_grave.png")),
                             ),
                           ),
                         ),
@@ -755,11 +734,11 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/wa.mp3'));
+                              player.play(AssetSource('audio/lecon22/sai.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/wa.png")),
+                                  child: Image.asset("assets/lecon22/sai.png")),
                             ),
                           ),
                         ),
@@ -772,11 +751,52 @@ class _Lecon13State extends State<Lecon13> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon3/ba.mp3'));
+                              player.play(AssetSource('audio/lecon22/san.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon/ba.png")),
+                                  child: Image.asset("assets/lecon22/san.png")),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        height: MediaQuery.of(context).size.height / 9,
+                        child: Card(
+                          child: new InkWell(
+                            onTap: () {
+                              // // Navigator.pushNamed(context, '/lecon1');
+                              //print("tapped");
+                              player.play(AssetSource('audio/lecon22/sou.mp3'));
+                            },
+                            child: Center(
+                              child: Center(
+                                  child: Image.asset("assets/lecon22/sou.png")),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        height: MediaQuery.of(context).size.height / 9,
+                        child: Card(
+                          child: new InkWell(
+                            onTap: () {
+                              // // Navigator.pushNamed(context, '/lecon1');
+                              //print("tapped");
+                              player.play(AssetSource('audio/lecon22/sui.mp3'));
+                            },
+                            child: Center(
+                              child: Center(
+                                  child: Image.asset("assets/lecon22/sui.png")),
                             ),
                           ),
                         ),
@@ -786,38 +806,40 @@ class _Lecon13State extends State<Lecon13> {
                 ],
               ),
             ),
-            // les TROIS images d'exemples
+            // les deux images d'exemples
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   height: 300,
-                  width: 200,
                   child: InkWell(
                     onTap: () {
-                      extraHilght(9);
-                      player.play(AssetSource('audio/lecon3/craie.mp3'));
+                      extraHilght(7);
+                      player.play(AssetSource('audio/lecon22/sifflet.mp3'));
                     },
                     child: Column(
                       children: [
                         Image(
-                          image: AssetImage('assets/lecon/craie.png'),
-                          width: 200,
+                          image: AssetImage('assets/lecon22/sifflet.png'),
+                          width: 300,
                           height: 200,
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             letters(
-                              text: "la ",
-                              color: Colors.red,
-                              i: 9,
+                              text: "Le ",
+                              i: 7,
                             ),
                             letters(
-                              text: "craie",
+                              text: "s",
+                              color: Colors.red,
                               font: FontWeight.w600,
-                              i: 9,
+                              i: 7,
                             ),
+                            letters(text: "ifflet", i: 7),
                           ],
                         )
                       ],
@@ -829,69 +851,33 @@ class _Lecon13State extends State<Lecon13> {
                 ),
                 SizedBox(
                   height: 300,
-                  width: 200,
                   child: InkWell(
                     onTap: () {
-                      extraHilght(10);
-                      player.play(AssetSource('audio/lecon3/table.mp3'));
+                      extraHilght(8);
+                      player.play(AssetSource('audio/lecon22/sachet.mp3'));
                     },
                     child: Column(
                       children: [
                         Image(
-                          image: AssetImage('assets/lecon/table.png'),
-                          width: 200,
+                          image: AssetImage('assets/lecon22/sachet.png'),
+                          width: 300,
                           height: 200,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            letters(
-                              text: "une ",
-                              i: 10,
-                            ),
-                            letters(
-                                text: "ta",
-                                color: Colors.red,
-                                font: FontWeight.w600,
-                                i: 10),
-                            letters(text: "ble", i: 10),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                SizedBox(
-                  height: 300,
-                  width: 200,
-                  child: InkWell(
-                    onTap: () {
-                      extraHilght(11);
-                      player.play(AssetSource('audio/lecon3/machette.mp3'));
-                    },
-                    child: Column(
-                      children: [
-                        Image(
-                          image: AssetImage('assets/lecon/machette.png'),
-                          width: 200,
-                          height: 200,
+                        SizedBox(
+                          height: 10,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             letters(
-                              text: "une ",
-                              i: 11,
+                              text: "un ",
+                              i: 8,
                             ),
                             letters(
-                                text: "ma",
+                                text: "sa",
                                 color: Colors.red,
                                 font: FontWeight.w600,
-                                i: 11),
-                            letters(text: "chette", i: 11),
+                                i: 8),
+                            letters(text: "chet", i: 8),
                           ],
                         )
                       ],
@@ -903,41 +889,37 @@ class _Lecon13State extends State<Lecon13> {
 
             // le text de la fin
             Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(bottom: 50),
+                  padding: EdgeInsets.only(left: 50, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      extraHilght(12);
-                      player.play(AssetSource('audio/lecon3/alimaphrase.mp3'));
+                      extraHilght(9);
+                      player.play(AssetSource('audio/lecon22/text.mp3'));
                     },
                     child: Column(children: [
                       letters(
                           text:
-                              "Alima sait lire, écrire et calculer. Elle a appris à écrire son nom",
-                          i: 12),
+                              "Sopie se lave les dents tous les matins et soirs pour éviter la",
+                          i: 9),
                       letters(
                           text:
-                              "et son prénom. Elle calcule ses bénéfices avec une",
-                          i: 12),
+                              "carie dentaire. cette mesure d'hygiène bucco-dentaire lui",
+                          i: 9),
                       letters(
                           text:
-                              "calculatrice. Alima maîtrise les calculs de base. Pour ses",
-                          i: 12),
+                              "permet d'avoir des dents solides. Son haleine est agréable.",
+                          i: 9),
                       letters(
-                          text:
-                              "factures et son compte d’exploitation prévisionnel, elle ne ",
-                          i: 12),
-                      letters(
-                          text: "demande plus l’aide de son petit frère Abib.",
-                          i: 12),
+                          text: "Elle suit les conseils de son dentiste.",
+                          i: 9),
                     ]),
                   ),
                 ),
               ],
             ),
+
+            //---------------- Les phrases de fin ------------
           ],
         ),
       ),
