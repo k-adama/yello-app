@@ -37,7 +37,7 @@ class _AdminLoginState extends State<AdminLogin> {
   Future senddata(String pwd) async {
     if (pwd == "YelloAlpha") {
       Navigator.pushReplacementNamed(context, '/register');
-      // Navigator.pushReplacementNamed(context, '/menulecon');
+      // Navigator.pushReplacementNamed(context, '/lecon67');
     } else {
       setState(() {
         thereponse = "Erreur de mot de passe";
