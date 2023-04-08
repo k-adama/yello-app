@@ -58,6 +58,7 @@ import 'package:projets/register.dart';
 import 'package:projets/update.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wakelock/wakelock.dart';
+import 'appBlocked.dart';
 import 'lecon1.dart';
 import 'lecon10.dart';
 import 'lecon15.dart';
@@ -97,7 +98,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool _isBlocked = false;
-
   @override
   void initState() {
     super.initState();
@@ -316,23 +316,43 @@ class _MyHomePageState extends State<MyHomePage> {
   late SharedPreferences preference;
   int counterInt = 0;
 
+  late Timer _timer;
+  bool _appEnabled = true;
+
   StarCount() {
     Future.delayed(Duration(seconds: 10), () {
       setState(() {
         TheLogo = 'assets/mtn/accueil.png';
       });
-      Navigator.pushReplacementNamed(context, '/menu');
+      !_appEnabled
+          ? Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => appBlocked()))
+          : Navigator.pushReplacementNamed(context, '/menu');
     });
   }
 
   void initState() {
-    //super.initState();
-    //GetLogoPart();//call it over here
+    super.initState();
+    final DateTime deadline = DateTime(2023, 4, 7);
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      if (DateTime.now().isAfter(deadline)) {
+        timer.cancel();
+        setState(() {
+          _appEnabled = false;
+        });
+      }
+    });
     setState(() {
       TheLogo = 'assets/mtn/accueil.png';
     });
     StarCount();
     retrieveCounter();
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   Future retrieveCounter() async {
@@ -360,7 +380,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    addCounter();
     return Scaffold(
       backgroundColor: '#fcca0c'.toColor(),
       body: Center(
@@ -371,8 +390,6 @@ class _MyHomePageState extends State<MyHomePage> {
       // This trailing comma makes auto-formatting nicer for build methods.
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your onPressed code here!
-
           Navigator.pushReplacementNamed(context, '/adminlogin');
         },
         backgroundColor: Colors.limeAccent,
