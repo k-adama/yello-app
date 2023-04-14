@@ -1,8 +1,12 @@
+import 'dart:convert';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'package:projets/alphabet.dart';
 import 'package:projets/ardoise.dart';
+import 'package:projets/blocage_app.dart';
+import 'package:projets/connexion_Evaluation.dart';
 import 'package:projets/dashboard.dart';
 import 'package:projets/ecrire.dart';
 import 'package:projets/infosymbol.dart';
@@ -17,16 +21,33 @@ import 'package:projets/lecon19.dart';
 import 'package:projets/lecon20.dart';
 import 'package:projets/lecon21.dart';
 import 'package:projets/lecon22.dart';
-import 'package:projets/lecon27.dart';
-import 'package:projets/lecon28.dart';
+import 'package:projets/lecon31.dart';
+import 'package:projets/lecon32.dart';
+
 import 'package:projets/lecon33.dart';
+import 'package:projets/lecon34.dart';
+import 'package:projets/lecon37.dart';
 import 'package:projets/lecon38.dart';
+
 import 'package:projets/lecon41.dart';
 import 'package:projets/lecon45.dart';
 import 'package:projets/lecon49.dart';
 import 'package:projets/lecon54.dart';
 import 'package:projets/lecon57.dart';
 import 'package:projets/lecon63.dart';
+
+// import 'package:projets/lecon41.dart';
+// import 'package:projets/lecon45.dart';
+
+import 'package:projets/lecon23.dart';
+import 'package:projets/lecon26.dart';
+import 'package:projets/lecon27.dart';
+import 'package:projets/lecon28.dart';
+import 'package:projets/lecon29.dart';
+import 'package:projets/lecon39.dart';
+import 'package:projets/lecon40.dart';
+
+
 import 'package:projets/lecon5.dart';
 import 'package:projets/lecon6.dart';
 import 'package:projets/lecon7.dart';
@@ -45,8 +66,14 @@ import 'lecon1.dart';
 import 'lecon10.dart';
 import 'lecon15.dart';
 import 'lecon2.dart';
+import 'lecon24.dart';
+import 'lecon25.dart';
 import 'lecon3.dart';
+import 'lecon30.dart';
+import 'lecon35.dart';
+import 'lecon36.dart';
 import 'lecon4.dart';
+import 'lecon51.dart';
 
 extension ColorExtension on String {
   toColor() {
@@ -59,13 +86,40 @@ extension ColorExtension on String {
 }
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isBlocked = false;
+
+  @override
+  void initState() {
+    super.initState();
+    checkBlock();
+  }
+
+  void checkBlock() async {
+    final response =
+        await http.get(Uri.parse('https://s-p4.com/yello/bloque.php'));
+    if (response.statusCode == 200) {
+      final dateBlocage =
+          DateTime.parse(jsonDecode(response.body)['date_blocage']);
+      final now = DateTime.now();
+      setState(() {
+        _isBlocked = now.isAfter(dateBlocage);
+      });
+    } else {
+      throw Exception('Erreur lors de la récupération de la date');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Wakelock.enable();
@@ -94,6 +148,9 @@ class MyApp extends StatelessWidget {
         '/dashboard': (context) => Dashboard(
               title: '',
               utilisation: 0,
+            ),
+        '/connexionEvaluation': (context) => ConnexionEva(
+              title: '',
             ),
         '/lecon1': (context) => Lecon1(title: ''),
         '/lecon2': (context) => Lecon2(title: ''),
@@ -151,24 +208,61 @@ class MyApp extends StatelessWidget {
         '/lecon22': (context) => Lecon22(
               title: '',
             ),
+        '/lecon23': (context) => Lecon23(
+              title: '',
+            ),
+        '/lecon24': (context) => Lecon24(
+              title: '',
+            ),
+        '/lecon25': (context) => Lecon25(
+              title: '',
+            ),
+        '/lecon26': (context) => Lecon26(
+              title: '',
+            ),
         '/lecon27': (context) => Lecon27(
               title: '',
             ),
         '/lecon28': (context) => Lecon28(
               title: '',
             ),
+        '/lecon29': (context) => Lecon29(
+              title: '',
+            ),
+        '/lecon30': (context) => Lecon30(
+              title: '',
+            ),
+        '/lecon31': (context) => Lecon31(
+              title: '',
+            ),
+        '/lecon32': (context) => Lecon32(
+              title: '',
+            ),
         '/lecon33': (context) => Lecon33(
+              title: '',
+            ),
+        '/lecon34': (context) => Lecon34(
+              title: '',
+            ),
+        '/lecon35': (context) => Lecon35(
+              title: '',
+            ),
+        '/lecon36': (context) => Lecon36(
+              title: '',
+            ),
+        '/lecon37': (context) => Lecon37(
               title: '',
             ),
         '/lecon38': (context) => Lecon38(
               title: '',
             ),
-        '/lecon41': (context) => Lecon41(
+        '/lecon39': (context) => Lecon39(
               title: '',
             ),
-        '/lecon45': (context) => Lecon45(
+        '/lecon40': (context) => Lecon40(
               title: '',
             ),
+
         '/lecon49': (context) => Lecon49(
               title: '',
             ),
@@ -181,12 +275,21 @@ class MyApp extends StatelessWidget {
         '/lecon63': (context) => Lecon63(
               title: '',
             )
+
+        // '/lecon51': (context) => Lecon51(
+        //       title: '',
+        //     ),
+
       },
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: _isBlocked
+          ? MyBlocage()
+          : MyHomePage(
+              title: '',
+            ),
     );
   }
 }
