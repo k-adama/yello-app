@@ -23,6 +23,10 @@ import 'package:projets/lecon33.dart';
 import 'package:projets/lecon38.dart';
 import 'package:projets/lecon41.dart';
 import 'package:projets/lecon45.dart';
+import 'package:projets/lecon49.dart';
+import 'package:projets/lecon54.dart';
+import 'package:projets/lecon57.dart';
+import 'package:projets/lecon63.dart';
 import 'package:projets/lecon5.dart';
 import 'package:projets/lecon6.dart';
 import 'package:projets/lecon7.dart';
@@ -163,6 +167,18 @@ class MyApp extends StatelessWidget {
               title: '',
             ),
         '/lecon45': (context) => Lecon45(
+              title: '',
+            ),
+        '/lecon49': (context) => Lecon49(
+              title: '',
+            ),
+        '/lecon54': (context) => Lecon54(
+              title: '',
+            ),
+        '/lecon57': (context) => Lecon57(
+              title: '',
+            ),
+        '/lecon63': (context) => Lecon63(
               title: '',
             )
       },

@@ -574,6 +574,70 @@ class _MenuLeconState extends State<MenuLecon> {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/lecon49');
+                          //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 49')),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/lecon54');
+                          //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 54')),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/lecon57');
+                          //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 57')),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              // ),
+            ],
+          ),
+          Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/lecon63');
+                          //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 63')),
+                      ),
+                    ),
+                  ),
                 ],
               ),
 
