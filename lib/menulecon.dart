@@ -679,6 +679,17 @@ class _MenuLeconState extends State<MenuLecon> {
                   SizedBox(
                     width: 150,
                     height: 60,
+
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/lecon49');
+                          //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 49')),
+                      ),
+                    ),
+
                     // child: Card(
                     //   child: new InkWell(
                     //     onTap: () {
@@ -689,10 +700,22 @@ class _MenuLeconState extends State<MenuLecon> {
                     //     child: Center(child: Text('Leçon 21')),
                     //   ),
                     // ),
+
                   ),
                   SizedBox(
                     width: 150,
                     height: 60,
+
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/lecon54');
+                          //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 54')),
+                      ),
+                    ),
+
                     // child: Card(
                     //   child: new InkWell(
                     //     onTap: () {
@@ -703,10 +726,48 @@ class _MenuLeconState extends State<MenuLecon> {
                     //     child: Center(child: Text('Leçon 21')),
                     //   ),
                     // ),
+
                   ),
                   SizedBox(
                     width: 150,
                     height: 60,
+
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/lecon57');
+                          //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 57')),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              // ),
+            ],
+          ),
+          Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    width: 150,
+                    height: 60,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/lecon63');
+                          //print("tapped");
+                        },
+                        child: Center(child: Text('Leçon 63')),
+                      ),
+                    ),
+                  ),
+
                     // child: Card(
                     //   child: new InkWell(
                     //     onTap: () {
@@ -751,6 +812,7 @@ class _MenuLeconState extends State<MenuLecon> {
                   //     ),
                   //   ),
                   // ),
+
                 ],
               ),
             ],

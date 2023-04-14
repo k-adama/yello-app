@@ -28,6 +28,14 @@ import 'package:projets/lecon33.dart';
 import 'package:projets/lecon34.dart';
 import 'package:projets/lecon37.dart';
 import 'package:projets/lecon38.dart';
+
+import 'package:projets/lecon41.dart';
+import 'package:projets/lecon45.dart';
+import 'package:projets/lecon49.dart';
+import 'package:projets/lecon54.dart';
+import 'package:projets/lecon57.dart';
+import 'package:projets/lecon63.dart';
+
 // import 'package:projets/lecon41.dart';
 // import 'package:projets/lecon45.dart';
 
@@ -38,6 +46,7 @@ import 'package:projets/lecon28.dart';
 import 'package:projets/lecon29.dart';
 import 'package:projets/lecon39.dart';
 import 'package:projets/lecon40.dart';
+
 
 import 'package:projets/lecon5.dart';
 import 'package:projets/lecon6.dart';
@@ -253,9 +262,24 @@ class _MyAppState extends State<MyApp> {
         '/lecon40': (context) => Lecon40(
               title: '',
             ),
+
+        '/lecon49': (context) => Lecon49(
+              title: '',
+            ),
+        '/lecon54': (context) => Lecon54(
+              title: '',
+            ),
+        '/lecon57': (context) => Lecon57(
+              title: '',
+            ),
+        '/lecon63': (context) => Lecon63(
+              title: '',
+            )
+
         // '/lecon51': (context) => Lecon51(
         //       title: '',
         //     ),
+
       },
       title: 'Flutter Demo',
       theme: ThemeData(
