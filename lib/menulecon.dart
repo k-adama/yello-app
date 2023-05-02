@@ -778,6 +778,7 @@ class _MenuLeconState extends State<MenuLecon> {
                     //     child: Center(child: Text('Leçon 21')),
                     //   ),
                     // ),
+                    ]
                   ),
                 ],
               ),
@@ -817,6 +818,6 @@ class _MenuLeconState extends State<MenuLecon> {
               ),
             ],
           ),
-        ]));
+        );
   }
 }

@@ -282,7 +282,7 @@ class _MyAppState extends State<MyApp> {
             ),
         '/lecon63': (context) => Lecon63(
               title: '',
-            )
+            ),
         '/lecon42': (context) => Lecon42(
               title: '',
             ),
