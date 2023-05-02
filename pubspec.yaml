@@ -285,7 +285,9 @@ flutter:
              #  Leçon 50  --------
     - assets/audio/lecon50/
     - assets/lecon50/
-
+             #  Leçon 52  --------
+    - assets/audio/lecon52/
+    - assets/lecon52/
       #  Leçon 51
     - assets/audio/lecon51/
     - assets/lecon51/
@@ -339,6 +341,16 @@ flutter:
     - assets/audio/lecon57/
     - assets/lecon57/
 
+                    #  Leçon 59  -------- 
+    - assets/audio/lecon59/
+    - assets/lecon59/
+                    #  Leçon 60  -------- 
+    - assets/audio/lecon60/
+    - assets/lecon60/
+
+                #  Leçon 61  -------- 
+    - assets/audio/lecon61/
+    - assets/lecon61/
                 #  Leçon 63  -------- 
     - assets/audio/lecon63/
     - assets/lecon63/

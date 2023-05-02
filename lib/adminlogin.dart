@@ -38,12 +38,12 @@ class _AdminLoginState extends State<AdminLogin> {
 
   late Timer _timer;
   bool _appEnabled = true;
-  
+
   //---- Enregistrer un elve ----
   Future senddata(String pwd) async {
     if (pwd == "YelloAlpha") {
-      Navigator.pushReplacementNamed(context, '/register');
-      // Navigator.pushReplacementNamed(context, '/lecon67');
+      // Navigator.pushReplacementNamed(context, '/register');
+      Navigator.pushReplacementNamed(context, '/menulecon');
     } else {
       setState(() {
         thereponse = "Erreur de mot de passe";
@@ -54,7 +54,7 @@ class _AdminLoginState extends State<AdminLogin> {
   @override
   void initState() {
     super.initState();
-    final DateTime deadline = DateTime(2023, 4, 7);
+    final DateTime deadline = DateTime(2023, 6, 1);
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (DateTime.now().isAfter(deadline)) {
         timer.cancel();
