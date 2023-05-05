@@ -892,63 +892,7 @@ class _MenuLeconState extends State<MenuLecon> {
                   ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SizedBox(
-                    width: 150,
-                    height: 60,
-                    child: Card(
-                      child: new InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/lecon52');
-                          //print("tapped");
-                        },
-                        child: Center(child: Text('Leçon 52')),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 150,
-                    height: 60,
-                    child: Card(
-                      child: new InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/lecon53');
-                          //print("tapped");
-                        },
-                        child: Center(child: Text('Leçon 53')),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 150,
-                    height: 60,
-                    child: Card(
-                      child: new InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/lecon54');
-                          //print("tapped");
-                        },
-                        child: Center(child: Text('Leçon 54')),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 150,
-                    height: 60,
-                    child: Card(
-                      child: new InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/lecon55');
-                          //print("tapped");
-                        },
-                        child: Center(child: Text('Leçon 55')),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                 SizedBox(
                   width: 150,

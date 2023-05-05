@@ -89,6 +89,7 @@ import 'lecon30.dart';
 import 'lecon35.dart';
 import 'lecon36.dart';
 import 'lecon4.dart';
+import 'lecon43.dart';
 import 'lecon51.dart';
 import 'lecon58.dart';
 import 'lecon66.dart';
@@ -286,9 +287,9 @@ class _MyAppState extends State<MyApp> {
         '/lecon42': (context) => Lecon42(
               title: '',
             ),
-        // '/lecon43': (context) => Lecon43(
-        //         title: '',
-        //       ),
+        '/lecon43': (context) => Lecon43(
+                title: '',
+              ),
         '/lecon44': (context) => Lecon44(
               title: '',
             ),
