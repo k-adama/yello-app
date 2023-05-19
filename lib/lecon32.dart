@@ -427,7 +427,7 @@ class _Lecon32State extends State<Lecon32> {
                                   // // Navigator.pushNamed(context, '/lecon1');
                                   //print("tapped");
                                   player.play(
-                                      AssetSource('audio/lecon32/9*11.mp3'));
+                                      AssetSource('audio/lecon32/9x11.mp3'));
                                 },
                                 child: Column(
                                   children: [
@@ -446,7 +446,7 @@ class _Lecon32State extends State<Lecon32> {
                                   // // Navigator.pushNamed(context, '/lecon1');
                                   //print("tapped");
                                   player.play(
-                                      AssetSource('audio/lecon32/8*12.mp3'));
+                                      AssetSource('audio/lecon32/8x12.mp3'));
                                 },
                                 child: Column(
                                   children: [
@@ -465,7 +465,7 @@ class _Lecon32State extends State<Lecon32> {
                                   // // Navigator.pushNamed(context, '/lecon1');
                                   //print("tapped");
                                   player.play(
-                                      AssetSource('audio/lecon32/15*4.mp3'));
+                                      AssetSource('audio/lecon32/15x4.mp3'));
                                 },
                                 child: Column(
                                   children: [
@@ -484,7 +484,7 @@ class _Lecon32State extends State<Lecon32> {
                                   // // Navigator.pushNamed(context, '/lecon1');
                                   //print("tapped");
                                   player.play(
-                                      AssetSource('audio/lecon32/20*4.mp3'));
+                                      AssetSource('audio/lecon32/20x4.mp3'));
                                 },
                                 child: Column(
                                   children: [
