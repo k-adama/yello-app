@@ -700,7 +700,6 @@ class _MenuLeconState extends State<MenuLecon> {
                     //     child: Center(child: Text('Leçon 21')),
                     //   ),
                     // ),
-
                   ),
                   SizedBox(
                     width: 150,
@@ -726,12 +725,10 @@ class _MenuLeconState extends State<MenuLecon> {
                     //     child: Center(child: Text('Leçon 21')),
                     //   ),
                     // ),
-
                   ),
                   SizedBox(
                     width: 150,
                     height: 60,
-
                     child: Card(
                       child: new InkWell(
                         onTap: () {
@@ -768,17 +765,17 @@ class _MenuLeconState extends State<MenuLecon> {
                     ),
                   ),
 
-                    // child: Card(
-                    //   child: new InkWell(
-                    //     onTap: () {
-                    //       // // Navigator.pushNamed(context, '/lecon1');
-                    //       //print("tapped");
-                    //       Navigator.pushNamed(context, '/lecon21');
-                    //     },
-                    //     child: Center(child: Text('Leçon 21')),
-                    //   ),
-                    // ),
-                  ),
+                  // child: Card(
+                  //   child: new InkWell(
+                  //     onTap: () {
+                  //       // // Navigator.pushNamed(context, '/lecon1');
+                  //       //print("tapped");
+                  //       Navigator.pushNamed(context, '/lecon21');
+                  //     },
+                  //     child: Center(child: Text('Leçon 21')),
+                  //   ),
+                  // ),
+                  // ),
                 ],
               ),
               Row(
@@ -812,7 +809,6 @@ class _MenuLeconState extends State<MenuLecon> {
                   //     ),
                   //   ),
                   // ),
-
                 ],
               ),
             ],
