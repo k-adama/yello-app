@@ -491,7 +491,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        //Navigator.pushNamed(context, '/EvaSymbol');
+                        Navigator.pushNamed(context, '/exercice3_lit');
                         //print("tapped");
                       },
                       child: Center(child: Text('Exercice 3')),
