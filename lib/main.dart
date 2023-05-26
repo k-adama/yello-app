@@ -148,8 +148,6 @@ class _MyAppState extends State<MyApp> {
         '/exercice3_num': (context) => Exercice3_num(title: ''),
         '/exercice4_num': (context) => Exercice4_num(title: ''),
 
-
-
         '/main': (context) => MyApp(),
         '/menu': (context) => MenuApp(title: ''),
         '/adminlogin': (context) => AdminLogin(title: ''),
