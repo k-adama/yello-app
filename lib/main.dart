@@ -54,6 +54,7 @@ import 'package:projets/lecon8.dart';
 import 'package:projets/lecon9.dart';
 import 'package:projets/exercice1_lit.dart';
 import 'package:projets/exercice2_lit.dart';
+import 'package:projets/exercice3_lit.dart';
 import 'package:projets/leconPrealpha.dart';
 import 'package:projets/menu.dart';
 import 'package:projets/adminlogin.dart';
@@ -141,10 +142,13 @@ class _MyAppState extends State<MyApp> {
         //ROUTE DES EXERCICES
         '/exercice1_lit': (context) => Exercice1_lit(title: ''),
         '/exercice2_lit': (context) => Exercice2_lit(title: ''),
+        '/exercice3_lit': (context) => Exercice3_lit(title: ''),
         '/exercice1_num': (context) => Exercice1_num(title: ''),
         '/exercice2_num': (context) => Exercice2_num(title: ''),
         '/exercice3_num': (context) => Exercice3_num(title: ''),
         '/exercice4_num': (context) => Exercice4_num(title: ''),
+
+
 
         '/main': (context) => MyApp(),
         '/menu': (context) => MenuApp(title: ''),
