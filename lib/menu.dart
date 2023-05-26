@@ -142,7 +142,7 @@ class _MenuAppState extends State<MenuApp> {
                     color: Color.fromRGBO(252, 202, 12, 1),
                     child: new InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/connexionEvaluation');
+                        Navigator.pushNamed(context, '/menuEva');
                         // print("tapped");
                       },
                       child: Image(
@@ -291,7 +291,7 @@ class _MenuAppState extends State<MenuApp> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-              
+
                 SizedBox(
                   width: 150,
                   height: 50,

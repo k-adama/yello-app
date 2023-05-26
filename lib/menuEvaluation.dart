@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
+/**** ANCIEN MENU D'EVALUATION ****************
 extension ColorExtension on String {
   toColor14() {
     var hexString = this;
@@ -380,6 +381,206 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   ),
                 ),
               ],
+            ),
+          ],
+        ),
+      ),
+      // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+*/
+
+extension ColorExtension on String {
+  toColor5() {
+    var hexString = this;
+    final buffer = StringBuffer();
+    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
+    buffer.write(hexString.replaceFirst('#', ''));
+    return Color(int.parse(buffer.toString(), radix: 16));
+  }
+}
+
+class MenuEvaluation extends StatefulWidget {
+  const MenuEvaluation({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  State<MenuEvaluation> createState() => _MenuEvaluationState();
+}
+
+class _MenuEvaluationState extends State<MenuEvaluation> {
+  int _counter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //backgroundColor: '#fcca0c'.toColor2(),
+      appBar: AppBar(
+        centerTitle: true,
+        toolbarHeight: 80,
+        // leading: IconButton(
+        //   icon: const Icon(
+        //     Icons.arrow_back_ios,
+        //     color: Colors.black,
+        //   ),
+        //   tooltip: "Close",
+        //   onPressed: () {
+        //     Navigator.pushReplacementNamed(context, '/menu');
+        //   },
+        // ),
+        backgroundColor: '#fcca0c'.toColor5(),
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(
+          widget.title + 'Menu des évaluations',
+          style:
+              TextStyle(color: Color(0xff000000), fontStyle: FontStyle.italic),
+        ),
+      ),
+      body: SingleChildScrollView(
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(20), //apply padding to all four sides
+              child: Text(
+                'Litteratie',
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
+// --- Ligne  1 -------------
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                // Expanded(
+                SizedBox(
+                  width: 150,
+                  height: 70,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/exercice1_lit');
+                        //print("tapped");
+                      },
+                      child: Center(child: Text('Exercice 1')),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 150,
+                  height: 70,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/exercice2_lit');
+                        //print("tapped");
+                      },
+                      child: Center(child: Text('Exercice 2')),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 150,
+                  height: 70,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/exercice3_lit');
+                        //print("tapped");
+                      },
+                      child: Center(child: Text('Exercice 3')),
+                    ),
+                  ),
+                ),
+                // ),
+
+                // ),
+              ],
+            ),
+            // --- Ligne  2 -------------
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: EdgeInsets.all(20), //apply padding to all four sides
+              child: Text(
+                'Numératie',
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                //Expanded(
+
+                //),
+
+                //Expanded(
+                SizedBox(
+                  width: 150,
+                  height: 70,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/exercice1_num');
+                        // print("tapped");
+                      },
+                      child: Center(child: Text('Exercice 1')),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 150,
+                  height: 70,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/exercice2_num');
+                      },
+                      child: Center(child: Text('Exercice 2')),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 150,
+                  height: 70,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/exercice3_num');
+                      },
+                      child: Center(child: Text('Exercice 3')),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 150,
+                  height: 70,
+                  child: Card(
+                    child: new InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/exercice4_num');
+                      },
+                      child: Center(child: Text('Exercice 4')),
+                    ),
+                  ),
+                ),
+
+                //),
+              ],
+            ),
+            SizedBox(
+              height: 60,
             ),
           ],
         ),

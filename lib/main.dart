@@ -55,6 +55,7 @@ import 'package:projets/lecon28.dart';
 import 'package:projets/lecon29.dart';
 import 'package:projets/lecon39.dart';
 import 'package:projets/lecon40.dart';
+
 import 'package:projets/lecon42.dart';
 import 'package:projets/lecon44.dart';
 
@@ -68,6 +69,9 @@ import 'package:projets/lecon65.dart';
 import 'package:projets/lecon7.dart';
 import 'package:projets/lecon8.dart';
 import 'package:projets/lecon9.dart';
+import 'package:projets/exercice1_lit.dart';
+import 'package:projets/exercice2_lit.dart';
+import 'package:projets/exercice3_lit.dart';
 import 'package:projets/leconPrealpha.dart';
 import 'package:projets/menu.dart';
 import 'package:projets/adminlogin.dart';
@@ -77,7 +81,14 @@ import 'package:projets/register.dart';
 import 'package:projets/update.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wakelock/wakelock.dart';
+
 import 'appBlocked.dart';
+
+import 'exercice1_num.dart';
+import 'exercice2_num.dart';
+import 'exercice3_num.dart';
+import 'exercice4_num.dart';
+
 import 'lecon1.dart';
 import 'lecon10.dart';
 import 'lecon15.dart';
@@ -121,7 +132,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    checkBlock();
+    //checkBlock();
   }
 
   void checkBlock() async {
@@ -152,6 +163,15 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
+        //ROUTE DES EXERCICES
+        '/exercice1_lit': (context) => Exercice1_lit(title: ''),
+        '/exercice2_lit': (context) => Exercice2_lit(title: ''),
+        '/exercice3_lit': (context) => Exercice3_lit(title: ''),
+        '/exercice1_num': (context) => Exercice1_num(title: ''),
+        '/exercice2_num': (context) => Exercice2_num(title: ''),
+        '/exercice3_num': (context) => Exercice3_num(title: ''),
+        '/exercice4_num': (context) => Exercice4_num(title: ''),
+
         '/main': (context) => MyApp(),
         '/menu': (context) => MenuApp(title: ''),
         '/adminlogin': (context) => AdminLogin(title: ''),
@@ -362,6 +382,7 @@ class _MyAppState extends State<MyApp> {
         '/lecon67': (context) => Lecon67(
               title: '',
             ),
+
       },
       title: 'Flutter Demo',
       theme: ThemeData(
