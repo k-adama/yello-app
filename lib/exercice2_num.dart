@@ -1,15 +1,7 @@
 import 'dart:async';
-import 'dart:ffi';
-import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:projets/menu.dart';
-import 'package:projets/main.dart';
-import 'package:projets/menuEvaluation.dart';
+
 
 extension ColorExtension on String {
   toColor18() {
@@ -57,34 +49,6 @@ class _Exercice2_numState extends State<Exercice2_num> {
     'ca',
     'cou',
   ];
-
-//tableau des reponses
-//   List<String> tableReponses = [
-//     'dou',
-//     'ca',
-//     'tou',
-//     'cu',
-//     'fou',
-//     'co',
-//     'sou',
-//     'ca',
-//     'bou',
-//     'coi',
-//   ];
-
-// //tableau des questions
-//   List<String> questions = [
-//     '1- Une ....leur',
-//     '2- une ....lebasse',
-//     '3- Du fou....',
-//     '4- une ....isine',
-//     '5- une ....rchette',
-//     '6- Une ....la',
-//     '7- la ....dure',
-//     '8- une noix de ....jou',
-//     '9- Une ....ture',
-//     '10- Une ....fure',
-//   ];
 
   @override
   void dispose() {
@@ -141,12 +105,9 @@ class _Exercice2_numState extends State<Exercice2_num> {
 
   Future Saveresult() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    //Double total = 0 as Double;
-    //Double total = preferences.getDouble('litteratie') as Double;
+
+    //sauvegarde du resultat
     prefs.setDouble('numeratie', point);
-    var nbr = prefs.getDouble('numeratie');
-    print(".....RESULTAT.....");
-    print(nbr);
     Successpopup();
   }
 
@@ -217,7 +178,7 @@ class _Exercice2_numState extends State<Exercice2_num> {
           TextButton(
             onPressed: () {
               Navigator.of(ctx).pop();
-              //Navigator.pushReplacementNamed(context, '/menuEva');
+
             },
             child: Text(
               "OK",
@@ -312,11 +273,10 @@ class _Exercice2_numState extends State<Exercice2_num> {
           tooltip: "Close",
           onPressed: () {
             Alertpopup(context);
-            //Navigator.pushReplacementNamed(context, '/menuevaluation');
+
           },
         ),
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
+
         title: Text(
           widget.title + 'Evaluation: Exercice 2 Numératie',
           style:
@@ -324,14 +284,12 @@ class _Exercice2_numState extends State<Exercice2_num> {
         ),
       ),
       body: SingleChildScrollView(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
+
           child: (_counter < evaElements.length)
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    
                     SizedBox(height: 20),
                     Text(
                       "A l’aide de votre calculatrice, trouvez les résultats des opérations suivantes:",
@@ -367,8 +325,7 @@ class _Exercice2_numState extends State<Exercice2_num> {
                             )),
                         ElevatedButton(
                             onPressed: () {
-                              // var res = _controller.text;
-                              // print(res);
+                              
                               CheckChoice(_controller.text);
 
                               _controller.clear();
@@ -386,14 +343,11 @@ class _Exercice2_numState extends State<Exercice2_num> {
         child: FloatingActionButton(
             backgroundColor: Colors.amber,
             child: Text(
-              '${point.toStringAsFixed(1)} /0.8',
+              '${point.toStringAsFixed(1)}/0.8',
               style: TextStyle(fontSize: 20),
             ),
-            onPressed: () {
-              //playSound();
-            }),
+            onPressed: () => null),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
