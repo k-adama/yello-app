@@ -104,8 +104,8 @@ class _Exercice1_numState extends State<Exercice1_num> {
 
   Future Saveresult() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-        //sauvegarde du resultat
-    prefs.setDouble('numeratie', point);
+    //sauvegarde du resultat
+    prefs.setDouble('numeratie1', point);
     Successpopup();
   }
 

@@ -107,7 +107,7 @@ class _Exercice2_numState extends State<Exercice2_num> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     //sauvegarde du resultat
-    prefs.setDouble('numeratie', point);
+    prefs.setDouble('numeratie2', point);
     Successpopup();
   }
 

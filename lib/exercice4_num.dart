@@ -89,7 +89,7 @@ class _Exercice4_numState extends State<Exercice4_num> {
   }
 
   void CheckChoice(int index) {
-    if (_counter < 10) {
+    if (_counter < 11) {
       // Vérification de la réponse
       if (_counter < syllabes.length && _counter < evaElements.length) {
         if (syllabes[index] == evaElements[_counter]["reponse"]) {
@@ -98,14 +98,14 @@ class _Exercice4_numState extends State<Exercice4_num> {
             point = point + 0.2;
 
             print(".....POINT: ${point.toStringAsFixed(1)}");
-            if (_counter == 10) {
+            if (_counter == 11) {
               Saveresult();
             }
           });
         } else {
           Errorpopup(context);
           RandomCounter();
-          if (_counter == 10) {
+          if (_counter == 11) {
             Saveresult();
           }
         }
@@ -119,7 +119,7 @@ class _Exercice4_numState extends State<Exercice4_num> {
   Future Saveresult() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     //sauvegarde du resultat
-    prefs.setDouble('litteratie', point);
+    prefs.setDouble('numeratie4', point);
     Successpopup();
   }
 

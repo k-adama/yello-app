@@ -148,7 +148,7 @@ class _Exercice1_litState extends State<Exercice1_lit> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     //Double total = 0 as Double;
     //Double total = preferences.getDouble('litteratie') as Double;
-    prefs.setDouble('litteratie', point);
+    prefs.setDouble('litteratie1', point);
     print(".....RESULTAT.....");
     Successpopup();
   }
