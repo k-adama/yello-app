@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /**** ANCIEN MENU D'EVALUATION ****************
 extension ColorExtension on String {
@@ -413,8 +414,24 @@ class MenuEvaluation extends StatefulWidget {
 class _MenuEvaluationState extends State<MenuEvaluation> {
   int _counter = 0;
 
+  Future<void> point() async {
+    var prefs = await SharedPreferences.getInstance();
+    double numeratie1 = prefs.getDouble('numeratie1') ?? 0;
+    double numeratie2 = prefs.getDouble('numeratie2') ?? 0;
+    double numeratie3 = prefs.getDouble('numeratie3') ?? 0;
+    double numeratie4 = prefs.getDouble('numeratie4') ?? 0;
+    double litteratie1 = prefs.getDouble('litteratie1') ?? 0;
+    double litteratie2 = prefs.getDouble('litteratie2') ?? 0;
+    double litteratie3 = prefs.getDouble('litteratie3') ?? 0;
+    double numeratie = numeratie1 + numeratie2 + numeratie3 + numeratie4;
+    double litteratie = litteratie1 + litteratie2 + litteratie3;
+    print("Point en litteratie: $litteratie");
+    print("Point en numeratie: $numeratie");
+  }
+
   @override
   Widget build(BuildContext context) {
+    point();
     return Scaffold(
       //backgroundColor: '#fcca0c'.toColor2(),
       appBar: AppBar(
