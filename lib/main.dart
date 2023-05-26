@@ -63,6 +63,10 @@ import 'package:projets/register.dart';
 import 'package:projets/update.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wakelock/wakelock.dart';
+import 'exercice1_num.dart';
+import 'exercice2_num.dart';
+import 'exercice3_num.dart';
+import 'exercice4_num.dart';
 import 'lecon1.dart';
 import 'lecon10.dart';
 import 'lecon15.dart';
@@ -137,6 +141,10 @@ class _MyAppState extends State<MyApp> {
         //ROUTE DES EXERCICES
         '/exercice1_lit': (context) => Exercice1_lit(title: ''),
         '/exercice2_lit': (context) => Exercice2_lit(title: ''),
+        '/exercice1_num': (context) => Exercice1_num(title: ''),
+        '/exercice2_num': (context) => Exercice2_num(title: ''),
+        '/exercice3_num': (context) => Exercice3_num(title: ''),
+        '/exercice4_num': (context) => Exercice4_num(title: ''),
 
         '/main': (context) => MyApp(),
         '/menu': (context) => MenuApp(title: ''),

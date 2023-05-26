@@ -36,8 +36,8 @@ class _AdminLoginState extends State<AdminLogin> {
   //---- Enregistrer un elve ----
   Future senddata(String pwd) async {
     if (pwd == "YelloAlpha") {
-      Navigator.pushReplacementNamed(context, '/register');
-      // Navigator.pushReplacementNamed(context, '/menulecon');
+      // Navigator.pushReplacementNamed(context, '/register');
+      Navigator.pushReplacementNamed(context, '/menuEva');
     } else {
       setState(() {
         thereponse = "Erreur de mot de passe";

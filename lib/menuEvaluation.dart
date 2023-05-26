@@ -491,7 +491,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        //Navigator.pushNamed(context, '/EvaSymbol');
+                        Navigator.pushNamed(context, '/exercice3_lit');
                         //print("tapped");
                       },
                       child: Center(child: Text('Exercice 3')),
@@ -531,7 +531,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        // Navigator.pushNamed(context, '/lecon4');
+                        Navigator.pushNamed(context, '/exercice1_num');
                         // print("tapped");
                       },
                       child: Center(child: Text('Exercice 1')),
@@ -544,8 +544,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        // Navigator.pushNamed(context, '/lecon5');
-                        // print("tapped");
+                        Navigator.pushNamed(context, '/exercice2_num');
                       },
                       child: Center(child: Text('Exercice 2')),
                     ),
@@ -558,7 +557,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        print("tapped");
+                        Navigator.pushNamed(context, '/exercice3_num');
                       },
                       child: Center(child: Text('Exercice 3')),
                     ),
@@ -570,7 +569,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        print("tapped");
+                        Navigator.pushNamed(context, '/exercice4_num');
                       },
                       child: Center(child: Text('Exercice 4')),
                     ),
