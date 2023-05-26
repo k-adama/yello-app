@@ -425,7 +425,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
     double litteratie3 = prefs.getDouble('litteratie3') ?? 0;
     double numeratie = numeratie1 + numeratie2 + numeratie3 + numeratie4;
     double litteratie = litteratie1 + litteratie2 + litteratie3;
-    print("Point en litteratie: $litteratie");
+    print("Point en litteratie to: $litteratie");
     print("Point en numeratie: $numeratie");
   }
 
@@ -597,8 +597,35 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
               ],
             ),
             SizedBox(
-              height: 60,
+              height: 40,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                // Expanded(
+                SizedBox(
+                  width: 300,
+                  height: 60,
+                  child: TextButton(
+                    style: TextButton.styleFrom(backgroundColor: Colors.yellow),
+                    onPressed: () async {
+                      Navigator.pushNamed(context, '/resultat');
+                      // senddata();
+                      //CheckConfig();
+                    },
+                    child: Text(
+                      'Voir les résulats',
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: CupertinoColors.darkBackgroundGray),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            )
           ],
         ),
       ),

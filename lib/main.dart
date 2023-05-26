@@ -78,6 +78,7 @@ import 'package:projets/adminlogin.dart';
 import 'package:projets/menuEvaluation.dart';
 import 'package:projets/menulecon.dart';
 import 'package:projets/register.dart';
+import 'package:projets/resultat.dart';
 import 'package:projets/update.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wakelock/wakelock.dart';
@@ -129,25 +130,42 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool _isBlocked = false;
+  late Timer _timer;
+  bool _appEnabled = false;
+
+  String accessBlocked = '';
+
+  void bloquer() async {
+    final DateTime deadline = DateTime(2023, 6, 01);
+
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      if (DateTime.now().isAfter(deadline)) {
+        timer.cancel();
+        setState(() {
+          _appEnabled = true;
+          accessBlocked = 'oui'; // Stocke la chaîne "oui" dans la variable
+        });
+      }
+      // else if (DateTime.now().isBefore(deadline)) {
+      //   setState(() {
+      //     accessBlocked =
+      //         'non'; // Stocke la chaîne "non" dans la variable pour bloquer l'accès
+      //   });
+      // }
+    });
+  }
+
   @override
   void initState() {
     super.initState();
+    bloquer();
     //checkBlock();
   }
 
-  void checkBlock() async {
-    final response =
-        await http.get(Uri.parse('https://s-p4.com/yello/bloque.php'));
-    if (response.statusCode == 200) {
-      final dateBlocage =
-          DateTime.parse(jsonDecode(response.body)['date_blocage']);
-      final now = DateTime.now();
-      setState(() {
-        _isBlocked = now.isAfter(dateBlocage);
-      });
-    } else {
-      throw Exception('Erreur lors de la récupération de la date');
-    }
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   @override
@@ -171,6 +189,7 @@ class _MyAppState extends State<MyApp> {
         '/exercice2_num': (context) => Exercice2_num(title: ''),
         '/exercice3_num': (context) => Exercice3_num(title: ''),
         '/exercice4_num': (context) => Exercice4_num(title: ''),
+        '/resultat': (context) => Resultat(title: ''),
 
         '/main': (context) => MyApp(),
         '/menu': (context) => MenuApp(title: ''),
@@ -308,8 +327,8 @@ class _MyAppState extends State<MyApp> {
               title: '',
             ),
         '/lecon43': (context) => Lecon43(
-                title: '',
-              ),
+              title: '',
+            ),
         '/lecon44': (context) => Lecon44(
               title: '',
             ),
@@ -382,17 +401,22 @@ class _MyAppState extends State<MyApp> {
         '/lecon67': (context) => Lecon67(
               title: '',
             ),
-
       },
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: _isBlocked
-          ? MyBlocage()
-          : MyHomePage(
-              title: '',
-            ),
+      home: _appEnabled
+          ? accessBlocked == 'oui'
+              ? appBlocked()
+              : MyHomePage(
+                  title: '',
+                )
+          : accessBlocked == 'non'
+              ? appBlocked()
+              : MyHomePage(
+                  title: '',
+                ),
     );
   }
 }
