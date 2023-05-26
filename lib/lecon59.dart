@@ -83,7 +83,7 @@ class _Lecon59State extends State<Lecon59> {
   String audio3 = 'audio/lecon59/hamecon.mp3';
   String audio4 = 'audio/lecon59/ce.mp3';
   String audio5 = 'audio/lecon59/ssaint.mp3';
-  String audio6 = 'audio/lecon59/con.mp3';
+  String audio6 = 'audio/lecon59/çon.mp3';
   String audio7 = 'audio/lecon59/c.mp3';
   String audio8 = 'audio/lecon59/ss.mp3';
   String audio9 = 'audio/lecon59/cc.mp3';
@@ -725,11 +725,11 @@ class _Lecon59State extends State<Lecon59> {
                             onTap: () {
                               // // Navigator.pushNamed(context, '/lecon1');
                               //print("tapped");
-                              player.play(AssetSource('audio/lecon59/con.mp3'));
+                              player.play(AssetSource('audio/lecon59/çon.mp3'));
                             },
                             child: Center(
                               child: Center(
-                                  child: Image.asset("assets/lecon59/con.png")),
+                                  child: Image.asset("assets/lecon59/çon.png")),
                             ),
                           ),
                         ),
