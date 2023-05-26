@@ -17,7 +17,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.5+5
+version: 1.0.6+6
 
 environment:
   sdk: ">=2.18.1 <3.0.0"
@@ -51,6 +51,7 @@ dependencies:
   flutter_launcher_icons: ^0.11.0
   simple_rich_text: ^2.0.49
   wakelock: ^0.6.2
+  flutter_countdown_timer: ^4.1.0
 
 dev_dependencies:
   flutter_test:
@@ -252,9 +253,17 @@ flutter:
     - assets/audio/lecon40/
     - assets/lecon40/
 
-      #  Leçon 41
-    # - assets/audio/lecon41/
-    # - assets/lecon41/
+      #  Leçon 42
+    - assets/audio/lecon42/
+    - assets/lecon42/
+
+         #  Leçon 43
+    - assets/audio/lecon43/
+    - assets/lecon43/
+
+      #  Leçon 44
+    - assets/audio/lecon44/
+    - assets/lecon44/
 
     #             #  Leçon 45
     # - assets/audio/lecon45/
@@ -277,10 +286,20 @@ flutter:
     - assets/audio/lecon48/
     - assets/lecon48/
 
+             #  Leçon 50  --------
+    - assets/audio/lecon50/
+    - assets/lecon50/
+             #  Leçon 52  --------
+    - assets/audio/lecon52/
+    - assets/lecon52/
       #  Leçon 51
     - assets/audio/lecon51/
     - assets/lecon51/
     - assets/lecon51/budget.png
+
+             #  Leçon 53  --------
+    - assets/audio/lecon53/
+    - assets/lecon53/
 
     #  Leçon 55  --------
     - assets/audio/lecon55/
@@ -291,10 +310,25 @@ flutter:
     - assets/audio/lecon56/
     - assets/lecon56/
 
+     #  Leçon 58  --------
+    - assets/audio/lecon58/
+    - assets/lecon58/
+
+     #  Leçon 62  --------
+    - assets/audio/lecon62/
+    - assets/lecon62/
+
  #  Leçon 65  --------
     - assets/audio/lecon65/
     - assets/lecon65/
-   
+        #  Leçon 66  --------
+    - assets/audio/lecon66/
+    - assets/lecon66/
+
+     #  Leçon 67  --------
+    - assets/audio/lecon67/
+    - assets/lecon67/
+
     #  Leçon 64  --------
     - assets/audio/lecon64/
     - assets/lecon64/
@@ -311,6 +345,16 @@ flutter:
     - assets/audio/lecon57/
     - assets/lecon57/
 
+                    #  Leçon 59  -------- 
+    - assets/audio/lecon59/
+    - assets/lecon59/
+                    #  Leçon 60  -------- 
+    - assets/audio/lecon60/
+    - assets/lecon60/
+
+                #  Leçon 61  -------- 
+    - assets/audio/lecon61/
+    - assets/lecon61/
                 #  Leçon 63  -------- 
     - assets/audio/lecon63/
     - assets/lecon63/

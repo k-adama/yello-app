@@ -31,9 +31,18 @@ import 'package:projets/lecon38.dart';
 
 import 'package:projets/lecon41.dart';
 import 'package:projets/lecon45.dart';
+import 'package:projets/lecon46.dart';
+import 'package:projets/lecon47.dart';
+import 'package:projets/lecon48.dart';
 import 'package:projets/lecon49.dart';
+import 'package:projets/lecon52.dart';
 import 'package:projets/lecon54.dart';
+import 'package:projets/lecon55.dart';
+import 'package:projets/lecon56.dart';
 import 'package:projets/lecon57.dart';
+import 'package:projets/lecon59.dart';
+import 'package:projets/lecon60.dart';
+import 'package:projets/lecon61.dart';
 import 'package:projets/lecon63.dart';
 
 // import 'package:projets/lecon41.dart';
@@ -47,8 +56,16 @@ import 'package:projets/lecon29.dart';
 import 'package:projets/lecon39.dart';
 import 'package:projets/lecon40.dart';
 
+import 'package:projets/lecon42.dart';
+import 'package:projets/lecon44.dart';
+
 import 'package:projets/lecon5.dart';
+import 'package:projets/lecon50.dart';
+import 'package:projets/lecon53.dart';
 import 'package:projets/lecon6.dart';
+import 'package:projets/lecon62.dart';
+import 'package:projets/lecon64.dart';
+import 'package:projets/lecon65.dart';
 import 'package:projets/lecon7.dart';
 import 'package:projets/lecon8.dart';
 import 'package:projets/lecon9.dart';
@@ -64,10 +81,14 @@ import 'package:projets/register.dart';
 import 'package:projets/update.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wakelock/wakelock.dart';
+
+import 'appBlocked.dart';
+
 import 'exercice1_num.dart';
 import 'exercice2_num.dart';
 import 'exercice3_num.dart';
 import 'exercice4_num.dart';
+
 import 'lecon1.dart';
 import 'lecon10.dart';
 import 'lecon15.dart';
@@ -79,7 +100,11 @@ import 'lecon30.dart';
 import 'lecon35.dart';
 import 'lecon36.dart';
 import 'lecon4.dart';
+import 'lecon43.dart';
 import 'lecon51.dart';
+import 'lecon58.dart';
+import 'lecon66.dart';
+import 'lecon67.dart';
 
 extension ColorExtension on String {
   toColor() {
@@ -104,7 +129,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool _isBlocked = false;
-
   @override
   void initState() {
     super.initState();
@@ -277,23 +301,88 @@ class _MyAppState extends State<MyApp> {
         '/lecon40': (context) => Lecon40(
               title: '',
             ),
-
+        '/lecon41': (context) => Lecon41(
+              title: '',
+            ),
+        '/lecon42': (context) => Lecon42(
+              title: '',
+            ),
+        '/lecon43': (context) => Lecon43(
+                title: '',
+              ),
+        '/lecon44': (context) => Lecon44(
+              title: '',
+            ),
+        '/lecon45': (context) => Lecon45(
+              title: '',
+            ),
+        '/lecon46': (context) => Lecon46(
+              title: '',
+            ),
+        '/lecon47': (context) => Lecon47(
+              title: '',
+            ),
+        '/lecon48': (context) => Lecon48(
+              title: '',
+            ),
         '/lecon49': (context) => Lecon49(
+              title: '',
+            ),
+        '/lecon50': (context) => Lecon50(
+              title: '',
+            ),
+        '/lecon51': (context) => Lecon51(
+              title: '',
+            ),
+        '/lecon52': (context) => Lecon52(
+              title: '',
+            ),
+        '/lecon53': (context) => Lecon53(
               title: '',
             ),
         '/lecon54': (context) => Lecon54(
               title: '',
             ),
+        '/lecon55': (context) => Lecon55(
+              title: '',
+            ),
+        '/lecon56': (context) => Lecon56(
+              title: '',
+            ),
         '/lecon57': (context) => Lecon57(
+              title: '',
+            ),
+        '/lecon58': (context) => Lecon58(
+              title: '',
+            ),
+        '/lecon59': (context) => Lecon59(
+              title: '',
+            ),
+        '/lecon60': (context) => Lecon60(
+              title: '',
+            ),
+        '/lecon61': (context) => Lecon61(
+              title: '',
+            ),
+        '/lecon62': (context) => Lecon62(
               title: '',
             ),
         '/lecon63': (context) => Lecon63(
               title: '',
-            )
+            ),
+        '/lecon64': (context) => Lecon64(
+              title: '',
+            ),
+        '/lecon65': (context) => Lecon65(
+              title: '',
+            ),
+        '/lecon66': (context) => Lecon66(
+              title: '',
+            ),
+        '/lecon67': (context) => Lecon67(
+              title: '',
+            ),
 
-        // '/lecon51': (context) => Lecon51(
-        //       title: '',
-        //     ),
       },
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -322,23 +411,43 @@ class _MyHomePageState extends State<MyHomePage> {
   late SharedPreferences preference;
   int counterInt = 0;
 
+  late Timer _timer;
+  bool _appEnabled = true;
+
   StarCount() {
     Future.delayed(Duration(seconds: 10), () {
       setState(() {
         TheLogo = 'assets/mtn/accueil.png';
       });
-      Navigator.pushReplacementNamed(context, '/menu');
+      !_appEnabled
+          ? Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => appBlocked()))
+          : Navigator.pushReplacementNamed(context, '/menu');
     });
   }
 
   void initState() {
-    //super.initState();
-    //GetLogoPart();//call it over here
+    super.initState();
+    final DateTime deadline = DateTime(2023, 6, 1);
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      if (DateTime.now().isAfter(deadline)) {
+        timer.cancel();
+        setState(() {
+          _appEnabled = false;
+        });
+      }
+    });
     setState(() {
       TheLogo = 'assets/mtn/accueil.png';
     });
     StarCount();
     retrieveCounter();
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   Future retrieveCounter() async {
@@ -366,7 +475,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    addCounter();
     return Scaffold(
       backgroundColor: '#fcca0c'.toColor(),
       body: Center(
@@ -377,8 +485,6 @@ class _MyHomePageState extends State<MyHomePage> {
       // This trailing comma makes auto-formatting nicer for build methods.
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your onPressed code here!
-
           Navigator.pushReplacementNamed(context, '/adminlogin');
         },
         backgroundColor: Colors.limeAccent,
