@@ -1,14 +1,6 @@
-import 'dart:ffi';
-import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:projets/menu.dart';
-import 'package:projets/main.dart';
-import 'package:projets/menuEvaluation.dart';
 
 extension ColorExtension on String {
   toColor18() {
@@ -48,6 +40,7 @@ class _Exercice4_numState extends State<Exercice4_num> {
     {'question': '8- Il est une heure moins le quart', 'reponse': '00 h 45'},
     {'question': '9- Il est quatre heures dix', 'reponse': '4 h 10'},
     {'question': '10- Il est dix heures et demie', 'reponse': '10 h 30'},
+    {'question': '11- Il est neuf heures trente', 'reponse': '9 h 30'},
   ];
 
 //Tableau des sysllables
@@ -59,6 +52,7 @@ class _Exercice4_numState extends State<Exercice4_num> {
     '6 h 30',
     '4 h 10',
     '00 h 45',
+    '9 h 30',
     '11 h 25',
     '1 h 40',
     '3 h 30',
@@ -124,12 +118,8 @@ class _Exercice4_numState extends State<Exercice4_num> {
 
   Future Saveresult() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    //Double total = 0 as Double;
-    //Double total = preferences.getDouble('litteratie') as Double;
+    //sauvegarde du resultat
     prefs.setDouble('litteratie', point);
-    var nbr = prefs.getDouble('litteratie');
-    print(".....RESULTAT.....");
-    print(nbr);
     Successpopup();
   }
 
@@ -282,7 +272,6 @@ class _Exercice4_numState extends State<Exercice4_num> {
         ? Future.delayed(Duration.zero, () => Startpopup(context))
         : "";
     return Scaffold(
-      //backgroundColor: '#fcca0c'.toColor2(),
       appBar: AppBar(
         centerTitle: true,
         toolbarHeight: 50,
@@ -298,8 +287,6 @@ class _Exercice4_numState extends State<Exercice4_num> {
             //Navigator.pushReplacementNamed(context, '/menuevaluation');
           },
         ),
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(
           widget.title + 'Evaluation: Exercice 3',
           style:
@@ -307,8 +294,6 @@ class _Exercice4_numState extends State<Exercice4_num> {
         ),
       ),
       body: SingleChildScrollView(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
           child: (_counter < evaElements.length)
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -340,7 +325,7 @@ class _Exercice4_numState extends State<Exercice4_num> {
                       child: GridView.count(
                         shrinkWrap: true,
                         crossAxisCount: 5,
-                        childAspectRatio: 2,
+                        childAspectRatio: 2.5,
                         children: List.generate(
                           syllabes.length,
                           (index) => Card(
@@ -370,14 +355,11 @@ class _Exercice4_numState extends State<Exercice4_num> {
         child: FloatingActionButton(
             backgroundColor: Colors.amber,
             child: Text(
-              '${point.toStringAsFixed(1)} /2.2',
+              '${point.toStringAsFixed(1)}/2.2',
               style: TextStyle(fontSize: 20),
             ),
-            onPressed: () {
-              //playSound();
-            }),
+            onPressed: () => null),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

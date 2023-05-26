@@ -1,15 +1,6 @@
 import 'dart:async';
-import 'dart:ffi';
-import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:projets/menu.dart';
-import 'package:projets/main.dart';
-import 'package:projets/menuEvaluation.dart';
 
 extension ColorExtension on String {
   toColor18() {
@@ -34,8 +25,6 @@ class _Exercice1_numState extends State<Exercice1_num> {
   var debutEvaluation;
   late SharedPreferences preferences;
   final _controller = TextEditingController();
-  late Timer _timer;
-  int _seconds = 15;
 
 //liste de type map avec nos questions, syllables et reponses
   List<Map<String, dynamic>> evaElements = [
@@ -92,7 +81,7 @@ class _Exercice1_numState extends State<Exercice1_num> {
         if (res.toLowerCase() == evaElements[_counter]["reponse"]) {
           setState(() {
             RandomCounter();
-            point = point + 1;
+            point = point + 0.2;
 
             print(".....POINT: ${point.toStringAsFixed(1)}");
             if (_counter == 5) {
@@ -115,12 +104,8 @@ class _Exercice1_numState extends State<Exercice1_num> {
 
   Future Saveresult() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    //Double total = 0 as Double;
-    //Double total = preferences.getDouble('litteratie') as Double;
+        //sauvegarde du resultat
     prefs.setDouble('numeratie', point);
-    var nbr = prefs.getDouble('numeratie');
-    print(".....RESULTAT.....");
-    print(nbr);
     Successpopup();
   }
 
@@ -266,15 +251,6 @@ class _Exercice1_numState extends State<Exercice1_num> {
     );
   }
 
-  void startTimer() {
-    var duration = Duration(seconds: 1);
-    _timer = Timer.periodic(duration, (timer) {
-      setState(() {
-        _seconds = _seconds--;
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     //affichage de popup d'evaluation
@@ -367,14 +343,10 @@ class _Exercice1_numState extends State<Exercice1_num> {
         child: FittedBox(
           child: FloatingActionButton(
               backgroundColor: Colors.amber,
-              child: Text('${_seconds.toString()} /5'),
-              onPressed: () {
-                //playSound();
-              }),
+              child: Text('${point.toStringAsFixed(1)}/1'),
+              onPressed: () => null),
         ),
       ),
-      // point.toStringAsFixed(1)
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
