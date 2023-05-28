@@ -128,7 +128,15 @@ flutter:
       #  Leçon 9
     - assets/audio/lecon9/
     - assets/lecon9/lec9.jpeg
+<<<<<<< Updated upstream
     - assets/lecon9/petitI.PNG
+=======
+<<<<<<< HEAD
+    # - assets/lecon9/petitI.png
+=======
+    - assets/lecon9/petitI.PNG
+>>>>>>> main
+>>>>>>> Stashed changes
     - assets/lecon9/
 
       #  Leçon 10

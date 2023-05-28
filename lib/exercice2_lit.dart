@@ -120,8 +120,12 @@ class _Exercice2_litState extends State<Exercice2_lit> {
   Future Saveresult() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     //Double total = 0 as Double;
+
     double total = preferences.getDouble('litteratie') as double;
     prefs.setDouble('litteratie2', point);
+
+    //Double total = preferences.getDouble('litteratie') as Double;
+    prefs.setDouble('litteratie', point);
     print(".....RESULTAT.....");
     Successpopup();
   }
