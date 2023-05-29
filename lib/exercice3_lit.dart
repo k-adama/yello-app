@@ -245,7 +245,7 @@ class _Exercice3_litState extends State<Exercice3_lit> {
                         Noter();
                       });
                     } else {
-                      total = point;
+                      total += point;
                       print(total);
                       setState(() {
                         erreur2 = '';
@@ -275,8 +275,10 @@ class _Exercice3_litState extends State<Exercice3_lit> {
   }
 
   Future Saveresult() async {
+
     prefs.setDouble('litteratie3', total as double);
      prefs.setBool("lit3", true);
+
     print(".....RESULTAT: ${prefs.getDouble('litteratie')} .....");
     //Successpopup();
   }
