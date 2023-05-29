@@ -143,7 +143,6 @@ class _MenuAppState extends State<MenuApp> {
                     child: new InkWell(
                       onTap: () {
                         Navigator.pushNamed(context, '/menuEva');
-                        // print("tapped");
                       },
                       child: Image(
                         image: AssetImage('assets/icons/pen.png'),

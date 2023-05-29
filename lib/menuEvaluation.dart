@@ -412,44 +412,78 @@ class MenuEvaluation extends StatefulWidget {
 }
 
 class _MenuEvaluationState extends State<MenuEvaluation> {
-  int _counter = 0;
+  bool? numeratie1;
+  bool? numeratie2;
+  bool? numeratie3;
+  bool? numeratie4;
+  bool? litteratie1;
+  bool? litteratie2;
+  bool? litteratie3;
 
-  Future<void> point() async {
+  Future<void> checkParcipation() async {
     var prefs = await SharedPreferences.getInstance();
-    double numeratie1 = prefs.getDouble('numeratie1') ?? 0;
-    double numeratie2 = prefs.getDouble('numeratie2') ?? 0;
-    double numeratie3 = prefs.getDouble('numeratie3') ?? 0;
-    double numeratie4 = prefs.getDouble('numeratie4') ?? 0;
-    double litteratie1 = prefs.getDouble('litteratie1') ?? 0;
-    double litteratie2 = prefs.getDouble('litteratie2') ?? 0;
-    double litteratie3 = prefs.getDouble('litteratie3') ?? 0;
-    double numeratie = numeratie1 + numeratie2 + numeratie3 + numeratie4;
-    double litteratie = litteratie1 + litteratie2 + litteratie3;
-    print("Point en litteratie to: $litteratie");
-    print("Point en numeratie: $numeratie");
+    numeratie1 = prefs.getBool('num1');
+    print(numeratie1);
+    numeratie2 = prefs.getBool('num2');
+    print(numeratie2);
+    numeratie3 = prefs.getBool('num3');
+    print(numeratie3);
+    numeratie4 = prefs.getBool('num4');
+    print(numeratie4);
+    litteratie1 = prefs.getBool('lit1');
+    print(litteratie1);
+    litteratie2 = prefs.getBool('lit2');
+    print(litteratie2);
+    litteratie3 = prefs.getBool('lit3');
+    print(litteratie3);
+
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    checkParcipation();
+    super.initState();
+  }
+
+  void passage() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(
+          "Désolé",
+          style: TextStyle(
+            fontSize: 25,
+            color: Colors.green[400],
+          ),
+        ),
+        content: Text(
+          "Vous avez déja fait cet exercice",
+        ),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.of(ctx).pop();
+              Navigator.pushReplacementNamed(context, '/menuEva');
+            },
+            child: Text(
+              "Ok",
+              style: TextStyle(fontSize: 25),
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    point();
     return Scaffold(
       //backgroundColor: '#fcca0c'.toColor2(),
       appBar: AppBar(
         centerTitle: true,
         toolbarHeight: 80,
-        // leading: IconButton(
-        //   icon: const Icon(
-        //     Icons.arrow_back_ios,
-        //     color: Colors.black,
-        //   ),
-        //   tooltip: "Close",
-        //   onPressed: () {
-        //     Navigator.pushReplacementNamed(context, '/menu');
-        //   },
-        // ),
         backgroundColor: '#fcca0c'.toColor5(),
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(
           widget.title + 'Menu des évaluations',
           style:
@@ -457,9 +491,6 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
         ),
       ),
       body: SingleChildScrollView(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -482,8 +513,11 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/exercice1_lit');
-                        //print("tapped");
+                        if (litteratie1 == true) {
+                          return passage();
+                        } else {
+                          Navigator.pushNamed(context, '/exercice1_lit');
+                        }
                       },
                       child: Center(child: Text('Exercice 1')),
                     ),
@@ -495,8 +529,11 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/exercice2_lit');
-                        //print("tapped");
+                        if (litteratie2 == true) {
+                          return passage();
+                        } else {
+                          Navigator.pushNamed(context, '/exercice2_lit');
+                        }
                       },
                       child: Center(child: Text('Exercice 2')),
                     ),
@@ -508,8 +545,11 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/exercice3_lit');
-                        //print("tapped");
+                        if (litteratie3 == true) {
+                          return passage();
+                        } else {
+                          Navigator.pushNamed(context, '/exercice3_lit');
+                        }
                       },
                       child: Center(child: Text('Exercice 3')),
                     ),
@@ -548,7 +588,11 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/exercice1_num');
+                        if (numeratie1 == true) {
+                          return passage();
+                        } else {
+                          Navigator.pushNamed(context, '/exercice1_num');
+                        }
                         // print("tapped");
                       },
                       child: Center(child: Text('Exercice 1')),
@@ -561,7 +605,11 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/exercice2_num');
+                        if (numeratie2 == true) {
+                          return passage();
+                        } else {
+                          Navigator.pushNamed(context, '/exercice2_num');
+                        }
                       },
                       child: Center(child: Text('Exercice 2')),
                     ),
@@ -574,7 +622,11 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/exercice3_num');
+                        if (numeratie3 == true) {
+                          return passage();
+                        } else {
+                          Navigator.pushNamed(context, '/exercice3_num');
+                        }
                       },
                       child: Center(child: Text('Exercice 3')),
                     ),
@@ -586,7 +638,11 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: Card(
                     child: new InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/exercice4_num');
+                        if (numeratie4 == true) {
+                          return passage();
+                        } else {
+                          Navigator.pushNamed(context, '/exercice4_num');
+                        }
                       },
                       child: Center(child: Text('Exercice 4')),
                     ),
@@ -610,6 +666,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                     style: TextButton.styleFrom(backgroundColor: Colors.yellow),
                     onPressed: () async {
                       Navigator.pushNamed(context, '/resultat');
+
                       // senddata();
                       //CheckConfig();
                     },

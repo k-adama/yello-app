@@ -125,20 +125,9 @@ class _ResultatState extends State<Resultat> {
   Widget build(BuildContext context) {
     point();
     return Scaffold(
-      //backgroundColor: '#fcca0c'.toColor2(),
       appBar: AppBar(
         centerTitle: true,
         toolbarHeight: 80,
-        // leading: IconButton(
-        //   icon: const Icon(
-        //     Icons.arrow_back_ios,
-        //     color: Colors.black,
-        //   ),
-        //   tooltip: "Close",
-        //   onPressed: () {
-        //     Navigator.pushReplacementNamed(context, '/menu');
-        //   },
-        // ),
         backgroundColor: '#fcca0c'.toColor5(),
         title: Text(
           widget.title + 'Résultat des évaluations',
@@ -193,7 +182,8 @@ class _ResultatState extends State<Resultat> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.yellow, // Définir la couleur de fond du bouton
+                backgroundColor:
+                    Colors.yellow, // Définir la couleur de fond du bouton
               ),
               onPressed: () {
                 senddata();

@@ -99,14 +99,16 @@ class _Exercice3_numState extends State<Exercice3_num> {
 
   Future Saveresult() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-        //sauvegarde du resultat
+    //sauvegarde du resultat
     prefs.setDouble('numeratie3', point);
+     prefs.setBool("num3", true);
     Successpopup();
   }
 
   //popup anonçant le début de l'évaluation
   void Startpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -186,6 +188,7 @@ class _Exercice3_numState extends State<Exercice3_num> {
   //popup de reponse erronée
   void Errorpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -218,6 +221,7 @@ class _Exercice3_numState extends State<Exercice3_num> {
   //popup de succès de l'évaluation
   void Successpopup() {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -266,10 +270,8 @@ class _Exercice3_numState extends State<Exercice3_num> {
           tooltip: "Close",
           onPressed: () {
             Alertpopup(context);
-
           },
         ),
-
         title: Text(
           widget.title + 'Evaluation: Exercice 3 Numératie',
           style:
@@ -277,7 +279,6 @@ class _Exercice3_numState extends State<Exercice3_num> {
         ),
       ),
       body: SingleChildScrollView(
-
           child: (_counter < evaElements.length)
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -317,7 +318,6 @@ class _Exercice3_numState extends State<Exercice3_num> {
                             )),
                         ElevatedButton(
                             onPressed: () {
-                             
                               CheckChoice(_controller.text);
 
                               _controller.clear();

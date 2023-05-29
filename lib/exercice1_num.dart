@@ -106,12 +106,14 @@ class _Exercice1_numState extends State<Exercice1_num> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     //sauvegarde du resultat
     prefs.setDouble('numeratie1', point);
+    prefs.setBool("num1", true);
     Successpopup();
   }
 
   //popup anonçant le début de l'évaluation
   void Startpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -191,6 +193,7 @@ class _Exercice1_numState extends State<Exercice1_num> {
   //popup de reponse erronée
   void Errorpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -223,6 +226,7 @@ class _Exercice1_numState extends State<Exercice1_num> {
   //popup de succès de l'évaluation
   void Successpopup() {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -238,7 +242,6 @@ class _Exercice1_numState extends State<Exercice1_num> {
         actions: <Widget>[
           TextButton(
             onPressed: () {
-              Navigator.of(ctx).pop();
               Navigator.pushReplacementNamed(context, '/menuEva');
             },
             child: Text(
