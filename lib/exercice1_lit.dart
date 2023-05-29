@@ -139,23 +139,24 @@ class _Exercice1_litState extends State<Exercice1_lit> {
       }
     } else {
       Saveresult();
-
-      Navigator.pushReplacementNamed(context, '/menuEva');
     }
   }
 
   Future Saveresult() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    //Double total = 0 as Double;
-    //Double total = preferences.getDouble('litteratie') as Double;
+
     prefs.setDouble('litteratie1', point);
+    prefs.setBool("lit1", true);
+    
     print(".....RESULTAT.....");
+
     Successpopup();
   }
 
   //popup anonçant le début de l'évaluation
   void Startpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -186,7 +187,6 @@ class _Exercice1_litState extends State<Exercice1_lit> {
           ),
           TextButton(
             onPressed: () {
-              Navigator.of(ctx).pop();
               Navigator.pushReplacementNamed(context, '/menuEva');
             },
             child: Text(
@@ -235,6 +235,7 @@ class _Exercice1_litState extends State<Exercice1_lit> {
   //popup de reponse erronée
   void Errorpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -267,6 +268,7 @@ class _Exercice1_litState extends State<Exercice1_lit> {
   //popup de succès de l'évaluation
   void Successpopup() {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -282,8 +284,12 @@ class _Exercice1_litState extends State<Exercice1_lit> {
         actions: <Widget>[
           TextButton(
             onPressed: () {
-              Navigator.of(ctx).pop();
-              Navigator.pushReplacementNamed(context, '/menuEva');
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => MenuEvaluation(
+                            title: '',
+                          )));
             },
             child: Text(
               "Ok",

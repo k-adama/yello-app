@@ -122,6 +122,7 @@ class _Exercice2_litState extends State<Exercice2_lit> {
     //Double total = 0 as Double;
     double total = preferences.getDouble('litteratie') as double;
     prefs.setDouble('litteratie2', point);
+     prefs.setBool("lit2", true);
     print(".....RESULTAT.....");
     Successpopup();
   }
@@ -129,6 +130,7 @@ class _Exercice2_litState extends State<Exercice2_lit> {
   //popup anonçant le début de l'évaluation
   void Startpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -208,6 +210,7 @@ class _Exercice2_litState extends State<Exercice2_lit> {
   //popup de reponse erronée
   void Errorpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -240,6 +243,7 @@ class _Exercice2_litState extends State<Exercice2_lit> {
   //popup de succès de l'évaluation
   void Successpopup() {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(

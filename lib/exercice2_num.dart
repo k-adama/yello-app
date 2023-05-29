@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 extension ColorExtension on String {
   toColor18() {
     var hexString = this;
@@ -108,12 +107,14 @@ class _Exercice2_numState extends State<Exercice2_num> {
 
     //sauvegarde du resultat
     prefs.setDouble('numeratie2', point);
+     prefs.setBool("num2", true);
     Successpopup();
   }
 
   //popup anonçant le début de l'évaluation
   void Startpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -178,7 +179,6 @@ class _Exercice2_numState extends State<Exercice2_num> {
           TextButton(
             onPressed: () {
               Navigator.of(ctx).pop();
-
             },
             child: Text(
               "OK",
@@ -193,6 +193,7 @@ class _Exercice2_numState extends State<Exercice2_num> {
   //popup de reponse erronée
   void Errorpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -225,6 +226,7 @@ class _Exercice2_numState extends State<Exercice2_num> {
   //popup de succès de l'évaluation
   void Successpopup() {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -273,10 +275,8 @@ class _Exercice2_numState extends State<Exercice2_num> {
           tooltip: "Close",
           onPressed: () {
             Alertpopup(context);
-
           },
         ),
-
         title: Text(
           widget.title + 'Evaluation: Exercice 2 Numératie',
           style:
@@ -284,7 +284,6 @@ class _Exercice2_numState extends State<Exercice2_num> {
         ),
       ),
       body: SingleChildScrollView(
-
           child: (_counter < evaElements.length)
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -325,7 +324,6 @@ class _Exercice2_numState extends State<Exercice2_num> {
                             )),
                         ElevatedButton(
                             onPressed: () {
-                              
                               CheckChoice(_controller.text);
 
                               _controller.clear();

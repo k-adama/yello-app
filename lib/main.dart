@@ -1,11 +1,8 @@
-import 'dart:convert';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'package:projets/alphabet.dart';
 import 'package:projets/ardoise.dart';
-import 'package:projets/blocage_app.dart';
 import 'package:projets/connexion_Evaluation.dart';
 import 'package:projets/dashboard.dart';
 import 'package:projets/ecrire.dart';
@@ -23,12 +20,10 @@ import 'package:projets/lecon21.dart';
 import 'package:projets/lecon22.dart';
 import 'package:projets/lecon31.dart';
 import 'package:projets/lecon32.dart';
-
 import 'package:projets/lecon33.dart';
 import 'package:projets/lecon34.dart';
 import 'package:projets/lecon37.dart';
 import 'package:projets/lecon38.dart';
-
 import 'package:projets/lecon41.dart';
 import 'package:projets/lecon45.dart';
 import 'package:projets/lecon46.dart';

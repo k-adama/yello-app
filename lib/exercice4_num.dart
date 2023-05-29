@@ -120,12 +120,14 @@ class _Exercice4_numState extends State<Exercice4_num> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     //sauvegarde du resultat
     prefs.setDouble('numeratie4', point);
+    prefs.setBool("num4", true);
     Successpopup();
   }
 
   //popup anonçant le début de l'évaluation
   void Startpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -205,6 +207,7 @@ class _Exercice4_numState extends State<Exercice4_num> {
   //popup de reponse erronée
   void Errorpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -237,6 +240,7 @@ class _Exercice4_numState extends State<Exercice4_num> {
   //popup de succès de l'évaluation
   void Successpopup() {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
