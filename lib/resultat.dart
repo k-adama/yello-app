@@ -124,6 +124,7 @@ class _ResultatState extends State<Resultat> {
   @override
   Widget build(BuildContext context) {
     point();
+
     return Scaffold(
       //backgroundColor: '#fcca0c'.toColor2(),
       appBar: AppBar(
