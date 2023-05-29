@@ -275,7 +275,10 @@ class _Exercice3_litState extends State<Exercice3_lit> {
   }
 
   Future Saveresult() async {
-    prefs.setDouble('litteratie', total as double);
+
+    prefs.setDouble('litteratie3', total as double);
+     prefs.setBool("lit3", true);
+
     print(".....RESULTAT: ${prefs.getDouble('litteratie')} .....");
     //Successpopup();
   }
@@ -283,6 +286,7 @@ class _Exercice3_litState extends State<Exercice3_lit> {
   //popup anonçant le début de l'évaluation
   void Startpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -362,6 +366,7 @@ class _Exercice3_litState extends State<Exercice3_lit> {
   //popup de reponse erronée
   void Errorpopup(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
@@ -394,6 +399,7 @@ class _Exercice3_litState extends State<Exercice3_lit> {
   //popup de succès de l'évaluation
   void Successpopup() {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(

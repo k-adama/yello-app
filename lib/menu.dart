@@ -225,7 +225,9 @@ class _MenuAppState extends State<MenuApp> {
                     color: Color.fromRGBO(252, 202, 12, 1),
                     child: new InkWell(
                       onTap: () {
+
                         Connexion();
+
                       },
                       child: Image(
                         image: AssetImage('assets/icons/pen.png'),
