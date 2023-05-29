@@ -412,6 +412,9 @@ class MenuEvaluation extends StatefulWidget {
 }
 
 class _MenuEvaluationState extends State<MenuEvaluation> {
+  int _counter = 0;
+  String erreurPass = "";
+  final pass = TextEditingController();
   bool? numeratie1;
   bool? numeratie2;
   bool? numeratie3;
@@ -419,6 +422,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
   bool? litteratie1;
   bool? litteratie2;
   bool? litteratie3;
+
 
   Future<void> checkParcipation() async {
     var prefs = await SharedPreferences.getInstance();
@@ -476,8 +480,90 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
     );
   }
 
+  void Connexion() {
+    showDialog(
+      context: context,
+      builder: (ctx) => SingleChildScrollView(
+        child: AlertDialog(
+          title: Text(
+            "Entrer votre mot de passe",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 25,
+              color: Colors.green[400],
+            ),
+          ),
+          content: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  width: 200,
+                  height: 60,
+                  child: TextField(
+                    controller: pass,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Mot de passe',
+                    ),
+                  ),
+                ),
+                Text(
+                  "${erreurPass}",
+                  style: TextStyle(color: Colors.red),
+                ),
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        if (pass.text == 'YelloAlpha') {
+                          Navigator.of(ctx).pop();
+                          setState(() {
+                            Navigator.pushNamed(context, '/resultat');
+
+                            pass.clear();
+                            erreurPass = '';
+                          });
+                        } else {
+                          setState(() {
+                            erreurPass = 'mot de passe incorrect';
+
+                            pass.clear();
+                          });
+                        }
+                      },
+                      child: Text(
+                        "connexion",
+                        style: TextStyle(fontSize: 25),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/menu');
+                      },
+                      child: Text(
+                        "Annuler",
+                        style: TextStyle(fontSize: 25),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+
+    point();
+
     return Scaffold(
       //backgroundColor: '#fcca0c'.toColor2(),
       appBar: AppBar(
@@ -665,8 +751,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                   child: TextButton(
                     style: TextButton.styleFrom(backgroundColor: Colors.yellow),
                     onPressed: () async {
-                      Navigator.pushNamed(context, '/resultat');
-
+                      Connexion();
                       // senddata();
                       //CheckConfig();
                     },

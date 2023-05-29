@@ -124,6 +124,7 @@ class _ResultatState extends State<Resultat> {
   @override
   Widget build(BuildContext context) {
     point();
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

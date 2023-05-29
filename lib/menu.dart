@@ -37,10 +37,93 @@ class _MenuAppState extends State<MenuApp> {
   late SharedPreferences preferences;
   String student = "";
 
+  String erreurPass = "";
+  final pass = TextEditingController();
+
   @override
   void initState() {
     super.initState();
     init();
+  }
+
+  void Connexion() {
+    showDialog(
+      context: context,
+      builder: (ctx) => SingleChildScrollView(
+        child: AlertDialog(
+          title: Text(
+            "Entrer votre mot de passe",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 25,
+              color: Colors.green[400],
+            ),
+          ),
+          content: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  width: 200,
+                  height: 60,
+                  child: TextField(
+                    controller: pass,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Mot de passe',
+                    ),
+                  ),
+                ),
+                Text(
+                  "${erreurPass}",
+                  style: TextStyle(color: Colors.red),
+                ),
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        if (pass.text == 'YelloAlpha') {
+                          Navigator.of(ctx).pop();
+                          setState(() {
+                            pass.clear();
+                          });
+                          Navigator.pushNamed(context, '/menuEva');
+                        } else {
+                          setState(() {
+                            erreurPass = "mot de passe incorrect";
+                            pass.clear();
+                          });
+                        }
+                      },
+                      child: Text(
+                        "connexion",
+                        style: TextStyle(fontSize: 25),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        pass.clear();
+                        setState(() {
+                          erreurPass = '';
+                        });
+                        Navigator.of(ctx).pop();
+                      },
+                      child: Text(
+                        "Annuler",
+                        style: TextStyle(fontSize: 25),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   Future init() async {
@@ -142,7 +225,9 @@ class _MenuAppState extends State<MenuApp> {
                     color: Color.fromRGBO(252, 202, 12, 1),
                     child: new InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/menuEva');
+
+                        Connexion();
+
                       },
                       child: Image(
                         image: AssetImage('assets/icons/pen.png'),
