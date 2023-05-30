@@ -251,7 +251,8 @@ class _Exercice3_litState extends State<Exercice3_lit> {
                         erreur2 = '';
                       });
                       Saveresult();
-                      Navigator.pushReplacementNamed(context, '/menuEva');
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/menuEva', ModalRoute.withName('/menu'));
                     }
                   },
                   child: Text(
@@ -275,9 +276,8 @@ class _Exercice3_litState extends State<Exercice3_lit> {
   }
 
   Future Saveresult() async {
-
     prefs.setDouble('litteratie3', total as double);
-     prefs.setBool("lit3", true);
+    prefs.setBool("lit3", true);
 
     print(".....RESULTAT: ${prefs.getDouble('litteratie')} .....");
     //Successpopup();
@@ -415,8 +415,7 @@ class _Exercice3_litState extends State<Exercice3_lit> {
         actions: <Widget>[
           TextButton(
             onPressed: () {
-             Navigator.pushNamedAndRemoveUntil(
-                  context, '/menuEva', ModalRoute.withName('/menu'));
+              Navigator.pop(context);
             },
             child: Text(
               "Ok",
@@ -497,29 +496,17 @@ class _Exercice3_litState extends State<Exercice3_lit> {
             Questionnaire(
                 'c - Expliquez en 10 lignes ce que vous retenez du projet.',
                 reponse_e),
-            Card(
-              child: InkWell(
-                onTap: () {
-                  terminated ? Connexion() : Terminer();
-                },
-                child: Padding(
-                  padding: EdgeInsets.all(5),
-                  child: terminated
-                      ? Text('Corriger',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontFamily: 'Poppins',
-                          ))
-                      : Text(
-                          'Terminer',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontFamily: 'Poppins',
-                          ),
-                        ),
-                ),
-              ),
-            ),
+            terminated
+                ? ElevatedButton(
+                    onPressed: () {
+                      Connexion();
+                    },
+                    child: Text("Noter"))
+                : ElevatedButton(
+                    onPressed: () {
+                      Terminer();
+                    },
+                    child: Text("Terminer")),
             SizedBox(height: 50),
           ],
         ),

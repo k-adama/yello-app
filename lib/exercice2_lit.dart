@@ -99,7 +99,7 @@ class _Exercice2_litState extends State<Exercice2_lit> {
         });
         // playSound();
       } else {
-        Errorpopup(context);
+        // Errorpopup(context);
         reponse.clear();
         RandomCounter();
         if (_counter != 10) {
@@ -207,37 +207,37 @@ class _Exercice2_litState extends State<Exercice2_lit> {
   }
 
   //popup de reponse erronée
-  void Errorpopup(BuildContext context) {
-    showDialog(
-      barrierDismissible: false,
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(
-          "Résultat",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 25,
-            color: Colors.red[400],
-          ),
-        ),
-        content: Text(
-          "Mauvaise réponse",
-          textAlign: TextAlign.center,
-        ),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.of(ctx).pop();
-            },
-            child: Text(
-              "Continuer",
-              style: TextStyle(fontSize: 25),
-            ),
-          )
-        ],
-      ),
-    );
-  }
+  // void Errorpopup(BuildContext context) {
+  //   showDialog(
+  //     barrierDismissible: false,
+  //     context: context,
+  //     builder: (ctx) => AlertDialog(
+  //       title: Text(
+  //         "Résultat",
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(
+  //           fontSize: 25,
+  //           color: Colors.red[400],
+  //         ),
+  //       ),
+  //       content: Text(
+  //         "Mauvaise réponse",
+  //         textAlign: TextAlign.center,
+  //       ),
+  //       actions: <Widget>[
+  //         TextButton(
+  //           onPressed: () {
+  //             Navigator.of(ctx).pop();
+  //           },
+  //           child: Text(
+  //             "Continuer",
+  //             style: TextStyle(fontSize: 25),
+  //           ),
+  //         )
+  //       ],
+  //     ),
+  //   );
+  // }
 
   //popup de succès de l'évaluation
   void Successpopup() {
