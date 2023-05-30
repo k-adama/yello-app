@@ -423,7 +423,6 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
   bool? litteratie2;
   bool? litteratie3;
 
-
   Future<void> checkParcipation() async {
     var prefs = await SharedPreferences.getInstance();
     numeratie1 = prefs.getBool('num1');
@@ -450,6 +449,12 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
     super.initState();
   }
 
+  @override
+  void dispose() {
+    checkParcipation();
+    super.dispose();
+  }
+
   void passage() {
     showDialog(
       context: context,
@@ -467,8 +472,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
         actions: <Widget>[
           TextButton(
             onPressed: () {
-              Navigator.of(ctx).pop();
-              Navigator.pushReplacementNamed(context, '/menuEva');
+              Navigator.pop(context);
             },
             child: Text(
               "Ok",
@@ -517,17 +521,14 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                     ElevatedButton(
                       onPressed: () {
                         if (pass.text == 'YelloAlpha') {
-                          Navigator.of(ctx).pop();
+                          Navigator.pushReplacementNamed(context, '/resultat');
                           setState(() {
-                            Navigator.pushNamed(context, '/resultat');
-
-                            pass.clear();
                             erreurPass = '';
+                            pass.clear();
                           });
                         } else {
                           setState(() {
                             erreurPass = 'mot de passe incorrect';
-
                             pass.clear();
                           });
                         }
@@ -542,7 +543,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/menu');
+                        Navigator.pop(context);
                       },
                       child: Text(
                         "Annuler",
@@ -561,217 +562,246 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
 
   @override
   Widget build(BuildContext context) {
-
-    point();
-
-    return Scaffold(
-      //backgroundColor: '#fcca0c'.toColor2(),
-      appBar: AppBar(
-        centerTitle: true,
-        toolbarHeight: 80,
-        backgroundColor: '#fcca0c'.toColor5(),
-        title: Text(
-          widget.title + 'Menu des évaluations',
-          style:
-              TextStyle(color: Color(0xff000000), fontStyle: FontStyle.italic),
+    return WillPopScope(
+      onWillPop: () async {
+        final shouldPop = await showDialog<bool>(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text(
+                  'Êtes-vous sûr de vouloir quitter le ménu d\'évaluation?'),
+              actionsAlignment: MainAxisAlignment.spaceBetween,
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/menu', ModalRoute.withName('/'));
+                  },
+                  child: const Text('Oui'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(true);
+                  },
+                  child: const Text('Non'),
+                ),
+              ],
+            );
+          },
+        );
+        return shouldPop!;
+      },
+      child: Scaffold(
+        //backgroundColor: '#fcca0c'.toColor2(),
+        appBar: AppBar(
+          centerTitle: true,
+          toolbarHeight: 80,
+          backgroundColor: '#fcca0c'.toColor5(),
+          title: Text(
+            widget.title + 'Menu des évaluations',
+            style: TextStyle(
+                color: Color(0xff000000), fontStyle: FontStyle.italic),
+          ),
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(20), //apply padding to all four sides
-              child: Text(
-                'Litteratie',
-                style: TextStyle(fontSize: 25),
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(20), //apply padding to all four sides
+                child: Text(
+                  'Litteratie',
+                  style: TextStyle(fontSize: 25),
+                ),
               ),
-            ),
-// --- Ligne  1 -------------
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                // Expanded(
-                SizedBox(
-                  width: 150,
-                  height: 70,
-                  child: Card(
-                    child: new InkWell(
-                      onTap: () {
-                        if (litteratie1 == true) {
-                          return passage();
-                        } else {
-                          Navigator.pushNamed(context, '/exercice1_lit');
-                        }
-                      },
-                      child: Center(child: Text('Exercice 1')),
+              // --- Ligne  1 -------------
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  // Expanded(
+                  SizedBox(
+                    width: 150,
+                    height: 70,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          if (litteratie1 == true) {
+                            return passage();
+                          } else {
+                            Navigator.pushNamed(context, '/exercice1_lit');
+                          }
+                        },
+                        child: Center(child: Text('Exercice 1')),
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: 150,
-                  height: 70,
-                  child: Card(
-                    child: new InkWell(
-                      onTap: () {
-                        if (litteratie2 == true) {
-                          return passage();
-                        } else {
-                          Navigator.pushNamed(context, '/exercice2_lit');
-                        }
-                      },
-                      child: Center(child: Text('Exercice 2')),
+                  SizedBox(
+                    width: 150,
+                    height: 70,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          if (litteratie2 == true) {
+                            return passage();
+                          } else {
+                            Navigator.pushNamed(context, '/exercice2_lit');
+                          }
+                        },
+                        child: Center(child: Text('Exercice 2')),
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: 150,
-                  height: 70,
-                  child: Card(
-                    child: new InkWell(
-                      onTap: () {
-                        if (litteratie3 == true) {
-                          return passage();
-                        } else {
-                          Navigator.pushNamed(context, '/exercice3_lit');
-                        }
-                      },
-                      child: Center(child: Text('Exercice 3')),
+                  SizedBox(
+                    width: 150,
+                    height: 70,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          if (litteratie3 == true) {
+                            return passage();
+                          } else {
+                            Navigator.pushNamed(context, '/exercice3_lit');
+                          }
+                        },
+                        child: Center(child: Text('Exercice 3')),
+                      ),
                     ),
                   ),
-                ),
-                // ),
+                  // ),
 
-                // ),
-              ],
-            ),
-            // --- Ligne  2 -------------
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.all(20), //apply padding to all four sides
-              child: Text(
-                'Numératie',
-                style: TextStyle(fontSize: 25),
+                  // ),
+                ],
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                //Expanded(
+              // --- Ligne  2 -------------
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: EdgeInsets.all(20), //apply padding to all four sides
+                child: Text(
+                  'Numératie',
+                  style: TextStyle(fontSize: 25),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  //Expanded(
 
-                //),
+                  //),
 
-                //Expanded(
-                SizedBox(
-                  width: 150,
-                  height: 70,
-                  child: Card(
-                    child: new InkWell(
-                      onTap: () {
-                        if (numeratie1 == true) {
-                          return passage();
-                        } else {
-                          Navigator.pushNamed(context, '/exercice1_num');
-                        }
-                        // print("tapped");
-                      },
-                      child: Center(child: Text('Exercice 1')),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 150,
-                  height: 70,
-                  child: Card(
-                    child: new InkWell(
-                      onTap: () {
-                        if (numeratie2 == true) {
-                          return passage();
-                        } else {
-                          Navigator.pushNamed(context, '/exercice2_num');
-                        }
-                      },
-                      child: Center(child: Text('Exercice 2')),
-                    ),
-                  ),
-                ),
+                  //Expanded(
+                  SizedBox(
+                    width: 150,
+                    height: 70,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          if (numeratie1 == true) {
+                            return passage();
+                          } else {
+                            Navigator.pushNamed(context, '/exercice1_num');
+                          }
 
-                SizedBox(
-                  width: 150,
-                  height: 70,
-                  child: Card(
-                    child: new InkWell(
-                      onTap: () {
-                        if (numeratie3 == true) {
-                          return passage();
-                        } else {
-                          Navigator.pushNamed(context, '/exercice3_num');
-                        }
-                      },
-                      child: Center(child: Text('Exercice 3')),
+                          // print("tapped");
+                        },
+                        child: Center(child: Text('Exercice 1')),
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: 150,
-                  height: 70,
-                  child: Card(
-                    child: new InkWell(
-                      onTap: () {
-                        if (numeratie4 == true) {
-                          return passage();
-                        } else {
-                          Navigator.pushNamed(context, '/exercice4_num');
-                        }
-                      },
-                      child: Center(child: Text('Exercice 4')),
+                  SizedBox(
+                    width: 150,
+                    height: 70,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          if (numeratie2 == true) {
+                            return passage();
+                          } else {
+                            Navigator.pushNamed(context, '/exercice2_num');
+                          }
+                        },
+                        child: Center(child: Text('Exercice 2')),
+                      ),
                     ),
                   ),
-                ),
 
-                //),
-              ],
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                // Expanded(
-                SizedBox(
-                  width: 300,
-                  height: 60,
-                  child: TextButton(
-                    style: TextButton.styleFrom(backgroundColor: Colors.yellow),
-                    onPressed: () async {
-                      Connexion();
-                      // senddata();
-                      //CheckConfig();
-                    },
-                    child: Text(
-                      'Voir les résulats',
-                      style: TextStyle(
-                          fontSize: 25,
-                          color: CupertinoColors.darkBackgroundGray),
+                  SizedBox(
+                    width: 150,
+                    height: 70,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          if (numeratie3 == true) {
+                            return passage();
+                          } else {
+                            Navigator.pushNamed(context, '/exercice3_num');
+                          }
+                        },
+                        child: Center(child: Text('Exercice 3')),
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            )
-          ],
+                  SizedBox(
+                    width: 150,
+                    height: 70,
+                    child: Card(
+                      child: new InkWell(
+                        onTap: () {
+                          if (numeratie4 == true) {
+                            return passage();
+                          } else {
+                            Navigator.pushNamed(context, '/exercice4_num');
+                          }
+                        },
+                        child: Center(child: Text('Exercice 4')),
+                      ),
+                    ),
+                  ),
+
+                  //),
+                ],
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  // Expanded(
+                  SizedBox(
+                    width: 300,
+                    height: 60,
+                    child: TextButton(
+                      style:
+                          TextButton.styleFrom(backgroundColor: Colors.yellow),
+                      onPressed: () async {
+                        Connexion();
+                        // senddata();
+                        //CheckConfig();
+                      },
+                      child: Text(
+                        'Voir les résulats',
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: CupertinoColors.darkBackgroundGray),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              )
+            ],
+          ),
         ),
+        // This trailing comma makes auto-formatting nicer for build methods.
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

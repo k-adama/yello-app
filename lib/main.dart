@@ -68,12 +68,6 @@ import 'package:projets/exercice1_lit.dart';
 import 'package:projets/exercice2_lit.dart';
 import 'package:projets/exercice3_lit.dart';
 import 'package:projets/leconPrealpha.dart';
-import 'package:projets/evaluationSymbol.dart';
-import 'package:projets/evaluationSyllable.dart';
-import 'package:projets/exercice1_lit.dart';
-import 'package:projets/exercice2_lit.dart';
-import 'package:projets/exercice3_lit.dart';
-import 'package:projets/leconPrealpha.dart';
 import 'package:projets/menu.dart';
 import 'package:projets/adminlogin.dart';
 import 'package:projets/menuEvaluation.dart';
@@ -137,7 +131,7 @@ class _MyAppState extends State<MyApp> {
   String accessBlocked = '';
 
   void bloquer() async {
-    final DateTime deadline = DateTime(2023, 6, 01);
+    final DateTime deadline = DateTime(2023, 6, 5);
 
     Timer.periodic(Duration(seconds: 1), (timer) {
       if (DateTime.now().isAfter(deadline)) {
@@ -453,7 +447,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initState() {
     super.initState();
-    final DateTime deadline = DateTime(2023, 6, 1);
+    final DateTime deadline = DateTime(2023, 6, 5);
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (DateTime.now().isAfter(deadline)) {
         timer.cancel();

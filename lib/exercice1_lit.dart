@@ -98,10 +98,6 @@ class _Exercice1_litState extends State<Exercice1_lit> {
     preferences = await SharedPreferences.getInstance();
   }
 
-  void playSound() {
-    player.play(AssetSource(theAudioPath));
-  }
-
   void RandomCounter() {
     setState(() {
       _counter++;
@@ -127,7 +123,7 @@ class _Exercice1_litState extends State<Exercice1_lit> {
         });
         // playSound();
       } else {
-        Errorpopup(context);
+        // Errorpopup(context);
         RandomCounter();
         if (_counter != 10) {
           theQuestion = questions[_counter];
@@ -147,7 +143,7 @@ class _Exercice1_litState extends State<Exercice1_lit> {
 
     prefs.setDouble('litteratie1', point);
     prefs.setBool("lit1", true);
-    
+
     print(".....RESULTAT.....");
 
     Successpopup();
@@ -177,7 +173,6 @@ class _Exercice1_litState extends State<Exercice1_lit> {
               setState(() {
                 debutEvaluation = "true";
               });
-              playSound();
               Navigator.of(ctx).pop();
             },
             child: Text(
@@ -187,7 +182,8 @@ class _Exercice1_litState extends State<Exercice1_lit> {
           ),
           TextButton(
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/menuEva');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/menuEva', ModalRoute.withName('/menu'));
             },
             child: Text(
               "Annuler",
@@ -219,8 +215,8 @@ class _Exercice1_litState extends State<Exercice1_lit> {
         actions: <Widget>[
           TextButton(
             onPressed: () {
-              Navigator.of(ctx).pop();
-              //Navigator.pushReplacementNamed(context, '/menuEva');
+              // Navigator.of(ctx).pop(false);
+              Navigator.pop(context);
             },
             child: Text(
               "OK",
@@ -233,37 +229,37 @@ class _Exercice1_litState extends State<Exercice1_lit> {
   }
 
   //popup de reponse erronée
-  void Errorpopup(BuildContext context) {
-    showDialog(
-      barrierDismissible: false,
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(
-          "Résultat",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 25,
-            color: Colors.red[400],
-          ),
-        ),
-        content: Text(
-          "Mauvaise réponse",
-          textAlign: TextAlign.center,
-        ),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.of(ctx).pop();
-            },
-            child: Text(
-              "Continuer",
-              style: TextStyle(fontSize: 25),
-            ),
-          )
-        ],
-      ),
-    );
-  }
+  // void Errorpopup(BuildContext context) {
+  //   showDialog(
+  //     barrierDismissible: false,
+  //     context: context,
+  //     builder: (ctx) => AlertDialog(
+  //       title: Text(
+  //         "Résultat",
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(
+  //           fontSize: 25,
+  //           color: Colors.red[400],
+  //         ),
+  //       ),
+  //       content: Text(
+  //         "Mauvaise réponse",
+  //         textAlign: TextAlign.center,
+  //       ),
+  //       actions: <Widget>[
+  //         TextButton(
+  //           onPressed: () {
+  //             Navigator.of(ctx).pop();
+  //           },
+  //           child: Text(
+  //             "Continuer",
+  //             style: TextStyle(fontSize: 25),
+  //           ),
+  //         )
+  //       ],
+  //     ),
+  //   );
+  // }
 
   //popup de succès de l'évaluation
   void Successpopup() {
@@ -284,12 +280,8 @@ class _Exercice1_litState extends State<Exercice1_lit> {
         actions: <Widget>[
           TextButton(
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => MenuEvaluation(
-                            title: '',
-                          )));
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/menuEva', ModalRoute.withName('/menu'));
             },
             child: Text(
               "Ok",

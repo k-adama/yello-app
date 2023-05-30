@@ -83,11 +83,11 @@ class _MenuAppState extends State<MenuApp> {
                     ElevatedButton(
                       onPressed: () {
                         if (pass.text == 'YelloAlpha') {
-                          Navigator.of(ctx).pop();
+                          Navigator.pushReplacementNamed(context, '/menuEva');
+                          // Navigator.pushReplacementNamed(context, '/menuEva');
                           setState(() {
                             pass.clear();
                           });
-                          Navigator.pushNamed(context, '/menuEva');
                         } else {
                           setState(() {
                             erreurPass = "mot de passe incorrect";
@@ -109,7 +109,7 @@ class _MenuAppState extends State<MenuApp> {
                         setState(() {
                           erreurPass = '';
                         });
-                        Navigator.of(ctx).pop();
+                        Navigator.pop(context);
                       },
                       child: Text(
                         "Annuler",
@@ -147,252 +147,260 @@ class _MenuAppState extends State<MenuApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //backgroundColor: '#fcca0c'.toColor2(),
-      appBar: AppBar(
-        centerTitle: true,
-        toolbarHeight: 50,
-        backgroundColor: '#fcca0c'.toColor3(),
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(
-          widget.title +
-              'Y\'ello Alphabétisation $student \n Qu\'est ce qu\'on fait aujourdhui ?',
-          style:
-              TextStyle(color: Color(0xff000000), fontStyle: FontStyle.italic),
+    return WillPopScope(
+      onWillPop: () async {
+        bool result = await Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => MenuApp(
+                      title: '',
+                    )));
+        return result;
+      },
+      child: Scaffold(
+        //backgroundColor: '#fcca0c'.toColor2(),
+        appBar: AppBar(
+          centerTitle: true,
+          toolbarHeight: 50,
+          backgroundColor: '#fcca0c'.toColor3(),
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(
+            widget.title +
+                'Y\'ello Alphabétisation $student \n Qu\'est ce qu\'on fait aujourdhui ?',
+            style: TextStyle(
+                color: Color(0xff000000), fontStyle: FontStyle.italic),
+          ),
         ),
-      ),
-      body: SingleChildScrollView(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+        body: SingleChildScrollView(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
 
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(4), //apply padding to all four sides
-              child: Text(
-                '',
-                style: TextStyle(fontSize: 25),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(4), //apply padding to all four sides
+                child: Text(
+                  '',
+                  style: TextStyle(fontSize: 25),
+                ),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                // Expanded(
-                SizedBox(
-                  width: 150,
-                  height: 150,
-                  child: Card(
-                    color: Color.fromRGBO(252, 202, 12, 1),
-                    child: new InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/infosymbol');
-                        //print("tapped");
-                      },
-                      child: Image(
-                        image: AssetImage('assets/icons/preicon.png'),
-                        width: 10,
-                        height: 10,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  // Expanded(
+                  SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: Card(
+                      color: Color.fromRGBO(252, 202, 12, 1),
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/infosymbol');
+                          //print("tapped");
+                        },
+                        child: Image(
+                          image: AssetImage('assets/icons/preicon.png'),
+                          width: 10,
+                          height: 10,
+                        ),
                       ),
                     ),
                   ),
-                ),
 
-                SizedBox(
-                  width: 150,
-                  height: 150,
-                  child: Card(
-                    color: Color.fromRGBO(252, 202, 12, 1),
-                    child: new InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/menulecon');
-                        //print("tapped");
-                      },
-                      child: Image(
-                        image: AssetImage('assets/icons/book.png'),
-                        width: 70,
-                        height: 70,
+                  SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: Card(
+                      color: Color.fromRGBO(252, 202, 12, 1),
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/menulecon');
+                        },
+                        child: Image(
+                          image: AssetImage('assets/icons/book.png'),
+                          width: 70,
+                          height: 70,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: 150,
-                  height: 150,
-                  child: Card(
-                    color: Color.fromRGBO(252, 202, 12, 1),
-                    child: new InkWell(
-                      onTap: () {
-
-                        Connexion();
-
-                      },
-                      child: Image(
-                        image: AssetImage('assets/icons/pen.png'),
-                        width: 70,
-                        height: 70,
+                  SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: Card(
+                      color: Color.fromRGBO(252, 202, 12, 1),
+                      child: new InkWell(
+                        onTap: () {
+                          Connexion();
+                        },
+                        child: Image(
+                          image: AssetImage('assets/icons/pen.png'),
+                          width: 70,
+                          height: 70,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                // ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                // Expanded(
-                SizedBox(
-                  width: 150,
-                  height: 50,
-                  child: Text(
-                    'Pré-alpha',
-                    style: TextStyle(fontSize: 25),
-                    textAlign: TextAlign.center,
+                  // ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  // Expanded(
+                  SizedBox(
+                    width: 150,
+                    height: 50,
+                    child: Text(
+                      'Pré-alpha',
+                      style: TextStyle(fontSize: 25),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                // SizedBox(
-                //   width: 150,
-                //   height: 50,
-                //   child: Text(
-                //     'Alphabets',
-                //     style: TextStyle(fontSize: 25),
-                //     textAlign: TextAlign.center,
-                //   ),
-                // ),
-                // ),
-                // Expanded(
-                SizedBox(
-                  width: 150,
-                  height: 50,
-                  child: Text(
-                    'Leçons',
-                    style: TextStyle(fontSize: 25),
-                    textAlign: TextAlign.center,
+                  // SizedBox(
+                  //   width: 150,
+                  //   height: 50,
+                  //   child: Text(
+                  //     'Alphabets',
+                  //     style: TextStyle(fontSize: 25),
+                  //     textAlign: TextAlign.center,
+                  //   ),
+                  // ),
+                  // ),
+                  // Expanded(
+                  SizedBox(
+                    width: 150,
+                    height: 50,
+                    child: Text(
+                      'Leçons',
+                      style: TextStyle(fontSize: 25),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  width: 150,
-                  height: 50,
-                  child: Text(
-                    'Evaluations',
-                    style: TextStyle(fontSize: 25),
-                    textAlign: TextAlign.center,
+                  SizedBox(
+                    width: 150,
+                    height: 50,
+                    child: Text(
+                      'Evaluations',
+                      style: TextStyle(fontSize: 25),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                // ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                SizedBox(
-                  width: 150,
-                  height: 150,
-                  child: Card(
-                    color: Color.fromRGBO(252, 202, 12, 1),
-                    child: new InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/ardoise');
-                        //print("tapped");
-                      },
-                      child: Image(
-                        image: AssetImage('assets/icons/board.png'),
-                        width: 70,
-                        height: 70,
+                  // ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: Card(
+                      color: Color.fromRGBO(252, 202, 12, 1),
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/ardoise');
+                          //print("tapped");
+                        },
+                        child: Image(
+                          image: AssetImage('assets/icons/board.png'),
+                          width: 70,
+                          height: 70,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                // SizedBox(
-                //   width: 150,
-                //   height: 150,
-                //   child: Card(
-                //     color: Color.fromRGBO(252, 202, 12, 1),
-                //     child: new InkWell(
-                //       onTap: () {
-                //         //print("tapped");
-                //         Navigator.pushNamed(context, '/calculator');
-                //       },
-                //       child: Image(
-                //         image: AssetImage('assets/icons/calculator.png'),
-                //         width: 10,
-                //         height: 10,
-                //       ),
-                //     ),
-                //   ),
-                // ),
+                  // SizedBox(
+                  //   width: 150,
+                  //   height: 150,
+                  //   child: Card(
+                  //     color: Color.fromRGBO(252, 202, 12, 1),
+                  //     child: new InkWell(
+                  //       onTap: () {
+                  //         //print("tapped");
+                  //         Navigator.pushNamed(context, '/calculator');
+                  //       },
+                  //       child: Image(
+                  //         image: AssetImage('assets/icons/calculator.png'),
+                  //         width: 10,
+                  //         height: 10,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
 
-                // SizedBox(
-                //   width: 150,
-                //   height: 150,
-                //   child: Card(
-                //     color: Color.fromRGBO(252, 202, 12, 1),
-                //     child: new InkWell(
-                //       onTap: () {
-                //         //print("tapped");
-                //         Navigator.pushNamed(context, '/maths');
-                //       },
-                //       child: Image(
-                //         image: AssetImage('assets/icons/maths.png'),
-                //         width: 10,
-                //         height: 10,
-                //       ),
-                //     ),
-                //   ),
-                // ),
-                SizedBox(
-                  width: 150,
-                  height: 150,
-                  child: Card(
-                    color: Color.fromARGB(255, 11, 11, 11),
-                    child: new InkWell(
-                      onTap: () {
-                        SystemNavigator.pop();
-                      },
-                      child: Image.asset(
-                        'assets/icons/close.png',
-                        scale: 0.5,
+                  // SizedBox(
+                  //   width: 150,
+                  //   height: 150,
+                  //   child: Card(
+                  //     color: Color.fromRGBO(252, 202, 12, 1),
+                  //     child: new InkWell(
+                  //       onTap: () {
+                  //         //print("tapped");
+                  //         Navigator.pushNamed(context, '/maths');
+                  //       },
+                  //       child: Image(
+                  //         image: AssetImage('assets/icons/maths.png'),
+                  //         width: 10,
+                  //         height: 10,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: Card(
+                      color: Color.fromARGB(255, 11, 11, 11),
+                      child: new InkWell(
+                        onTap: () {
+                          SystemNavigator.pop();
+                        },
+                        child: Image.asset(
+                          'assets/icons/close.png',
+                          scale: 0.5,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                //),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                // Expanded(
-                SizedBox(
-                  width: 150,
-                  height: 50,
-                  child: Text(
-                    'Ardoise',
-                    style: TextStyle(fontSize: 25),
-                    textAlign: TextAlign.center,
+                  //),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  // Expanded(
+                  SizedBox(
+                    width: 150,
+                    height: 50,
+                    child: Text(
+                      'Ardoise',
+                      style: TextStyle(fontSize: 25),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
 
-                SizedBox(
-                  width: 150,
-                  height: 50,
-                  child: Text(
-                    'Fermer',
-                    style: TextStyle(fontSize: 25),
-                    textAlign: TextAlign.center,
+                  SizedBox(
+                    width: 150,
+                    height: 50,
+                    child: Text(
+                      'Fermer',
+                      style: TextStyle(fontSize: 25),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
 
-                // ),
-              ],
-            ),
-          ],
+                  // ),
+                ],
+              ),
+            ],
+          ),
         ),
+        // This trailing comma makes auto-formatting nicer for build methods.
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

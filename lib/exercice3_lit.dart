@@ -317,8 +317,8 @@ class _Exercice3_litState extends State<Exercice3_lit> {
           ),
           TextButton(
             onPressed: () {
-              Navigator.of(ctx).pop();
-              Navigator.pushReplacementNamed(context, '/menuEva');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/menuEva', ModalRoute.withName('/menu'));
             },
             child: Text(
               "Annuler",
@@ -415,8 +415,8 @@ class _Exercice3_litState extends State<Exercice3_lit> {
         actions: <Widget>[
           TextButton(
             onPressed: () {
-              Navigator.of(ctx).pop();
-              //Navigator.pushReplacementNamed(context, '/menuEva');
+             Navigator.pushNamedAndRemoveUntil(
+                  context, '/menuEva', ModalRoute.withName('/menu'));
             },
             child: Text(
               "Ok",

@@ -147,9 +147,11 @@ class _ResultatState extends State<Resultat> {
             Row(
               children: [
                 SizedBox(
-                  width: 120,
+                  width: 100,
                 ),
-                Text('Littératie :     '),
+                Text('Littératie :     ',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                 Container(
                   width: 180,
                   child: TextField(
@@ -163,7 +165,10 @@ class _ResultatState extends State<Resultat> {
                   ),
                 ),
                 SizedBox(width: 30), // Espace entre les champs
-                Text('Numératie :       '),
+                Text(
+                  'Numératie :       ',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
                 Container(
                   width: 180,
                   child: TextField(
@@ -189,9 +194,11 @@ class _ResultatState extends State<Resultat> {
               onPressed: () {
                 senddata();
               },
-              child: Text(
-                'Enregistrer les notes', // Texte à afficher sur le bouton
-              ),
+              child: Text('Enregistrer les notes',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20) // Texte à afficher sur le bouton
+                  ),
             ),
           ],
         ),
