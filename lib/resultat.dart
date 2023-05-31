@@ -30,7 +30,6 @@ class _ResultatState extends State<Resultat> {
   double litteratie = 0;
   String thereponse = "";
   String theid = "";
-  bool fait = false;
 
   @override
   void initState() {
@@ -83,7 +82,6 @@ class _ResultatState extends State<Resultat> {
       thereponse = response.body.toString();
       //thereponse = json.decode(response.body);
       if (thereponse == 'ok') {
-        fait = true;
         showDialog(
           context: context,
           builder: (BuildContext context) {
