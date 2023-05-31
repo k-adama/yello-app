@@ -445,8 +445,8 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
 
   @override
   void initState() {
-    checkParcipation();
     super.initState();
+    checkParcipation();
   }
 
   @override
