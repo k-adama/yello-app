@@ -447,7 +447,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initState() {
     super.initState();
-    final DateTime deadline = DateTime(2023, 6, 5);
+    final DateTime deadline = DateTime(2023, 6, 15);
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (DateTime.now().isAfter(deadline)) {
         timer.cancel();
