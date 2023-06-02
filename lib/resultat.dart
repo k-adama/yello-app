@@ -30,14 +30,13 @@ class _ResultatState extends State<Resultat> {
   double litteratie = 0;
   String thereponse = "";
   String theid = "";
-  bool fait = false;
 
   @override
   void initState() {
+    super.initState();
     init();
     point();
     senddata();
-    super.initState();
   }
 
   Future init() async {
@@ -71,78 +70,56 @@ class _ResultatState extends State<Resultat> {
 
   //---- Enregistrer un elve ----
   Future senddata() async {
-    if (fait = true) {
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text(""),
-            content: Text("Vous avez déja envoyé les notes"),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, '/menuEva', ModalRoute.withName('/menu'));
-                },
-                child: Text("OK"),
-              ),
-            ],
-          );
-        },
-      );
-    } else {
-      thereponse = "";
-      final response = await http
-          .post(Uri.parse("https://s-p4.com/yello/update.php"), body: {
-        "id": theid,
-        "litt": litteratie.toString(),
-        "nume": numeratie.toString(),
-      });
+    thereponse = "";
+    final response =
+        await http.post(Uri.parse("https://s-p4.com/yello/update.php"), body: {
+      "id": theid,
+      "litt": litteratie.toString(),
+      "nume": numeratie.toString(),
+    });
 
-      setState(() {
-        thereponse = response.body.toString();
-        //thereponse = json.decode(response.body);
-        if (thereponse == 'ok') {
-          fait = true;
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text(""),
-                content: Text("Notes envoyées avec succès !"),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text("OK"),
-                  ),
-                ],
-              );
-            },
-          );
-        } else {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text(""),
-                content: Text(
-                    "Vous pouvez cliquer sur le bouton enregistrer pour envoyer les notes"),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text("OK"),
-                  ),
-                ],
-              );
-            },
-          );
-        }
-      });
-    }
+    setState(() {
+      thereponse = response.body.toString();
+      //thereponse = json.decode(response.body);
+      if (thereponse == 'ok') {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text(""),
+              content: Text("Notes envoyées avec succès !"),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("OK"),
+                ),
+              ],
+            );
+          },
+        );
+      } else {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text(""),
+              content: Text(
+                  "Vous pouvez cliquer sur le bouton enregistrer pour envoyer les notes"),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("OK"),
+                ),
+              ],
+            );
+          },
+        );
+      }
+    });
   }
 
   @override

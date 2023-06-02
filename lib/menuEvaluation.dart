@@ -445,8 +445,8 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
 
   @override
   void initState() {
-    checkParcipation();
     super.initState();
+    checkParcipation();
   }
 
   @override
@@ -581,7 +581,7 @@ class _MenuEvaluationState extends State<MenuEvaluation> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.of(context).pop(true);
+                    Navigator.of(context).pop(false);
                   },
                   child: const Text('Non'),
                 ),
