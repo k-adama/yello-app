@@ -1,12 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:projets/lecon1.dart';
-import 'package:projets/infosymbol.dart';
-import 'package:projets/lecon3.dart';
-import 'package:projets/lecon2.dart';
-import 'package:projets/lecon4.dart';
-import 'package:projets/lecon5.dart';
+
 
 extension ColorExtension on String {
   toColor5() {
@@ -28,7 +23,7 @@ class MenuLecon extends StatefulWidget {
 }
 
 class _MenuLeconState extends State<MenuLecon> {
-  int _counter = 0;
+
   late PageController _controller = PageController(
     initialPage: 0,
   );

@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:projets/alphabet.dart';
@@ -124,7 +125,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _isBlocked = false;
+
   late Timer _timer;
   bool _appEnabled = false;
 
@@ -505,6 +506,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushReplacementNamed(context, '/adminlogin');
+          
         },
         backgroundColor: Colors.limeAccent,
         child: const Icon(Icons.settings),

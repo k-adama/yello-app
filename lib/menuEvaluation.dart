@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 
 /**** ANCIEN MENU D'EVALUATION ****************
 extension ColorExtension on String {
@@ -412,7 +412,7 @@ class MenuEvaluation extends StatefulWidget {
 }
 
 class _MenuEvaluationState extends State<MenuEvaluation> {
-  int _counter = 0;
+
   String erreurPass = "";
   final pass = TextEditingController();
   bool? numeratie1;
