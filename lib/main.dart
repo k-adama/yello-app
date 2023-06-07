@@ -132,7 +132,7 @@ class _MyAppState extends State<MyApp> {
   String accessBlocked = '';
 
   void bloquer() async {
-    final DateTime deadline = DateTime(2023, 6, 5);
+    final DateTime deadline = DateTime(2023, 6, 20);
 
     Timer.periodic(Duration(seconds: 1), (timer) {
       if (DateTime.now().isAfter(deadline)) {
@@ -448,7 +448,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initState() {
     super.initState();
-    final DateTime deadline = DateTime(2023, 6, 15);
+    final DateTime deadline = DateTime(2023, 6, 20);
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (DateTime.now().isAfter(deadline)) {
         timer.cancel();
