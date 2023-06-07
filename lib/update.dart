@@ -1,6 +1,6 @@
-import 'dart:io';
+
 import 'package:flutter/services.dart';
-import 'package:dio/dio.dart';
+
 import 'package:flutter/material.dart';
 import 'package:projets/menu.dart';
 import 'package:projets/downloading_dialog.dart';

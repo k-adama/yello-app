@@ -1,17 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:projets/alphabet.dart';
-import 'package:projets/infosymbol.dart';
-import 'package:projets/menulecon.dart';
-import 'package:projets/menuEvaluation.dart';
-import 'package:projets/ardoise.dart';
-import 'package:projets/calculator.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:projets/adminlogin.dart';
-import 'package:projets/menu.dart';
 
-import 'evaluationSymbol.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 extension ColorExtension on String {
   toColor3() {
@@ -33,7 +25,7 @@ class MenuApp extends StatefulWidget {
 }
 
 class _MenuAppState extends State<MenuApp> {
-  int _counter = 0;
+
   late SharedPreferences preferences;
   String student = "";
 

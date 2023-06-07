@@ -29,7 +29,8 @@ class _Exercice2_numState extends State<Exercice2_num> {
 
 //liste de type map avec nos questions, syllables et reponses
   List<Map<String, dynamic>> evaElements = [
-    {'question': '1 450 X 51 =', 'reponse': '73950'},
+    {'question': '1 450 X 51 =',
+     'reponse': '73950'},
     {'question': '58 000 + 4 850 = ', 'reponse': '62850'},
     {'question': '65870 – 8820 = ', 'reponse': '357050'},
     {'question': '89000 ÷ 200 = ', 'reponse': '245'},

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 
 extension ColorExtension on String {
   toColor5() {
@@ -25,7 +25,7 @@ class Resultat extends StatefulWidget {
 
 class _ResultatState extends State<Resultat> {
   late SharedPreferences preferences;
-  int _counter = 0;
+
   double numeratie = 0;
   double litteratie = 0;
   String thereponse = "";
