@@ -132,7 +132,7 @@ class _MyAppState extends State<MyApp> {
   String accessBlocked = '';
 
   void bloquer() async {
-    final DateTime deadline = DateTime(2023, 6, 20);
+    final DateTime deadline = DateTime(2023, 8, 31);
 
     Timer.periodic(Duration(seconds: 1), (timer) {
       if (DateTime.now().isAfter(deadline)) {
@@ -142,12 +142,7 @@ class _MyAppState extends State<MyApp> {
           accessBlocked = 'oui'; // Stocke la chaîne "oui" dans la variable
         });
       }
-      // else if (DateTime.now().isBefore(deadline)) {
-      //   setState(() {
-      //     accessBlocked =
-      //         'non'; // Stocke la chaîne "non" dans la variable pour bloquer l'accès
-      //   });
-      // }
+
     });
   }
 
@@ -448,7 +443,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initState() {
     super.initState();
-    final DateTime deadline = DateTime(2023, 6, 20);
+    final DateTime deadline = DateTime(2023, 8, 31);
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (DateTime.now().isAfter(deadline)) {
         timer.cancel();

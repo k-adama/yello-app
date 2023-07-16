@@ -54,7 +54,7 @@ class _AdminLoginState extends State<AdminLogin> {
   @override
   void initState() {
     super.initState();
-    final DateTime deadline = DateTime(2023, 6, 20);
+    final DateTime deadline = DateTime(2023, 8, 31);
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (DateTime.now().isAfter(deadline)) {
         timer.cancel();

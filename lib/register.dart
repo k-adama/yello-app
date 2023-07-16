@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:http/http.dart' as http;
 
-const List<String> list = <String>['Soubré', 'Gagnoa', 'Boundiali'];
+const List<String> list = <String>['Soubré', 'Gagnoa', 'Boundiali', 'Abidjan'];
 
 extension ColorExtension on String {
   toColor15() {
@@ -29,7 +29,6 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-
   String go = '';
   final eleve = TextEditingController();
   final formateur = TextEditingController();
