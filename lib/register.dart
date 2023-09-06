@@ -3,14 +3,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:projets/infosymbol.dart';
-import 'package:projets/main.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:projets/dashboard.dart';
-import 'package:http/http.dart' as http;
-import 'package:projets/menu.dart';
 
-const List<String> list = <String>['Soubré', 'Gagnoa', 'Boundiali'];
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:http/http.dart' as http;
+
+const List<String> list = <String>['Soubré', 'Gagnoa', 'Boundiali', 'Abidjan'];
 
 extension ColorExtension on String {
   toColor15() {
@@ -31,7 +29,6 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-  int _counter = 0;
   String go = '';
   final eleve = TextEditingController();
   final formateur = TextEditingController();

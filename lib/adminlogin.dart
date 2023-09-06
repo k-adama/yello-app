@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:projets/appBlocked.dart';
 import 'package:projets/infosymbol.dart';
 import 'package:projets/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -33,11 +36,14 @@ class _AdminLoginState extends State<AdminLogin> {
   String thereponse = "";
   late SharedPreferences preferences;
 
+  late Timer _timer;
+  bool _appEnabled = true;
+
   //---- Enregistrer un elve ----
   Future senddata(String pwd) async {
     if (pwd == "YelloAlpha") {
       Navigator.pushReplacementNamed(context, '/register');
-      // Navigator.pushReplacementNamed(context, '/menulecon');
+      // Navigator.pushReplacementNamed(context, '/menuEva');
     } else {
       setState(() {
         thereponse = "Erreur de mot de passe";
@@ -48,7 +54,22 @@ class _AdminLoginState extends State<AdminLogin> {
   @override
   void initState() {
     super.initState();
+    final DateTime deadline = DateTime(2023, 8, 31);
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      if (DateTime.now().isAfter(deadline)) {
+        timer.cancel();
+        setState(() {
+          _appEnabled = false;
+        });
+      }
+    });
     init();
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   Future init() async {
@@ -56,7 +77,10 @@ class _AdminLoginState extends State<AdminLogin> {
   }
 
   void GotoMain() {
-    Navigator.pushReplacementNamed(context, '/main');
+    !_appEnabled
+        ? Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => appBlocked()))
+        : Navigator.pushReplacementNamed(context, '/main');
   }
 
   @override
@@ -136,7 +160,14 @@ class _AdminLoginState extends State<AdminLogin> {
                         backgroundColor: '#fcca0c'.toColor14(),
                       ),
                       onPressed: () {
-                        senddata(pass.text);
+                        if (!_appEnabled) {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => appBlocked()));
+                        } else {
+                          senddata(pass.text);
+                        }
                       },
                       child: Text(
                         'Connexion',
